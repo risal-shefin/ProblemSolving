@@ -3611,6 +3611,22 @@
     ],
     "timestamp": "Sep/16/2021 03:19"
   },
+  "CF28921731": {
+    "contest_id": 478,
+    "language": "GNU C",
+    "path": "codeforces\\478\\A.c",
+    "platform": "Codeforces",
+    "problem_index": "A",
+    "problem_name": "Initial Bet",
+    "problem_url": "https://codeforces.com/contest/478/problem/A",
+    "submission_id": "CF28921731",
+    "submission_url": "https://codeforces.com/contest/478/submission/28921731",
+    "tags": [
+      "implementation",
+      "*1100"
+    ],
+    "timestamp": "Jul/27/2017 11:41"
+  },
   "CF28921748": {
     "contest_id": 677,
     "language": "GNU C",
