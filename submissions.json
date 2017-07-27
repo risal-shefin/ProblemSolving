@@ -9460,6 +9460,22 @@
     ],
     "timestamp": "Jul/27/2017 11:44"
   },
+  "CF28921830": {
+    "contest_id": 733,
+    "language": "GNU C",
+    "path": "codeforces\\733\\A.c",
+    "platform": "Codeforces",
+    "problem_index": "A",
+    "problem_name": "Grasshopper And the String",
+    "problem_url": "https://codeforces.com/contest/733/problem/A",
+    "submission_id": "CF28921830",
+    "submission_url": "https://codeforces.com/contest/733/submission/28921830",
+    "tags": [
+      "implementation",
+      "*1000"
+    ],
+    "timestamp": "Jul/27/2017 11:46"
+  },
   "CF28922100": {
     "contest_id": 630,
     "language": "GNU C",
