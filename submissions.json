@@ -3611,6 +3611,23 @@
     ],
     "timestamp": "Sep/16/2021 03:19"
   },
+  "CF28927489": {
+    "contest_id": 659,
+    "language": "GNU C++11",
+    "path": "codeforces\\659\\B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "Qualifying Contest",
+    "problem_url": "https://codeforces.com/contest/659/problem/B",
+    "submission_id": "CF28927489",
+    "submission_url": "https://codeforces.com/contest/659/submission/28927489",
+    "tags": [
+      "constructive algorithms",
+      "sortings",
+      "*1300"
+    ],
+    "timestamp": "Jul/27/2017 16:12"
+  },
   "CF28928425": {
     "contest_id": 805,
     "language": "GNU C++11",
