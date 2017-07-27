@@ -9494,6 +9494,22 @@
     ],
     "timestamp": "Jul/27/2017 13:23"
   },
+  "CF28923822": {
+    "contest_id": 1,
+    "language": "GNU C11",
+    "path": "codeforces\\1\\A.cpp",
+    "platform": "Codeforces",
+    "problem_index": "A",
+    "problem_name": "Theatre Square",
+    "problem_url": "https://codeforces.com/contest/1/problem/A",
+    "submission_id": "CF28923822",
+    "submission_url": "https://codeforces.com/contest/1/submission/28923822",
+    "tags": [
+      "math",
+      "*1000"
+    ],
+    "timestamp": "Jul/27/2017 13:24"
+  },
   "CF28923847": {
     "contest_id": 50,
     "language": "GNU C11",

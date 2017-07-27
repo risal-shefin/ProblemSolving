@@ -1,15 +1,27 @@
-#include <bits/stdc++.h>
-using namespace std;
+#include <stdio.h>
 
 int main()
 
 {
-    long long n, m, a, c1, c2;
-    cin >> n >> m >> a;
-    c1 = ceil((double)n / (double)a);
-    c2 = ceil((double)m / (double)a);
-    c1 = c1 * c2;
-    cout << c1 << endl;
+    long long int n, m , a, row, col;
 
+    scanf("%lld %lld %lld", &n, &m, &a);
+
+    if(n % a == 0) {
+       col  = n / a;
+    }
+    else {
+       col = n / a + 1;
+    }
+
+    if(m % a == 0) {
+        row = m / a;
+    }
+    else {
+        row = m / a + 1;
+    }
+
+    printf("%lld\n", row * col);
+    return 0;
 }
 
