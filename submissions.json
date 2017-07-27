@@ -3611,6 +3611,22 @@
     ],
     "timestamp": "Sep/16/2021 03:19"
   },
+  "CF28921710": {
+    "contest_id": 705,
+    "language": "GNU C",
+    "path": "codeforces\\705\\A.c",
+    "platform": "Codeforces",
+    "problem_index": "A",
+    "problem_name": "Hulk",
+    "problem_url": "https://codeforces.com/contest/705/problem/A",
+    "submission_id": "CF28921710",
+    "submission_url": "https://codeforces.com/contest/705/submission/28921710",
+    "tags": [
+      "implementation",
+      "*800"
+    ],
+    "timestamp": "Jul/27/2017 11:40"
+  },
   "CF28921731": {
     "contest_id": 478,
     "language": "GNU C",
