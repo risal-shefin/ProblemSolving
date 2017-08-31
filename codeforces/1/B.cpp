@@ -17,13 +17,9 @@ int main()
         char s1[100];
         scanf(" %s", s1);
         check = 0;
-        if(s1[0] == 'R' && (s1[1] >= '0' && s1[1] <= '9')) {
-            for(int h = 2; s1[h] != '\0'; h++) {
-                if((s1[h] == 'C')) {
-                    check = 1;
-                    break;
-                }
-            }
+        for(int h = 1; s1[h] != '\0'; h++) {
+            if((s1[h + 1] >= 'A' && s1[h + 1] <= 'Z') && (s1[h] >= '0' && s1[h] <= '9'))
+                check = 1;
         }
         if(check == 0) {
             int ans = 0, j, tmp = 0;
