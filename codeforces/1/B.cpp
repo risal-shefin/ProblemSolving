@@ -18,8 +18,10 @@ int main()
         scanf(" %s", s1);
         check = 0;
         for(int h = 1; s1[h] != '\0'; h++) {
-            if((s1[h + 1] >= 'A' && s1[h + 1] <= 'Z') && (s1[h] >= '0' && s1[h] <= '9'))
+            if((s1[h + 1] >= 'A' && s1[h + 1] <= 'Z') && (s1[h] >= '0' && s1[h] <= '9')) {
                 check = 1;
+                break;
+            }
         }
         if(check == 0) {
             int ans = 0, j, tmp = 0;
