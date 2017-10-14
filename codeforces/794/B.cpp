@@ -37,7 +37,7 @@ int main()
     th1 = atan(h / 0.5);
     a = 1;
     n--;
-    double dh =  h;
+    double dh = h;
     int counter = -1;
     vector <double> st;
     while(n--) {
