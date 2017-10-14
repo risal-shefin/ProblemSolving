@@ -49,9 +49,10 @@ int main()
         counter++;
     }
 
-    printf("%0.12f", st[counter]);
+    cout << fixed << setprecision(15) << st[counter];
     for(int i = counter - 1; i >= 0; i--) {
-        printf(" %0.12f", st[i]);
+        printf(" ");
+        cout << fixed << setprecision(15) << st[i];
     }
     printf("\n");
     return 0;
