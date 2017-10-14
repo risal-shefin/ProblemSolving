@@ -38,22 +38,21 @@ int main()
     a = 1;
     n--;
     double dh = h;
-    stack <double> st;
+    int counter = -1;
+    vector <double> st;
     while(n--) {
         double ansh;
         ansh = bsearch(0, dh);
         dh -= ansh;
         a = b;
-        st.push(dh);
+        st.push_back(dh);
+        counter++;
     }
 
-    printf("%0.12f", st.top());
-    st.pop();
-    while(!st.empty()) {
-        printf(" %0.12f", st.top());
-        st.pop();
+    printf("%0.12f", st[counter]);
+    for(int i = counter - 1; i >= 0; i--) {
+        printf(" %0.12f", st[i]);
     }
-
     printf("\n");
     return 0;
 }
