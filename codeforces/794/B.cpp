@@ -38,22 +38,22 @@ int main()
     a = 1;
     n--;
     double dh = h;
-    int counter = -1;
-    vector <double> st;
+    stack <double> st;
     while(n--) {
         double ansh;
         ansh = bsearch(0, dh);
         dh -= ansh;
         a = b;
-        st.push_back(dh);
-        counter++;
+        st.push(dh);
     }
 
-    cout << fixed << setprecision(15) << st[counter];
-    for(int i = counter - 1; i >= 0; i--) {
-        printf(" ");
-        cout << fixed << setprecision(15) << st[i];
+    printf("%0.12f", st.top());
+    st.pop();
+    while(!st.empty()) {
+        printf(" %0.12f", st.top());
+        st.pop();
     }
+
     printf("\n");
     return 0;
 }

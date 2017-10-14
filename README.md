@@ -1022,7 +1022,7 @@ A repository to keep track of problem solving practice, containing solutions fro
 24 | [A - QAQ](https://codeforces.com/contest/894/problem/A) | [GNU C++11](./codeforces/894/A.cpp) | `brute force` `dp` `*800` | Nov/19/2017 20:50 | 
 23 | [A - ACM ICPC](https://codeforces.com/contest/890/problem/A) | [GNU C++11](./codeforces/890/A.cpp) | `brute force` `*1000` | Nov/13/2017 09:30 | 
 22 | [A - Anton and Letters](https://codeforces.com/contest/443/problem/A) | [GNU C++11](./codeforces/443/A.cpp) | `constructive algorithms` `implementation` `*800` | Oct/23/2017 23:25 | 
-21 | [B - Cutting Carrot](https://codeforces.com/contest/794/problem/B) | [GNU C++11](./codeforces/794/B.cpp) | `geometry` `math` `*1200` | Oct/15/2017 02:04 | 
+21 | [B - Cutting Carrot](https://codeforces.com/contest/794/problem/B) | [GNU C++11](./codeforces/794/B.cpp) | `geometry` `math` `*1200` | Oct/15/2017 02:14 | 
 20 | [A - Mahmoud and Ehab and the MEX](https://codeforces.com/contest/862/problem/A) | [GNU C++11](./codeforces/862/A.cpp) | `greedy` `implementation` `*1000` | Sep/20/2017 23:09 | 
 19 | [B - Spreadsheet](https://codeforces.com/contest/1/problem/B) | [GNU C++11](./codeforces/1/B.cpp) | `implementation` `math` `*1600` | Sep/01/2017 06:00 | 
 18 | [A - Theatre Square](https://codeforces.com/contest/1/problem/A) | [GNU C++11](./codeforces/1/A.cpp) | `math` `*1000` | Aug/29/2017 15:15 | 

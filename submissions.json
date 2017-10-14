@@ -9724,6 +9724,23 @@
     ],
     "timestamp": "Oct/15/2017 02:04"
   },
+  "CF31323091": {
+    "contest_id": 794,
+    "language": "GNU C++11",
+    "path": "codeforces\\794\\B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "Cutting Carrot",
+    "problem_url": "https://codeforces.com/contest/794/problem/B",
+    "submission_id": "CF31323091",
+    "submission_url": "https://codeforces.com/contest/794/submission/31323091",
+    "tags": [
+      "geometry",
+      "math",
+      "*1200"
+    ],
+    "timestamp": "Oct/15/2017 02:14"
+  },
   "CF31654335": {
     "contest_id": 443,
     "language": "GNU C++11",
