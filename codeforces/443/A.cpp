@@ -1,21 +1,18 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-
-#define ll long long
-
+set < char > s;
 int main()
-
 {
-    char ara[1009];
-    gets(ara);
-    set <char> st;
-    for(int i = 0; ara[i] != '\0'; i++) {
-        if(ara[i] >= 'a' && ara[i] <= 'z') {
-            st.insert(ara[i]);
+    char x[10002];
+    int i;
+    scanf(" %[^\n]",x);
+    for(i=0;i<strlen(x);i++)
+    {
+        if(x[i] >= 97 && x[i] <= 122)
+        {
+            s.insert(x[i]);
         }
     }
-
-    cout << st.size() << endl;
-    return 0;
+    cout << s.size() << endl;
 }
 
