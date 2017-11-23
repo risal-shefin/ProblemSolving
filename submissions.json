@@ -3611,6 +3611,23 @@
     ],
     "timestamp": "Sep/16/2021 03:19"
   },
+  "CF32589552": {
+    "contest_id": 893,
+    "language": "GNU C++11",
+    "path": "codeforces\\893\\B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "Beautiful Divisors",
+    "problem_url": "https://codeforces.com/contest/893/problem/B",
+    "submission_id": "CF32589552",
+    "submission_url": "https://codeforces.com/contest/893/submission/32589552",
+    "tags": [
+      "brute force",
+      "implementation",
+      "*1000"
+    ],
+    "timestamp": "Nov/23/2017 22:02"
+  },
   "CF33032962": {
     "contest_id": 3,
     "language": "GNU C++11",
