@@ -1316,8 +1316,8 @@ A repository to keep track of problem solving practice, containing solutions fro
 29 | [A - Pizza Separation](https://codeforces.com/contest/895/problem/A) | [GNU C++11](./codeforces/895/A.cpp) | `brute force` `implementation` `*1200` | Nov/27/2017 03:31 | 
 28 | [C - Anton and Fairy Tale](https://codeforces.com/contest/785/problem/C) | [GNU C++11](./codeforces/785/C.cpp) | `binary search` `math` `*1600` | Nov/27/2017 03:10 | 
 27 | [B - Karen and Coffee](https://codeforces.com/contest/816/problem/B) | [GNU C++11](./codeforces/816/B.cpp) | `binary search` `data structures` `implementation` `*1400` | Nov/27/2017 02:18 | 
-26 | [A - Chess For Three](https://codeforces.com/contest/893/problem/A) | [GNU C++11](./codeforces/893/A.cpp) | `implementation` `*900` | Nov/24/2017 23:30 | 
-25 | [C - Rumor](https://codeforces.com/contest/893/problem/C) | [GNU C++11](./codeforces/893/C.cpp) | `dfs and similar` `graphs` `greedy` `*1300` | Nov/23/2017 22:22 | 
+26 | [C - Rumor](https://codeforces.com/contest/893/problem/C) | [GNU C++11](./codeforces/893/C.cpp) | `dfs and similar` `graphs` `greedy` `*1300` | Nov/24/2017 23:33 | 
+25 | [A - Chess For Three](https://codeforces.com/contest/893/problem/A) | [GNU C++11](./codeforces/893/A.cpp) | `implementation` `*900` | Nov/24/2017 23:30 | 
 24 | [B - Beautiful Divisors](https://codeforces.com/contest/893/problem/B) | [GNU C++11](./codeforces/893/B.cpp) | `brute force` `implementation` `*1000` | Nov/23/2017 22:02 | 
 23 | [A - QAQ](https://codeforces.com/contest/894/problem/A) | [GNU C++11](./codeforces/894/A.cpp) | `brute force` `dp` `*800` | Nov/19/2017 20:50 | 
 22 | [A - ACM ICPC](https://codeforces.com/contest/890/problem/A) | [GNU C++11](./codeforces/890/A.cpp) | `brute force` `*1000` | Nov/13/2017 09:30 | 
