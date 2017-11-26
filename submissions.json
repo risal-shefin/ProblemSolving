@@ -9933,6 +9933,23 @@
     ],
     "timestamp": "Nov/27/2017 02:18"
   },
+  "CF32695491": {
+    "contest_id": 785,
+    "language": "GNU C++11",
+    "path": "codeforces\\785\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Anton and Fairy Tale",
+    "problem_url": "https://codeforces.com/contest/785/problem/C",
+    "submission_id": "CF32695491",
+    "submission_url": "https://codeforces.com/contest/785/submission/32695491",
+    "tags": [
+      "binary search",
+      "math",
+      "*1600"
+    ],
+    "timestamp": "Nov/27/2017 03:07"
+  },
   "CF32695537": {
     "contest_id": 785,
     "language": "GNU C++11",

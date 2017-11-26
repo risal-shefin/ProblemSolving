@@ -15,11 +15,11 @@ int main()
     n -= m;
     long long ans;
     long long lo = 0, hi = INT_MAX, mid;
-    while(lo <= hi) {
+    while(lo < hi) {
         mid = (lo + hi) / 2;
         long long tmp = mid * (mid + 1) / 2;
         if(tmp >= n) {
-            hi = mid - 1;
+            hi = mid;
             ans = m + mid;
         }
         else
