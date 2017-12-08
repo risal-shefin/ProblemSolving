@@ -45,6 +45,7 @@ int main()
     queue <nd> q;
     q.push(nd(r1, c1));
     vector <node> v;
+    v.push_back(node(r1, c1, r1, c1));
     bool visit[10][10] = {};
 
     while(!q.empty()) {
@@ -83,6 +84,7 @@ int main()
             for(int i = sz - 1; i >= 0; i--) {
                 if(v[i].row == r2 && v[i].col == c2) {
                     vct.push_back(nd(v[i].mr, v[i].mc));
+                    //cout << v[i].mr << " gg " << v[i].mc << endl;
 
                     r2 = v[i].mr;
                     c2 = v[i].mc;
@@ -91,7 +93,7 @@ int main()
             v.clear();
 
             sz = vct.size();
-            printf("%d\n", sz - 1);
+            printf("%d\n", sz - 2);
             for(int i = sz - 1; i >= 0; i--) {
                 if(vct[i].row > r1) {
                     if(vct[i].col > c1) {
@@ -131,7 +133,7 @@ int main()
                 r1 = vct[i].row;
                 c1 = vct[i].col;
             }
-            vct.clear();
+
         }
 
     return 0;
