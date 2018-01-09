@@ -27,6 +27,7 @@ int main()
     for(ll i = n - 1; i >= 0; i--) {
         ll amount = L / lit[i];
         prc = amount * price[i];
+        L -= amount * lit[i];
 
         if(L % lit[i] != 0) {
             ll cst = (amount + 1) * price[i];
@@ -37,7 +38,6 @@ int main()
             break;
         }
 
-        L -= amount * lit[i];
         cost += prc;
     }
     cout << m << endl;
