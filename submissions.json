@@ -10175,6 +10175,26 @@
     ],
     "timestamp": "Jan/08/2018 21:08"
   },
+  "CF34688691": {
+    "contest_id": 918,
+    "language": "GNU C++11",
+    "path": "codeforces\\918\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "The Monster",
+    "problem_url": "https://codeforces.com/contest/918/problem/C",
+    "submission_id": "CF34688691",
+    "submission_url": "https://codeforces.com/contest/918/submission/34688691",
+    "tags": [
+      "data structures",
+      "dp",
+      "greedy",
+      "implementation",
+      "math",
+      "*1800"
+    ],
+    "timestamp": "Jan/30/2018 01:19"
+  },
   "CF34740272": {
     "contest_id": 919,
     "language": "GNU C++11",
