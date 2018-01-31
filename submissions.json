@@ -10175,6 +10175,23 @@
     ],
     "timestamp": "Jan/08/2018 21:08"
   },
+  "CF34781950": {
+    "contest_id": 379,
+    "language": "GNU C++14",
+    "path": "codeforces\\379\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "New Year Ratings Change",
+    "problem_url": "https://codeforces.com/contest/379/problem/C",
+    "submission_id": "CF34781950",
+    "submission_url": "https://codeforces.com/contest/379/submission/34781950",
+    "tags": [
+      "greedy",
+      "sortings",
+      "*1400"
+    ],
+    "timestamp": "Feb/01/2018 03:32"
+  },
   "CF34795754": {
     "contest_id": 918,
     "language": "GNU C++14",
