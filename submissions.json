@@ -10175,6 +10175,23 @@
     ],
     "timestamp": "Jan/08/2018 21:08"
   },
+  "CF34781906": {
+    "contest_id": 379,
+    "language": "GNU C++11",
+    "path": "codeforces\\379\\B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "New Year Present",
+    "problem_url": "https://codeforces.com/contest/379/problem/B",
+    "submission_id": "CF34781906",
+    "submission_url": "https://codeforces.com/contest/379/submission/34781906",
+    "tags": [
+      "constructive algorithms",
+      "implementation",
+      "*1200"
+    ],
+    "timestamp": "Feb/01/2018 03:29"
+  },
   "CF34781913": {
     "contest_id": 381,
     "language": "GNU C++11",
