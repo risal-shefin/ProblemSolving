@@ -10175,6 +10175,25 @@
     ],
     "timestamp": "Jan/08/2018 21:08"
   },
+  "CF34795754": {
+    "contest_id": 918,
+    "language": "GNU C++14",
+    "path": "codeforces\\918\\D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "MADMAX",
+    "problem_url": "https://codeforces.com/contest/918/problem/D",
+    "submission_id": "CF34795754",
+    "submission_url": "https://codeforces.com/contest/918/submission/34795754",
+    "tags": [
+      "dfs and similar",
+      "dp",
+      "games",
+      "graphs",
+      "*1700"
+    ],
+    "timestamp": "Feb/01/2018 14:42"
+  },
   "CF34803154": {
     "contest_id": 217,
     "language": "GNU C++14",
