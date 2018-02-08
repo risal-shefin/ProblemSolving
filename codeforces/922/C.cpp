@@ -1,14 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool check[35];
+bool check[110];
 #define ll long long
 
 int main() {
 	
     ll n, k;
     cin >> n >> k;
-    ll p = min(k, 32LL);
+    ll p = min(k, 100LL);
     for(ll i = 1; i <= p; i++) {
          ll tmp = n % i;
          if(check[tmp]) {
