@@ -8,7 +8,7 @@ int main() {
 	
     ll n, k;
     cin >> n >> k;
-    ll p = min(k, 25LL);
+    ll p = min(k, 32LL);
     for(ll i = 1; i <= p; i++) {
          ll tmp = n % i;
          if(check[tmp]) {
