@@ -10175,6 +10175,23 @@
     ],
     "timestamp": "Jan/08/2018 21:08"
   },
+  "CF35236180": {
+    "contest_id": 934,
+    "language": "GNU C++11",
+    "path": "codeforces\\934\\B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "A Prosperous Lot",
+    "problem_url": "https://codeforces.com/contest/934/problem/B",
+    "submission_id": "CF35236180",
+    "submission_url": "https://codeforces.com/contest/934/submission/35236180",
+    "tags": [
+      "constructive algorithms",
+      "implementation",
+      "*1200"
+    ],
+    "timestamp": "Feb/14/2018 18:21"
+  },
   "CF35247697": {
     "contest_id": 934,
     "language": "GNU C++11",
