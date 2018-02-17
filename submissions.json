@@ -10175,6 +10175,24 @@
     ],
     "timestamp": "Jan/08/2018 21:08"
   },
+  "CF35384929": {
+    "contest_id": 938,
+    "language": "GNU C++11",
+    "path": "codeforces\\938\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Constructing Tests",
+    "problem_url": "https://codeforces.com/contest/938/problem/C",
+    "submission_id": "CF35384929",
+    "submission_url": "https://codeforces.com/contest/938/submission/35384929",
+    "tags": [
+      "binary search",
+      "brute force",
+      "constructive algorithms",
+      "*1700"
+    ],
+    "timestamp": "Feb/17/2018 13:41"
+  },
   "CF35391294": {
     "contest_id": 939,
     "language": "GNU C++11",
