@@ -10175,6 +10175,22 @@
     ],
     "timestamp": "Jan/08/2018 21:08"
   },
+  "CF35391294": {
+    "contest_id": 939,
+    "language": "GNU C++11",
+    "path": "codeforces\\939\\A.cpp",
+    "platform": "Codeforces",
+    "problem_index": "A",
+    "problem_name": "Love Triangle",
+    "problem_url": "https://codeforces.com/contest/939/problem/A",
+    "submission_id": "CF35391294",
+    "submission_url": "https://codeforces.com/contest/939/submission/35391294",
+    "tags": [
+      "graphs",
+      "*800"
+    ],
+    "timestamp": "Feb/17/2018 16:14"
+  },
   "CF35419379": {
     "contest_id": 939,
     "language": "GNU C++11",
