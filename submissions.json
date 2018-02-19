@@ -9932,6 +9932,22 @@
     ],
     "timestamp": "Jan/08/2018 21:08"
   },
+  "CF35484694": {
+    "contest_id": 935,
+    "language": "GNU C++14",
+    "path": "codeforces\\935\\B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "Fafa and the Gates",
+    "problem_url": "https://codeforces.com/contest/935/problem/B",
+    "submission_id": "CF35484694",
+    "submission_url": "https://codeforces.com/contest/935/submission/35484694",
+    "tags": [
+      "implementation",
+      "*900"
+    ],
+    "timestamp": "Feb/19/2018 22:57"
+  },
   "CF35518021": {
     "contest_id": 935,
     "language": "GNU C++11",
