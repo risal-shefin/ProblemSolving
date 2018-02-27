@@ -11,7 +11,7 @@ ll s, dp[100009][2], m, visit[100009][2];
 ll solve(ll u, ll id, ll counter)
 
 {
-    if(visit[u][id] && counter > m) {
+    if(visit[u][id] && counter > m + 1) {
         return 2;
     }
     if(counter >= 1000000) {
@@ -86,3 +86,45 @@ int main()
 
     return 0;
 }
+
+/*
+15 20
+3 4 9 7
+0
+1 1
+3 5 6 1
+1 13
+0
+4 8 15 4 2
+1 7
+1 2
+0
+1 4
+0
+2 3 11
+1 5
+2 1 6
+4
+*/
+
+/*
+5 5
+1 2
+1 3
+1 4
+2 2 5
+0
+1
+*/
+
+/*
+6 6
+1 2
+2 3 4
+1 5
+1 5
+1 6
+0
+1
+Lose
+*/
