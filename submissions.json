@@ -10207,6 +10207,23 @@
     ],
     "timestamp": "Feb/20/2018 16:18"
   },
+  "CF35940554": {
+    "contest_id": 931,
+    "language": "GNU C++11",
+    "path": "codeforces\\931\\B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "World Cup",
+    "problem_url": "https://codeforces.com/contest/931/problem/B",
+    "submission_id": "CF35940554",
+    "submission_url": "https://codeforces.com/contest/931/submission/35940554",
+    "tags": [
+      "constructive algorithms",
+      "implementation",
+      "*1200"
+    ],
+    "timestamp": "Mar/04/2018 22:53"
+  },
   "CF36000236": {
     "contest_id": 946,
     "language": "GNU C++11",
