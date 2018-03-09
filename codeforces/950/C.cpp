@@ -11,7 +11,7 @@ set <ll> :: iterator it, it2;
 int main()
 
 {
-    string  s;
+    string s;
     cin >> s;
     ll indx1 = 0, indx2 = 0;
     for(ll i = 0; i < s.length(); i++) {
