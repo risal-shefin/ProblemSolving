@@ -51,7 +51,7 @@ int main()
         tmp = *it;
         ans[indx].pb(tmp);
 
-        l1.erase(tmp);
+        l1.erase(it);
         counter++;
 
         while(1) {
@@ -66,8 +66,8 @@ int main()
             if(tmp > tp) {
                 ans[indx].pb(tp);
                 ans[indx].pb(tmp);
-                l1.erase(tmp);
-                l2.erase(tp);
+                l1.erase(it2);
+                l2.erase(it);
                 counter += 2;
             }
         }
