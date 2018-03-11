@@ -10207,6 +10207,24 @@
     ],
     "timestamp": "Feb/20/2018 16:18"
   },
+  "CF36207860": {
+    "contest_id": 938,
+    "language": "GNU C++11",
+    "path": "codeforces\\938\\D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "Buy a Ticket",
+    "problem_url": "https://codeforces.com/contest/938/problem/D",
+    "submission_id": "CF36207860",
+    "submission_url": "https://codeforces.com/contest/938/submission/36207860",
+    "tags": [
+      "data structures",
+      "graphs",
+      "shortest paths",
+      "*2000"
+    ],
+    "timestamp": "Mar/12/2018 00:18"
+  },
   "CF36294269": {
     "contest_id": 665,
     "language": "GNU C++11",
