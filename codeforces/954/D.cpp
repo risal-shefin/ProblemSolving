@@ -20,7 +20,6 @@ int main()
 
 {
     ll n, m, s, t, tot2 = 0;
-    ll k;
     cin >> n >> m >> s >> t;
     for(ll i = 1; i <= m; i++) {
         ll u, v;
