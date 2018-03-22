@@ -1,31 +1,33 @@
-#include <bits/stdc++.h>
-using namespace std;
+    #include<bits/stdc++.h>
 
-int main()
+    #define ll long long
 
-{
-    int n;
-    cin >> n;
-    string s;
-    cin >> s;
+    using namespace std;
 
-    for(int i = 0; i < s.length() - 1; i++) {
-        if(s[i] == 'U' && s[i + 1] == 'R') {
-            s[i] = '#';
-            s[i + 1] = '#';
-            n--;
-            i++;
+    int main()
+    {
+        ll test;
+        cin >> test;
+        char ara[110];
+        scanf("%s",ara);
+        ll c=0;
+        for(ll i = 0; i < test; i++)
+        {
+            if(ara[i]=='U'&&ara[i+1]=='R')
+                {
+                    ara[i]='D';
+                    ara[i+1]='0';
+                    c++;
+                }
+            else if(ara[i]=='R'&&ara[i+1]=='U')
+                {
+
+                    ara[i]='D';
+                    ara[i+1]='0';
+                    c++;
+                }
+            else if(ara[i]=='U' || ara[i]=='R')
+                c++;
         }
-
-        else if(s[i] == 'R' && s[i + 1] == 'U') {
-            s[i] = '#';
-            s[i + 1] = '#';
-            n--;
-            i++;
-        }
+        cout<<c<<endl;
     }
-
-    printf("%d\n", n);
-
-    return 0;
-}
