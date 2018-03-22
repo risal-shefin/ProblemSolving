@@ -1,31 +1,38 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+#define ll long long
+
 int main()
 
 {
-    int n;
+    bool check = 0;
+    int n, mx, ans;
     cin >> n;
-    string s;
-    cin >> s;
-
-    int half = n / 2, ans = n;
-    for(int i = half; i >= 1; i--) {
-        bool test = 1;
-        for(int j = 0, k = i; j < i; j++, k++) {
-            if(s[j] != s[k]) {
-                test = 0;
+    char s[120];
+    scanf(" %s", s + 1);
+    for(int i = n / 2; i >= 1; i--) {
+        int k = 2 * i;
+        check = 1;
+        for(int j = 0; j < i; j++) {
+            if(s[i - j] != s[k - j]) {
+                check = 0;
                 break;
             }
         }
 
-        if(test) {
-            ans = ans - i + 1;
+        if(check == 1) {
+            mx = i;
             break;
         }
     }
 
-    printf("%d\n", ans);
+    if(check) {
+       ans = n - mx + 1;
+    }
+    else
+        ans = n;
+    cout << ans << endl;
 
     return 0;
 }
