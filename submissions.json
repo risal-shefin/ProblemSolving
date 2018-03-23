@@ -10207,6 +10207,22 @@
     ],
     "timestamp": "Feb/20/2018 16:18"
   },
+  "CF36542415": {
+    "contest_id": 955,
+    "language": "GNU C++11",
+    "path": "codeforces\\955\\B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "Not simply beatiful strings",
+    "problem_url": "https://codeforces.com/contest/955/problem/B",
+    "submission_id": "CF36542415",
+    "submission_url": "https://codeforces.com/contest/955/submission/36542415",
+    "tags": [
+      "implementation",
+      "*1400"
+    ],
+    "timestamp": "Mar/23/2018 23:14"
+  },
   "CF36547261": {
     "contest_id": 955,
     "language": "GNU C++11",
