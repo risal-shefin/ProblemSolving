@@ -10207,6 +10207,22 @@
     ],
     "timestamp": "Feb/20/2018 16:18"
   },
+  "CF37523802": {
+    "contest_id": 954,
+    "language": "GNU C++17",
+    "path": "codeforces\\954\\A.cpp",
+    "platform": "Codeforces",
+    "problem_index": "A",
+    "problem_name": "Diagonal Walking",
+    "problem_url": "https://codeforces.com/contest/954/problem/A",
+    "submission_id": "CF37523802",
+    "submission_url": "https://codeforces.com/contest/954/submission/37523802",
+    "tags": [
+      "implementation",
+      "*800"
+    ],
+    "timestamp": "Apr/22/2018 03:13"
+  },
   "CF37523804": {
     "contest_id": 954,
     "language": "GNU C++17",
