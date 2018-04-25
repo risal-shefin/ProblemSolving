@@ -10207,6 +10207,22 @@
     ],
     "timestamp": "Feb/20/2018 16:18"
   },
+  "CF37618351": {
+    "contest_id": 965,
+    "language": "GNU C++17",
+    "path": "codeforces\\965\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Greedy Arkady",
+    "problem_url": "https://codeforces.com/contest/965/problem/C",
+    "submission_id": "CF37618351",
+    "submission_url": "https://codeforces.com/contest/965/submission/37618351",
+    "tags": [
+      "math",
+      "*2000"
+    ],
+    "timestamp": "Apr/26/2018 02:16"
+  },
   "CF37619969": {
     "contest_id": 965,
     "language": "GNU C++17",
