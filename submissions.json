@@ -10207,6 +10207,22 @@
     ],
     "timestamp": "Feb/20/2018 16:18"
   },
+  "CF37685471": {
+    "contest_id": 38,
+    "language": "GNU C++17",
+    "path": "codeforces\\38\\A.cpp",
+    "platform": "Codeforces",
+    "problem_index": "A",
+    "problem_name": "Army",
+    "problem_url": "https://codeforces.com/contest/38/problem/A",
+    "submission_id": "CF37685471",
+    "submission_url": "https://codeforces.com/contest/38/submission/37685471",
+    "tags": [
+      "implementation",
+      "*800"
+    ],
+    "timestamp": "Apr/28/2018 18:31"
+  },
   "CF37685493": {
     "contest_id": 595,
     "language": "GNU C++17",
