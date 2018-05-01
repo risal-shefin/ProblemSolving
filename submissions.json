@@ -9932,6 +9932,22 @@
     ],
     "timestamp": "Jan/08/2018 21:08"
   },
+  "CF37785848": {
+    "contest_id": 967,
+    "language": "GNU C++17",
+    "path": "codeforces\\967\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Stairs and Elevators",
+    "problem_url": "https://codeforces.com/contest/967/problem/C",
+    "submission_id": "CF37785848",
+    "submission_url": "https://codeforces.com/contest/967/submission/37785848",
+    "tags": [
+      "binary search",
+      "*1600"
+    ],
+    "timestamp": "May/01/2018 08:30"
+  },
   "CF37802451": {
     "contest_id": 975,
     "language": "GNU C++17",
