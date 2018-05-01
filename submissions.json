@@ -9932,6 +9932,23 @@
     ],
     "timestamp": "Jan/08/2018 21:08"
   },
+  "CF37826860": {
+    "contest_id": 883,
+    "language": "GNU C++17",
+    "path": "codeforces\\883\\I.cpp",
+    "platform": "Codeforces",
+    "problem_index": "I",
+    "problem_name": "Photo Processing",
+    "problem_url": "https://codeforces.com/contest/883/problem/I",
+    "submission_id": "CF37826860",
+    "submission_url": "https://codeforces.com/contest/883/submission/37826860",
+    "tags": [
+      "binary search",
+      "dp",
+      "*1900"
+    ],
+    "timestamp": "May/02/2018 04:58"
+  },
   "CF37991027": {
     "contest_id": 977,
     "language": "GNU C++17",
