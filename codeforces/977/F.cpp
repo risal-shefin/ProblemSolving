@@ -3,8 +3,6 @@ using namespace std;
 
 #define ll long long
 #define pb push_back
-#define inf 2e18
-#define ninf -2e18
 
 ll ara[200009], ans[200009], cnt[200009], prv[200009];
 
