@@ -9932,6 +9932,24 @@
     ],
     "timestamp": "Jan/08/2018 21:08"
   },
+  "CF38304118": {
+    "contest_id": 978,
+    "language": "GNU C++17",
+    "path": "codeforces\\978\\D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "Almost Arithmetic Progression",
+    "problem_url": "https://codeforces.com/contest/978/problem/D",
+    "submission_id": "CF38304118",
+    "submission_url": "https://codeforces.com/contest/978/submission/38304118",
+    "tags": [
+      "brute force",
+      "implementation",
+      "math",
+      "*1500"
+    ],
+    "timestamp": "May/16/2018 04:52"
+  },
   "CF38304121": {
     "contest_id": 978,
     "language": "GNU C++17",
