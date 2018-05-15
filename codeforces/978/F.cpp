@@ -2,7 +2,7 @@
 using namespace std;
 
 #define ll long long
-#define inf (1LL<<61)
+#define inf 1e18
 #define sl(val) scanf("%lld", &val)
 
 ll r1[200009], ans[200009];
