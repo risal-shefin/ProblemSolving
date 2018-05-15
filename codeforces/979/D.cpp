@@ -59,11 +59,6 @@ ll query(ll x, ll k, ll s)
             cur = cur -> bt[state ^ 1];
         }
         else {
-            if(cur -> bt[state] == nullptr && i != 0)
-                return -1;
-            if(i != 0)
-                if(cur -> bt[state] -> mn + x > s)
-                    return -1;
             ret += (state << i);
             cur = cur -> bt[state];
         }
