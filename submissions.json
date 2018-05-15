@@ -9932,6 +9932,24 @@
     ],
     "timestamp": "Jan/08/2018 21:08"
   },
+  "CF38303988": {
+    "contest_id": 961,
+    "language": "GNU C++17",
+    "path": "codeforces\\961\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Chessboard",
+    "problem_url": "https://codeforces.com/contest/961/problem/C",
+    "submission_id": "CF38303988",
+    "submission_url": "https://codeforces.com/contest/961/submission/38303988",
+    "tags": [
+      "bitmasks",
+      "brute force",
+      "implementation",
+      "*1400"
+    ],
+    "timestamp": "May/16/2018 04:39"
+  },
   "CF38303996": {
     "contest_id": 961,
     "language": "GNU C++17",
