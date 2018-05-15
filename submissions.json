@@ -9932,6 +9932,24 @@
     ],
     "timestamp": "Jan/08/2018 21:08"
   },
+  "CF38304028": {
+    "contest_id": 962,
+    "language": "GNU C++17",
+    "path": "codeforces\\962\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Make a Square",
+    "problem_url": "https://codeforces.com/contest/962/problem/C",
+    "submission_id": "CF38304028",
+    "submission_url": "https://codeforces.com/contest/962/submission/38304028",
+    "tags": [
+      "brute force",
+      "implementation",
+      "math",
+      "*1400"
+    ],
+    "timestamp": "May/16/2018 04:43"
+  },
   "CF38304040": {
     "contest_id": 977,
     "language": "GNU C++17",
