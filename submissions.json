@@ -9932,6 +9932,23 @@
     ],
     "timestamp": "Jan/08/2018 21:08"
   },
+  "CF38302157": {
+    "contest_id": 869,
+    "language": "PHP",
+    "path": "codeforces\\869\\A.php",
+    "platform": "Codeforces",
+    "problem_index": "A",
+    "problem_name": "The Artful Expedient",
+    "problem_url": "https://codeforces.com/contest/869/problem/A",
+    "submission_id": "CF38302157",
+    "submission_url": "https://codeforces.com/contest/869/submission/38302157",
+    "tags": [
+      "brute force",
+      "implementation",
+      "*1100"
+    ],
+    "timestamp": "May/16/2018 02:13"
+  },
   "CF38303869": {
     "contest_id": 979,
     "language": "GNU C++17",
