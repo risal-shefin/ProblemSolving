@@ -9932,6 +9932,26 @@
     ],
     "timestamp": "Jan/08/2018 21:08"
   },
+  "CF38375190": {
+    "contest_id": 982,
+    "language": "GNU C++17",
+    "path": "codeforces\\982\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Cut 'em all!",
+    "problem_url": "https://codeforces.com/contest/982/problem/C",
+    "submission_id": "CF38375190",
+    "submission_url": "https://codeforces.com/contest/982/submission/38375190",
+    "tags": [
+      "dfs and similar",
+      "dp",
+      "graphs",
+      "greedy",
+      "trees",
+      "*1500"
+    ],
+    "timestamp": "May/17/2018 23:59"
+  },
   "CF38442324": {
     "contest_id": 220,
     "language": "GNU C++17",
