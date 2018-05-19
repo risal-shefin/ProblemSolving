@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define block 320
+#define block 1000
 
 int ara[100009], ans[100009], cnt[100009], answer = 0;
 
