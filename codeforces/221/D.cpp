@@ -3,7 +3,8 @@ using namespace std;
 
 #define block 1000
 
-int ara[100009], ans[100009], cnt[100009], answer = 0;
+int ara[100009], ans[100009], answer = 0;
+unordered_map <int, int> cnt;
 
 struct query {
     int l, r, i;
@@ -22,8 +23,6 @@ bool compare(query a, query b)
 void del(int indx)
 
 {
-    if(ara[indx] > 100000)
-        return;
     cnt[ ara[indx] ]--;
     if(cnt[ ara[indx] ] == ara[indx] - 1)
         answer--;
@@ -34,8 +33,6 @@ void del(int indx)
 void add(int indx)
 
 {
-    if(ara[indx] > 100000)
-        return;
     cnt[ ara[indx] ]++;
     if(cnt[ ara[indx] ] == ara[indx])
         answer++;
@@ -104,3 +101,4 @@ int main()
 
     return 0;
 }
+
