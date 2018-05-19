@@ -1,10 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define block 1000
+#define block 320
 
 int ara[100009], ans[100009], answer = 0;
 unordered_map <int, int> cnt;
+unordered_map <int, bool> chk;
 
 struct query {
     int l, r, i;
