@@ -9932,6 +9932,24 @@
     ],
     "timestamp": "Jan/08/2018 21:08"
   },
+  "CF38776691": {
+    "contest_id": 987,
+    "language": "GNU C++14",
+    "path": "codeforces\\987\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Three displays",
+    "problem_url": "https://codeforces.com/contest/987/problem/C",
+    "submission_id": "CF38776691",
+    "submission_url": "https://codeforces.com/contest/987/submission/38776691",
+    "tags": [
+      "brute force",
+      "dp",
+      "implementation",
+      "*1400"
+    ],
+    "timestamp": "May/30/2018 20:34"
+  },
   "CF38779904": {
     "contest_id": 987,
     "language": "GNU C++14",
