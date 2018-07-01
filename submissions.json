@@ -11444,6 +11444,23 @@
     ],
     "timestamp": "Jun/13/2018 20:05"
   },
+  "CF39849417": {
+    "contest_id": 1000,
+    "language": "GNU C++14",
+    "path": "codeforces\\1000\\F.cpp",
+    "platform": "Codeforces",
+    "problem_index": "F",
+    "problem_name": "One Occurrence",
+    "problem_url": "https://codeforces.com/contest/1000/problem/F",
+    "submission_id": "CF39849417",
+    "submission_url": "https://codeforces.com/contest/1000/submission/39849417",
+    "tags": [
+      "data structures",
+      "divide and conquer",
+      "*2400"
+    ],
+    "timestamp": "Jul/02/2018 01:21"
+  },
   "CF40034427": {
     "contest_id": 1004,
     "language": "GNU C++14",
