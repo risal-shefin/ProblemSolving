@@ -1115,17 +1115,17 @@ A repository to keep track of problem solving practice, containing solutions fro
 208 | [E - Blood Cousins](https://codeforces.com/contest/208/problem/E) | [GNU C++17](./codeforces/208/E.cpp) | `binary search` `data structures` `dfs and similar` `trees` `*2100` | Jul/11/2018 04:50 | 
 207 | [E - Blood Cousins Return](https://codeforces.com/contest/246/problem/E) | [GNU C++17](./codeforces/246/E.cpp) | `binary search` `data structures` `dfs and similar` `dp` `sortings` `*2400` | Jul/10/2018 04:37 | 
 206 | [D - Tree Requests](https://codeforces.com/contest/570/problem/D) | [GNU C++17](./codeforces/570/D.cpp) | `binary search` `bitmasks` `constructive algorithms` `dfs and similar` `graphs` `trees` `*2200` | Jul/06/2018 23:43 | 
-205 | [C - Alphabetic Removals](https://codeforces.com/contest/999/problem/C) | [GNU C++14](./codeforces/999/C.cpp) | `implementation` `*1200` | Jul/06/2018 22:12 | 
-204 | [A - Mishka and Contest](https://codeforces.com/contest/999/problem/A) | [GNU C++14](./codeforces/999/A.cpp) | `brute force` `implementation` `*800` | Jul/06/2018 22:10 | 
-203 | [E - Lomsat gelral](https://codeforces.com/contest/600/problem/E) | [GNU C++14](./codeforces/600/E.cpp) | `data structures` `dfs and similar` `dsu` `trees` `*2300` | Jul/06/2018 22:09 | 
-202 | [D - Coins and Queries](https://codeforces.com/contest/1003/problem/D) | [GNU C++14](./codeforces/1003/D.cpp) | `greedy` `*1600` | Jul/06/2018 21:58 | 
-201 | [B - Binary String Constructing](https://codeforces.com/contest/1003/problem/B) | [GNU C++14](./codeforces/1003/B.cpp) | `constructive algorithms` `*1300` | Jul/06/2018 21:57 | 
-200 | [C - Intense Heat](https://codeforces.com/contest/1003/problem/C) | [GNU C++14](./codeforces/1003/C.cpp) | `brute force` `implementation` `math` `*1300` | Jul/06/2018 21:57 | 
-199 | [A - Polycarp's Pockets](https://codeforces.com/contest/1003/problem/A) | [GNU C++14](./codeforces/1003/A.cpp) | `implementation` `*800` | Jul/06/2018 21:56 | 
-198 | [C - Sonya and Robots](https://codeforces.com/contest/1004/problem/C) | [GNU C++14](./codeforces/1004/C.cpp) | `constructive algorithms` `implementation` `*1400` | Jul/06/2018 21:55 | 
-197 | [A - Sonya and Hotels](https://codeforces.com/contest/1004/problem/A) | [GNU C++14](./codeforces/1004/A.cpp) | `implementation` `*900` | Jul/06/2018 21:54 | 
-196 | [B - Sonya and Exhibition](https://codeforces.com/contest/1004/problem/B) | [GNU C++14](./codeforces/1004/B.cpp) | `constructive algorithms` `greedy` `implementation` `math` `*1300` | Jul/06/2018 21:54 | 
-195 | [F - One Occurrence](https://codeforces.com/contest/1000/problem/F) | [GNU C++14](./codeforces/1000/F.cpp) | `data structures` `divide and conquer` `*2400` | Jul/02/2018 01:21 | 
+205 | [F - One Occurrence](https://codeforces.com/contest/1000/problem/F) | [GNU C++14](./codeforces/1000/F.cpp) | `data structures` `divide and conquer` `*2400` | Jul/06/2018 22:16 | 
+204 | [C - Alphabetic Removals](https://codeforces.com/contest/999/problem/C) | [GNU C++14](./codeforces/999/C.cpp) | `implementation` `*1200` | Jul/06/2018 22:12 | 
+203 | [A - Mishka and Contest](https://codeforces.com/contest/999/problem/A) | [GNU C++14](./codeforces/999/A.cpp) | `brute force` `implementation` `*800` | Jul/06/2018 22:10 | 
+202 | [E - Lomsat gelral](https://codeforces.com/contest/600/problem/E) | [GNU C++14](./codeforces/600/E.cpp) | `data structures` `dfs and similar` `dsu` `trees` `*2300` | Jul/06/2018 22:09 | 
+201 | [D - Coins and Queries](https://codeforces.com/contest/1003/problem/D) | [GNU C++14](./codeforces/1003/D.cpp) | `greedy` `*1600` | Jul/06/2018 21:58 | 
+200 | [B - Binary String Constructing](https://codeforces.com/contest/1003/problem/B) | [GNU C++14](./codeforces/1003/B.cpp) | `constructive algorithms` `*1300` | Jul/06/2018 21:57 | 
+199 | [C - Intense Heat](https://codeforces.com/contest/1003/problem/C) | [GNU C++14](./codeforces/1003/C.cpp) | `brute force` `implementation` `math` `*1300` | Jul/06/2018 21:57 | 
+198 | [A - Polycarp's Pockets](https://codeforces.com/contest/1003/problem/A) | [GNU C++14](./codeforces/1003/A.cpp) | `implementation` `*800` | Jul/06/2018 21:56 | 
+197 | [C - Sonya and Robots](https://codeforces.com/contest/1004/problem/C) | [GNU C++14](./codeforces/1004/C.cpp) | `constructive algorithms` `implementation` `*1400` | Jul/06/2018 21:55 | 
+196 | [A - Sonya and Hotels](https://codeforces.com/contest/1004/problem/A) | [GNU C++14](./codeforces/1004/A.cpp) | `implementation` `*900` | Jul/06/2018 21:54 | 
+195 | [B - Sonya and Exhibition](https://codeforces.com/contest/1004/problem/B) | [GNU C++14](./codeforces/1004/B.cpp) | `constructive algorithms` `greedy` `implementation` `math` `*1300` | Jul/06/2018 21:54 | 
 194 | [B - Cutting](https://codeforces.com/contest/998/problem/B) | [GNU C++14](./codeforces/998/B.cpp) | `dp` `greedy` `sortings` `*1200` | Jul/01/2018 23:56 | 
 193 | [C - Convert to Ones](https://codeforces.com/contest/998/problem/C) | [GNU C++14](./codeforces/998/C.cpp) | `math` `*1500` | Jul/01/2018 23:56 | 
 192 | [A - Balloons](https://codeforces.com/contest/998/problem/A) | [GNU C++14](./codeforces/998/A.cpp) | `constructive algorithms` `implementation` `*1000` | Jul/01/2018 23:55 | 

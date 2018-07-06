@@ -1,9 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define block 708
+#define block 800
 #define ll int
-ll ara[500009], ans[500009], cnt[500009], cntblock[block], tot = 0;
+ll ara[500009], ans[500009], cnt[500009], cntblock[block], num[500009], tot = 0;
 
 
 struct query
@@ -134,4 +134,3 @@ int main()
 
     return 0;
 }
-
