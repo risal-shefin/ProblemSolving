@@ -11444,6 +11444,23 @@
     ],
     "timestamp": "Jun/13/2018 20:05"
   },
+  "CF40034453": {
+    "contest_id": 1004,
+    "language": "GNU C++14",
+    "path": "codeforces\\1004\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Sonya and Robots",
+    "problem_url": "https://codeforces.com/contest/1004/problem/C",
+    "submission_id": "CF40034453",
+    "submission_url": "https://codeforces.com/contest/1004/submission/40034453",
+    "tags": [
+      "constructive algorithms",
+      "implementation",
+      "*1400"
+    ],
+    "timestamp": "Jul/06/2018 21:55"
+  },
   "CF40034477": {
     "contest_id": 1003,
     "language": "GNU C++14",
