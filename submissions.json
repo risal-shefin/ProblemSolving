@@ -13273,6 +13273,26 @@
     ],
     "timestamp": "Jul/06/2018 22:12"
   },
+  "CF40152340": {
+    "contest_id": 246,
+    "language": "GNU C++17",
+    "path": "codeforces\\246\\E.cpp",
+    "platform": "Codeforces",
+    "problem_index": "E",
+    "problem_name": "Blood Cousins Return",
+    "problem_url": "https://codeforces.com/contest/246/problem/E",
+    "submission_id": "CF40152340",
+    "submission_url": "https://codeforces.com/contest/246/submission/40152340",
+    "tags": [
+      "binary search",
+      "data structures",
+      "dfs and similar",
+      "dp",
+      "sortings",
+      "*2400"
+    ],
+    "timestamp": "Jul/10/2018 04:37"
+  },
   "CF40184167": {
     "contest_id": 208,
     "language": "GNU C++17",
