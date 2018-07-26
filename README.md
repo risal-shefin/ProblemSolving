@@ -1080,7 +1080,7 @@ A repository to keep track of problem solving practice, containing solutions fro
 122 | [C - New Year Snowmen](https://codeforces.com/contest/140/problem/C) | [GNU C++14](./codeforces/140/C.cpp) | `binary search` `data structures` `greedy` `*1800` | Jul/28/2018 02:04 | 
 121 | [D - Number of Parallelograms](https://codeforces.com/contest/660/problem/D) | [GNU C++14](./codeforces/660/D.cpp) | `geometry` `*1900` | Jul/28/2018 01:05 | 
 120 | [E - Border](https://codeforces.com/contest/1011/problem/E) | [GNU C++14](./codeforces/1011/E.cpp) | `number theory` `*1800` | Jul/27/2018 02:24 | 
-119 | [C - Fly](https://codeforces.com/contest/1011/problem/C) | [GNU C++14](./codeforces/1011/C.cpp) | `binary search` `greedy` `math` `*1500` | Jul/27/2018 01:20 | 
+119 | [C - Fly](https://codeforces.com/contest/1011/problem/C) | [GNU C++14](./codeforces/1011/C.cpp) | `binary search` `greedy` `math` `*1500` | Jul/27/2018 01:22 | 
 118 | [D - Rocket](https://codeforces.com/contest/1011/problem/D) | [GNU C++17](./codeforces/1011/D.cpp) | `binary search` `interactive` `*1800` | Jul/26/2018 22:51 | 
 117 | [A - Stages](https://codeforces.com/contest/1011/problem/A) | [GNU C++17](./codeforces/1011/A.cpp) | `greedy` `implementation` `sortings` `*900` | Jul/26/2018 21:17 | 
 116 | [D - Two Strings Swaps](https://codeforces.com/contest/1006/problem/D) | [GNU C++17](./codeforces/1006/D.cpp) | `implementation` `*1700` | Jul/20/2018 04:07 | 

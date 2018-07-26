@@ -9,51 +9,48 @@ int main()
 
 {
     //std::ios_base::sync_with_stdio(false);
-    ll n;
-    double tot, m;
+    ll n, m;
     cin >> n >> m;
     for(ll i = 1; i <= n; i++)
         scanf("%lld", &a[i]);
     for(ll i = 1; i <= n; i++)
         scanf("%lld", &b[i]);
 
-    bool found = 0;
-
-    double lo = 0, hi = 1000000009, ans = -1;
+    double lo = 0.0000000000001, hi = 1000000009, ans = -1;
     ll cnt = 1;
     while(cnt <= 100) {
-        double mid = (lo + hi) / 2.0;
+        double mid = (lo + hi) / 2;
 
-        tot = m + mid;
+        double tot = mid + m;
 
-        for(ll i = 1, j = 2; i <= n; i++, j++) {
-            if(i == n)
-                j = 1;
-            tot -= (tot / a[i]);
-            if(tot < m)
-                break;
-            tot -= (tot / b[j]);
-            if(tot < m)
-                break;
+        bool chk = 1;
+        for(ll i = 1; i < n; i++) {
+            double need = tot / a[i];
+            tot -= need;
+            need = tot / b[i + 1];
+            tot -= need;
         }
+
+        double need = tot / a[n];
+        tot -= need;
+        need = tot / b[1];
+        tot -= need;
 
         if(tot < m) {
-            lo = mid - 0.0000001;
+            lo = mid;
         }
         else {
-            found = 1;
             ans = mid;
-            hi = mid + 0.0000001;
+            hi = mid;
         }
 
         cnt++;
     }
 
-    if(!found)
-        cout << -1 << endl;
+    if(ans < 0)
+        cout << ans << endl;
     else
         printf("%0.7f\n", ans);
 
     return 0;
 }
-
