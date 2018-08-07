@@ -4,7 +4,7 @@ using namespace std;
 #define ll long long
 
 ll ara[100009], ics[100009], dcs[100009];
-bool icon[100009], dcon[100009];
+bool icon[100009], dcon[100009], is[100009], ds[100009];
 
 int main()
 
@@ -21,6 +21,8 @@ int main()
                     ics[i] = 1;
                     iflag = 1;
                     dflag = 0;
+
+                    is[i] = 1;
                 }
                 else
                     icon[i] = 1;
@@ -31,6 +33,8 @@ int main()
                     dcs[i] = 1;
                     iflag = 0;
                     dflag = 1;
+
+                    ds[i] = 1;
                 }
                 else
                     dcon[i] = 1;
@@ -55,11 +59,11 @@ int main()
 
         //cout << dcs[r] << "  " << dcs[l] << endl;
         if(l != r) {
-            if(icon[l + 1]) {
+            if(icon[l + 1] & !is[l + 1]) {
                 a++;
                 pos1 = l + 1;
             }
-            if(dcon[l + 1]) {
+            if(dcon[l + 1] & !ds[l + 1]) {
                 b++;
                 pos2 = l + 1;
             }
