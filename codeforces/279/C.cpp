@@ -80,8 +80,15 @@ int main()
         if(pos2 == -1)
             pos2 = lower_bound(dcs + l, dcs + r + 1, dcs[r]) - dcs;
 
-        if(pos2 < pos1)
+        if(pos2 == l || pos1 == l) {
+            printf("Yes\n");
+            continue;
+        }
+
+        if(pos2 < pos1) {
             printf("No\n");
+            //cout << pos2 << "  " << pos1 << endl;
+        }
         else
             printf("Yes\n");
     }
