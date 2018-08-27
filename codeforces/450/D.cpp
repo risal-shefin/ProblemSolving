@@ -3,8 +3,7 @@ using namespace std;
 
 #define ll long long
 
-ll dist[100009], train[100009], ti[100009], city[100009], route[100009];
-bool mark[100009];
+ll dist[100009], train[100009], city[100009], route[100009];
 
 struct node {
     ll v, c;
@@ -38,34 +37,15 @@ int main()
     for(ll i = 1; i <= k; i++) {
         ll u, c;
         scanf("%lld %lld", &u, &c);
-        if(train[u] == 0) {
-            train[u] = c;
-            ti[u] = i;
-        }
-        else {
-            if(train[u] <= c) {
-                cnt++;
-                mark[i] = 1;
-            }
-            else {
-                cnt++;
-                train[u] = c;
-                mark[ ti[u] ] = 1;
-                ti[u] = i;
-            }
-        }
-
+        train[i] = c;
         city[i] = u;
+
+        graph[u].push_back( node(1, c));
+        graph[1].push_back( node(u, c));
     }
 
-    for(ll i = 1; i <= n; i++) {
+    for(ll i = 1; i <= n; i++)
         dist[i] = 1e18;
-
-        if(train[i] != 0) {
-            graph[i].push_back( node(1, train[i]));
-            graph[1].push_back( node(i, train[i]));
-        }
-    }
 
     dist[1] = 0;
     priority_queue <node> q;
@@ -88,18 +68,18 @@ int main()
             }
             else if(u.c + v.c == dist[v.v])
                 route[v.v]++;
-
         }
 
     }
 
+
     for(ll i = 1; i <= k; i++) {
-        if(mark[i])
-            continue;
-        if(train[ city[i] ] > dist[ city[i] ])
+        if(train[i] != dist[ city[i] ])
             cnt++;
-        else if(train[ city[i] ] == dist[ city[i] ] && route[ city[i] ] > 1)
+        else if(train[i] == dist[ city[i] ] && route[ city[i] ] > 1) {
+            route[ city[i] ]--;
             cnt++;
+        }
     }
 
     cout << cnt << endl;
