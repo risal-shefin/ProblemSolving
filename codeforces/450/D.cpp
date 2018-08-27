@@ -64,14 +64,17 @@ int main()
             if(u.c + v.c < dist[v.v]) {
                 dist[v.v] = u.c + v.c;
                 q.push( node(v.v, dist[v.v]) );
-                route[v.v] = 1;
             }
-            else if(u.c + v.c == dist[v.v])
-                route[v.v]++;
         }
 
     }
 
+    for(ll i = 1; i <= n; i++) {
+        for(ll j = 0; j < graph[i].size(); j++) {
+            if(dist[i] + graph[i][j].c == dist[ graph[i][j].v ])
+                route[ graph[i][j].v ]++;
+        }
+    }
 
     for(ll i = 1; i <= k; i++) {
         if(train[i] != dist[ city[i] ])
