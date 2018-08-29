@@ -14019,6 +14019,24 @@
     ],
     "timestamp": "Aug/13/2018 00:45"
   },
+  "CF42255785": {
+    "contest_id": 498,
+    "language": "GNU C++14",
+    "path": "codeforces\\498\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Array and Operations",
+    "problem_url": "https://codeforces.com/contest/498/problem/C",
+    "submission_id": "CF42255785",
+    "submission_url": "https://codeforces.com/contest/498/submission/42255785",
+    "tags": [
+      "flows",
+      "graph matchings",
+      "number theory",
+      "*2100"
+    ],
+    "timestamp": "Aug/30/2018 02:58"
+  },
   "CF43653405": {
     "contest_id": 476,
     "language": "GNU C++14",
