@@ -3611,6 +3611,23 @@
     ],
     "timestamp": "Sep/16/2021 03:19"
   },
+  "CF44454678": {
+    "contest_id": 108,
+    "language": "GNU C++17",
+    "path": "codeforces\\108\\A.cpp",
+    "platform": "Codeforces",
+    "problem_index": "A",
+    "problem_name": "Palindromic Times",
+    "problem_url": "https://codeforces.com/contest/108/problem/A",
+    "submission_id": "CF44454678",
+    "submission_url": "https://codeforces.com/contest/108/submission/44454678",
+    "tags": [
+      "implementation",
+      "strings",
+      "*1000"
+    ],
+    "timestamp": "Oct/17/2018 23:23"
+  },
   "CF44685942": {
     "contest_id": 1072,
     "language": "GNU C++17",
