@@ -3611,6 +3611,24 @@
     ],
     "timestamp": "Sep/16/2021 03:19"
   },
+  "CF46007778": {
+    "contest_id": 914,
+    "language": "GNU C++17",
+    "path": "codeforces\\914\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Travelling Salesman and Special Numbers",
+    "problem_url": "https://codeforces.com/contest/914/problem/C",
+    "submission_id": "CF46007778",
+    "submission_url": "https://codeforces.com/contest/914/submission/46007778",
+    "tags": [
+      "brute force",
+      "combinatorics",
+      "dp",
+      "*1800"
+    ],
+    "timestamp": "Nov/21/2018 00:05"
+  },
   "CF46007797": {
     "contest_id": 855,
     "language": "GNU C++17",
