@@ -3611,6 +3611,23 @@
     ],
     "timestamp": "Sep/16/2021 03:19"
   },
+  "CF46672876": {
+    "contest_id": 95,
+    "language": "GNU C++17",
+    "path": "codeforces\\95\\B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "Lucky Numbers",
+    "problem_url": "https://codeforces.com/contest/95/problem/B",
+    "submission_id": "CF46672876",
+    "submission_url": "https://codeforces.com/contest/95/submission/46672876",
+    "tags": [
+      "dp",
+      "greedy",
+      "*1800"
+    ],
+    "timestamp": "Dec/06/2018 14:00"
+  },
   "CF46942790": {
     "contest_id": 1084,
     "language": "GNU C++17",
