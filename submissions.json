@@ -3611,6 +3611,23 @@
     ],
     "timestamp": "Sep/16/2021 03:19"
   },
+  "CF47171032": {
+    "contest_id": 95,
+    "language": "GNU C++17",
+    "path": "codeforces\\95\\D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "Horse Races",
+    "problem_url": "https://codeforces.com/contest/95/problem/D",
+    "submission_id": "CF47171032",
+    "submission_url": "https://codeforces.com/contest/95/submission/47171032",
+    "tags": [
+      "dp",
+      "math",
+      "*2500"
+    ],
+    "timestamp": "Dec/17/2018 20:59"
+  },
   "CF47434568": {
     "contest_id": 1087,
     "language": "GNU C++17",
