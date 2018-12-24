@@ -3611,6 +3611,23 @@
     ],
     "timestamp": "Sep/16/2021 03:19"
   },
+  "CF47459442": {
+    "contest_id": 1087,
+    "language": "GNU C++17",
+    "path": "codeforces\\1087\\D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "Minimum Diameter Tree",
+    "problem_url": "https://codeforces.com/contest/1087/problem/D",
+    "submission_id": "CF47459442",
+    "submission_url": "https://codeforces.com/contest/1087/submission/47459442",
+    "tags": [
+      "implementation",
+      "trees",
+      "*1700"
+    ],
+    "timestamp": "Dec/24/2018 20:18"
+  },
   "CF47532648": {
     "contest_id": 349,
     "language": "GNU C++17",
