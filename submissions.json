@@ -3611,6 +3611,23 @@
     ],
     "timestamp": "Sep/16/2021 03:19"
   },
+  "CF47532660": {
+    "contest_id": 348,
+    "language": "GNU C++17",
+    "path": "codeforces\\348\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Subset Sums",
+    "problem_url": "https://codeforces.com/contest/348/problem/C",
+    "submission_id": "CF47532660",
+    "submission_url": "https://codeforces.com/contest/348/submission/47532660",
+    "tags": [
+      "brute force",
+      "data structures",
+      "*2500"
+    ],
+    "timestamp": "Dec/27/2018 02:35"
+  },
   "CF47785402": {
     "contest_id": 1096,
     "language": "GNU C++17",
