@@ -3611,6 +3611,24 @@
     ],
     "timestamp": "Sep/16/2021 03:19"
   },
+  "CF48713819": {
+    "contest_id": 919,
+    "language": "GNU C++17",
+    "path": "codeforces\\919\\D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "Substring",
+    "problem_url": "https://codeforces.com/contest/919/problem/D",
+    "submission_id": "CF48713819",
+    "submission_url": "https://codeforces.com/contest/919/submission/48713819",
+    "tags": [
+      "dfs and similar",
+      "dp",
+      "graphs",
+      "*1700"
+    ],
+    "timestamp": "Jan/22/2019 16:03"
+  },
   "CF48713879": {
     "contest_id": 339,
     "language": "GNU C++17",
