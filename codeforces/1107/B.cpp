@@ -27,9 +27,11 @@ ll dgroot(ll n)
 ll solve(ll isStart, ll isSmall, ll pos, ll sum, ll x)
 
 {
-    if(pos == 0)
-        return dgroot(sum) == x;
-
+    if(pos == 0) {
+        ll p = lower_bound(root[x].begin(), root[x].end(), sum) - root[x].begin();
+        if(p == root[x].size()) return 0;
+        return root[x][p] == sum;
+    }
     ll &ret = dp[isStart][isSmall][pos][sum][x];
     if(ret != -1 && isSmall)
         return ret;
@@ -72,13 +74,13 @@ ll calc(ll n, ll x)
 int main()
 
 {
-//    for(ll i = 1; i <= 171; i++) {
-//        ll rt = dgroot(i);
-//        root[rt].pb(i);
-//    }
-//
-//    for(ll i = 1; i <= 9; i++)
-//        sort(root[i].begin(), root[i].end());
+    for(ll i = 1; i <= 171; i++) {
+        ll rt = dgroot(i);
+        root[rt].pb(i);
+    }
+
+    for(ll i = 1; i <= 9; i++)
+        sort(root[i].begin(), root[i].end());
 
     ll q;
     cin >> q;
