@@ -4,7 +4,7 @@ using namespace std;
 #define ll long long
 
 #define pb push_back
-ll dp[2][2][15][122][122];
+ll dp[2][2][20][173][10];
 vector <ll> root[12];
 ll num[20], sz = 0;
 
@@ -27,9 +27,9 @@ ll dgroot(ll n)
 ll solve(ll isStart, ll isSmall, ll pos, ll sum, ll x)
 
 {
-    if(pos == 0) {
-        return sum == x;
-    }
+    if(pos == 0)
+        return dgroot(sum) == x;
+
     ll &ret = dp[isStart][isSmall][pos][sum][x];
     if(ret != -1 && isSmall)
         return ret;
@@ -72,10 +72,13 @@ ll calc(ll n, ll x)
 int main()
 
 {
-    for(ll i = 1; i <= 120; i++) {
-        ll rt = dgroot(i);
-        root[rt].pb(i);
-    }
+//    for(ll i = 1; i <= 171; i++) {
+//        ll rt = dgroot(i);
+//        root[rt].pb(i);
+//    }
+//
+//    for(ll i = 1; i <= 9; i++)
+//        sort(root[i].begin(), root[i].end());
 
     ll q;
     cin >> q;
@@ -84,13 +87,13 @@ int main()
         ll x, k;
         scanf("%lld %lld", &k, &x);
 
-        ll lo = 1, hi = 1e13, ans;
+        ll lo = 1, hi = 1e18, ans;
         while(lo <= hi) {
             ll mid = (lo + hi) / 2;
-            ll rgt = 0;
-            for(ll i = 0; i < root[x].size(); i++) {
-                rgt += calc(mid, root[x][i]);
-            }
+            ll rgt = calc(mid, x);
+//            for(ll i = 0; i < root[x].size(); i++) {
+//                rgt += calc(mid, root[x][i]);
+//            }
             //cout <<  mid << "  " << rgt << endl;
             if(rgt >= k) {
                 hi = mid - 1;
@@ -106,4 +109,3 @@ int main()
 
     return 0;
 }
-
