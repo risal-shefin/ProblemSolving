@@ -12415,6 +12415,23 @@
     ],
     "timestamp": "Jan/27/2019 00:06"
   },
+  "CF49316796": {
+    "contest_id": 314,
+    "language": "GNU C++14",
+    "path": "codeforces\\314\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Sereja and Subsequences",
+    "problem_url": "https://codeforces.com/contest/314/problem/C",
+    "submission_id": "CF49316796",
+    "submission_url": "https://codeforces.com/contest/314/submission/49316796",
+    "tags": [
+      "data structures",
+      "dp",
+      "*2000"
+    ],
+    "timestamp": "Feb/01/2019 16:12"
+  },
   "CF50134892": {
     "contest_id": 1113,
     "language": "GNU C++14",
