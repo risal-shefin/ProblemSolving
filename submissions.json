@@ -3611,6 +3611,24 @@
     ],
     "timestamp": "Sep/16/2021 03:19"
   },
+  "CF50134892": {
+    "contest_id": 1113,
+    "language": "GNU C++14",
+    "path": "codeforces\\1113\\D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "Sasha and One More Name",
+    "problem_url": "https://codeforces.com/contest/1113/problem/D",
+    "submission_id": "CF50134892",
+    "submission_url": "https://codeforces.com/contest/1113/submission/50134892",
+    "tags": [
+      "brute force",
+      "constructive algorithms",
+      "strings",
+      "*1800"
+    ],
+    "timestamp": "Feb/19/2019 00:28"
+  },
   "CF50168445": {
     "contest_id": 1118,
     "language": "GNU C++14",
