@@ -3611,6 +3611,22 @@
     ],
     "timestamp": "Sep/16/2021 03:19"
   },
+  "CF50172619": {
+    "contest_id": 1118,
+    "language": "GNU C++14",
+    "path": "codeforces\\1118\\B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "Tanya and Candies",
+    "problem_url": "https://codeforces.com/contest/1118/problem/B",
+    "submission_id": "CF50172619",
+    "submission_url": "https://codeforces.com/contest/1118/submission/50172619",
+    "tags": [
+      "implementation",
+      "*1200"
+    ],
+    "timestamp": "Feb/19/2019 20:50"
+  },
   "CF50188221": {
     "contest_id": 1118,
     "language": "GNU C++14",
