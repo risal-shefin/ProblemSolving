@@ -3611,6 +3611,23 @@
     ],
     "timestamp": "Sep/16/2021 03:19"
   },
+  "CF51037665": {
+    "contest_id": 122,
+    "language": "GNU C++14",
+    "path": "codeforces\\122\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Lucky Sum",
+    "problem_url": "https://codeforces.com/contest/122/problem/C",
+    "submission_id": "CF51037665",
+    "submission_url": "https://codeforces.com/contest/122/submission/51037665",
+    "tags": [
+      "brute force",
+      "math",
+      "*1100"
+    ],
+    "timestamp": "Mar/08/2019 21:49"
+  },
   "CF51403663": {
     "contest_id": 1136,
     "language": "GNU C++14",
