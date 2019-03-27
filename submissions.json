@@ -19024,6 +19024,23 @@
     ],
     "timestamp": "Mar/26/2019 20:15"
   },
+  "CF51902608": {
+    "contest_id": 112,
+    "language": "GNU C++17",
+    "path": "codeforces\\112\\D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "Petya and Divisors",
+    "problem_url": "https://codeforces.com/contest/112/problem/D",
+    "submission_id": "CF51902608",
+    "submission_url": "https://codeforces.com/contest/112/submission/51902608",
+    "tags": [
+      "implementation",
+      "number theory",
+      "*1900"
+    ],
+    "timestamp": "Mar/27/2019 20:04"
+  },
   "CF53375596": {
     "contest_id": 1152,
     "language": "GNU C++17",
