@@ -7,8 +7,8 @@ ll mngreat[1000009], mxgreat[1000009];
 bool state[1000009];
 long long ans = 0;
 
-multiset <ll> lst;
-multiset <ll> ::iterator it;
+set <ll> lst;
+set <ll> ::iterator it;
 ll ara[1000009];
 
 ll mxBIT[1000009], mnBIT[1000009];
@@ -125,6 +125,7 @@ int main()
             }
         }
 
+        //cout << i << " " << range << "  " << minboro << endl;
         if(range == -1)
             continue;
 
