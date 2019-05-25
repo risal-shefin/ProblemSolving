@@ -129,7 +129,7 @@ int main()
     ll v;
     bool t;
     for(ll i = 1; i <= n; i++) {
-        scanf("%d", &ara[i]);
+        read_int(ara[i]);
         lst.insert(ara[i]);
 
         it = lst.lower_bound(ara[i]);
