@@ -3,13 +3,45 @@ using namespace std;
 
 #define ll int
 #define inf 1000000000
-ll mngreat[1000009], mxgreat[1000009];
-bool state[1000009];
+ll mngreat[4000009], mxgreat[4000009];
+bool state[1000009], tree[4000009];
 long long ans = 0;
 
-multiset <ll> lst;
-multiset <ll> ::iterator it;
+set <ll> lst;
+set <ll> ::iterator it;
 ll ara[1000009];
+
+void update(ll lo, ll hi, ll &idx, ll node)
+
+{
+    if(lo > idx || hi < idx)
+        return;
+    if(lo == hi) {
+        tree[node] = 1;
+        return;
+    }
+
+    ll mid = (lo + hi) / 2;
+    update(lo, mid, idx, node << 1);
+    update(mid + 1, hi, idx, (node << 1) | 1);
+
+    tree[node] = max(tree[node << 1], tree[(node<<1) | 1]);
+}
+
+bool query(ll lo, ll hi, ll &left, ll &right, ll node)
+
+{
+    if(lo > right || hi < left)
+        return 0;
+    if(lo >= left && hi <= right)
+        return tree[node];
+
+    ll mid = (lo + hi) / 2;
+    bool p1 = query(lo, mid, left, right, (node << 1));
+    bool p2 = query(mid + 1, hi, left, right, (node << 1) | 1);
+
+    return max(p1, p2);
+}
 
 ll mxBIT[1000009], mnBIT[1000009];
 
@@ -28,7 +60,7 @@ ll getMax(ll index)
     return mx;
 }
 
-void updatemxBIT(ll index, ll val)
+void updatemxBIT(ll index, ll &val)
 
 {
     // Traverse all ancestors
@@ -56,7 +88,7 @@ ll getMin(ll index)
     return mn;
 }
 
-void updatemnBIT(ll index, ll val)
+void updatemnBIT(ll index, ll &val)
 
 {
     // Traverse all ancestors
@@ -81,24 +113,37 @@ int main()
     }
 
 
-    ll last = 0;
+    ll v;
+    bool t;
     for(ll i = 1; i <= n; i++) {
         scanf("%d", &ara[i]);
         lst.insert(ara[i]);
 
-        it = lst.upper_bound(ara[i]);
+        it = lst.lower_bound(ara[i]);
+        it++;
         if(it != lst.end()) {
-            last = max(last, ara[i]);
+            update(0, 1000000, ara[i], 1);
 
-            updatemnBIT(ara[i], *it);
-            updatemxBIT(ara[i], *(--lst.end()));
+            v = *it, t = 0;
+            updatemnBIT(ara[i], v);
+            v = *(--lst.end()), t = 1;
+            updatemxBIT(ara[i], v);
         }
     }
 
-    for(ll i = last + 1; i <= x; i++)
-        state[i] = 1;
+    ll minboro, maxboro, start, stop, lo, hi, mid, range;
 
-    ll minboro, maxboro, lo, hi, mid, range;
+    for(ll i = 1; i <= x; i++) {
+        start = i, stop = x, t = 1;
+        bool ret = query(0, 1000000, start, stop, 1);
+        if(ret == 0) {
+            for(ll j = i; j <= x; j++)
+                state[j] = 1;
+
+            break;
+        }
+    }
+
     for(ll i = 1; i <= x; i++) {
         minboro = getMin(i - 1);
         //cout << i << "  " << minboro << endl;
