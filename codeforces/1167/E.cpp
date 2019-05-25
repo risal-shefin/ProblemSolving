@@ -2,40 +2,66 @@
 using namespace std;
 
 #define ll int
-#define pll pair <ll, ll>
 #define inf 1000000000
+ll mngreat[1000009], mxgreat[1000009];
 long long ans = 0;
 
 set <ll> lst;
 set <ll> ::iterator it;
 ll ara[1000009];
 
-pll BIT[1000009];
+ll mxBIT[1000009], mnBIT[1000009];
 
-pll getRes(ll index)
+ll getMax(ll index)
 {
-    pll ret = make_pair(inf, -inf); // Iniialize result
+    ll mx = -inf; // Iniialize result
 
     // Traverse ancestors of BITree[index]
     while (index>0)
     {
-        ret.first = min(ret.first, BIT[index].first);
-        ret.second = max(ret.second, BIT[index].second);
+        mx = max(mx, mxBIT[index]);
 
-        // Move index to parent node in getRes View
+        // Move index to parent node in getSum View
         index -= index & (-index);
     }
-    return ret;
+    return mx;
 }
 
-void updateBIT(ll index, pll val)
+void updatemxBIT(ll index, ll val)
 
 {
     // Traverse all ancestors
     while (index <= 1000000)
     {
-        BIT[index].first = min(BIT[index].first, val.first);
-        BIT[index].second = max(BIT[index].second, val.second);
+        mxBIT[index] = max(mxBIT[index], val);
+
+       // Update index to that of parent in update View
+       index += index & (-index);
+    }
+}
+
+ll getMin(ll index)
+{
+    ll mn = inf; // Iniialize result
+
+    // Traverse ancestors of BITree[index]
+    while (index>0)
+    {
+        mn = min(mn, mnBIT[index]);
+
+        // Move index to parent node in getSum View
+        index -= index & (-index);
+    }
+    return mn;
+}
+
+void updatemnBIT(ll index, ll val)
+
+{
+    // Traverse all ancestors
+    while (index <= 1000000)
+    {
+        mnBIT[index] = min(mnBIT[index], val);
 
        // Update index to that of parent in update View
        index += index & (-index);
@@ -49,8 +75,8 @@ int main()
     scanf("%d %d", &n, &x);
 
     for(ll i = 0; i <= 1000000; i++) {
-        BIT[i].first = inf;
-        BIT[i].second = -inf;
+        mxBIT[i] = -inf;
+        mnBIT[i] = inf;
     }
 
 
@@ -63,20 +89,19 @@ int main()
         if(it != lst.end()) {
             last = max(last, ara[i]);
 
-            updateBIT(ara[i], make_pair(*it, *(--lst.end()) ) );
+            updatemnBIT(ara[i], *it);
+            updatemxBIT(ara[i], *(--lst.end()));
         }
     }
 
     ll minboro, maxboro, range;
-    pll p;
     for(ll i = 1; i <= x; i++) {
-        p = getRes(i - 1);
+        minboro = getMin(i - 1);
         //cout << i << "  " << minboro << endl;
-        minboro = p.first;
         if(minboro < i)
             break;
 
-        maxboro = p.second;
+        maxboro = getMax(i - 1);
         range = max(maxboro, last);
         range = max(range, i);
 
