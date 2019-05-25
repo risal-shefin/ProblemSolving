@@ -3,12 +3,45 @@ using namespace std;
 
 #define ll int
 #define inf 1000000000
-ll mngreat[1000009], mxgreat[1000009];
+ll mngreat[4000009], mxgreat[4000009];
+bool state[1000009], tree[4000009];
 long long ans = 0;
 
 set <ll> lst;
 set <ll> ::iterator it;
 ll ara[1000009];
+
+void update(ll lo, ll hi, ll &idx, ll node)
+
+{
+    if(lo > idx || hi < idx)
+        return;
+    if(lo == hi) {
+        tree[node] = 1;
+        return;
+    }
+
+    ll mid = (lo + hi) / 2;
+    update(lo, mid, idx, node << 1);
+    update(mid + 1, hi, idx, (node << 1) | 1);
+
+    tree[node] = max(tree[node << 1], tree[(node<<1) | 1]);
+}
+
+bool query(ll lo, ll hi, ll &left, ll &right, ll node)
+
+{
+    if(lo > right || hi < left)
+        return 0;
+    if(lo >= left && hi <= right)
+        return tree[node];
+
+    ll mid = (lo + hi) / 2;
+    bool p1 = query(lo, mid, left, right, (node << 1));
+    bool p2 = query(mid + 1, hi, left, right, (node << 1) | 1);
+
+    return max(p1, p2);
+}
 
 ll mxBIT[1000009], mnBIT[1000009];
 
@@ -27,7 +60,7 @@ ll getMax(ll index)
     return mx;
 }
 
-void updatemxBIT(ll index, ll val)
+void updatemxBIT(ll index, ll &val)
 
 {
     // Traverse all ancestors
@@ -55,7 +88,7 @@ ll getMin(ll index)
     return mn;
 }
 
-void updatemnBIT(ll index, ll val)
+void updatemnBIT(ll index, ll &val)
 
 {
     // Traverse all ancestors
@@ -68,11 +101,24 @@ void updatemnBIT(ll index, ll val)
     }
 }
 
+//#define gc getchar_unlocked
+#define gc getchar   // for windows
+inline void read_int(int &x)
+
+{
+    x=0;
+    register char c=gc();
+    for(;c<'0' || c>'9';c=gc());
+    for(;c>='0' && c<='9';c=gc())
+    x=(x<<3)+(x<<1)+(c-'0');
+}
+
 int main()
 
 {
+    //freopen("in.txt", "r", stdin);
     ll n, x;
-    scanf("%d %d", &n, &x);
+    read_int(n), read_int(x);
 
     for(ll i = 0; i <= 1000000; i++) {
         mxBIT[i] = -inf;
@@ -80,21 +126,37 @@ int main()
     }
 
 
-    ll last = 0;
+    ll v;
+    bool t;
     for(ll i = 1; i <= n; i++) {
         scanf("%d", &ara[i]);
         lst.insert(ara[i]);
 
-        it = lst.upper_bound(ara[i]);
+        it = lst.lower_bound(ara[i]);
+        it++;
         if(it != lst.end()) {
-            last = max(last, ara[i]);
+            update(0, 1000000, ara[i], 1);
 
-            updatemnBIT(ara[i], *it);
-            updatemxBIT(ara[i], *(--lst.end()));
+            v = *it, t = 0;
+            updatemnBIT(ara[i], v);
+            v = *(--lst.end()), t = 1;
+            updatemxBIT(ara[i], v);
         }
     }
 
-    ll minboro, maxboro, range;
+    ll minboro, maxboro, start, stop, lo, hi, mid, range;
+
+    for(ll i = 1; i <= x; i++) {
+        start = i, stop = x, t = 1;
+        bool ret = query(0, 1000000, start, stop, 1);
+        if(ret == 0) {
+            for(ll j = i; j <= x; j++)
+                state[j] = 1;
+
+            break;
+        }
+    }
+
     for(ll i = 1; i <= x; i++) {
         minboro = getMin(i - 1);
         //cout << i << "  " << minboro << endl;
@@ -102,8 +164,28 @@ int main()
             break;
 
         maxboro = getMax(i - 1);
-        range = max(maxboro, last);
-        range = max(range, i);
+
+        lo = max(i, maxboro), hi = x, range = -1;
+        while(lo <= hi) {
+            mid = (lo + hi) / 2;
+
+            if(mid == x) {
+                range = mid;
+                hi = mid - 1;
+            }
+            else {
+                if(state[mid + 1] == 1) {
+                    range = mid;
+                    hi = mid - 1;
+                }
+                else
+                    lo = mid + 1;
+            }
+        }
+
+        //cout << i << " " << range << "  " << minboro << endl;
+        if(range == -1)
+            continue;
 
         ans += (long long)(x - range + 1);
     }
