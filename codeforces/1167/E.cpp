@@ -7,8 +7,8 @@ ll mngreat[1000009], mxgreat[1000009];
 bool state[1000009];
 long long ans = 0;
 
-set <ll> lst;
-set <ll> ::iterator it;
+multiset <ll> lst;
+multiset <ll> ::iterator it;
 ll ara[1000009];
 
 ll mxBIT[1000009], mnBIT[1000009];
