@@ -13097,6 +13097,22 @@
     ],
     "timestamp": "Jun/13/2019 17:17"
   },
+  "CF67018521": {
+    "contest_id": 1281,
+    "language": "GNU C++17",
+    "path": "codeforces\\1281\\B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "Azamon Web Services",
+    "problem_url": "https://codeforces.com/contest/1281/problem/B",
+    "submission_id": "CF67018521",
+    "submission_url": "https://codeforces.com/contest/1281/submission/67018521",
+    "tags": [
+      "greedy",
+      "*1600"
+    ],
+    "timestamp": "Dec/16/2019 18:14"
+  },
   "CF67020870": {
     "contest_id": 1281,
     "language": "GNU C++17",
