@@ -44,7 +44,12 @@ struct custom_hash {
 ll a[2009], b[2009];
 
 gp_hash_table <int, int, custom_hash> cnt, freq;
+gp_hash_table <int, int, custom_hash> check;
 gp_hash_table <int, int, custom_hash> :: iterator it;
+
+//unordered_map <int, int> freq, cnt;
+//unordered_map <int, int> check;
+//unordered_map <int, int> :: iterator it;
 
 int main()
 
@@ -60,27 +65,39 @@ int main()
 
     ll prv = -1;
     sort(a + 1, a + n + 1);
-    sort(b + 1, b + n + 1);
     for1(i, n) {
 
         if(prv == a[i])
             continue;
 
         ll f = freq[ a[i] ];
+        freq.erase(a[i]);
         prv = a[i];
 
-        for(ll j = 1; j + f - 1 <= n; ) {
+        for1(j, n) {
             ll diff = b[j] - a[i];
             if(diff < 0)
                 diff += m;
 
-            if(b[j] == b[j+f-1]) {
-                cnt[diff] += f;
-                j = j + f;
-            }
+            if(check.find(diff) == check.end())
+                check[diff] = 1;
             else
-                j++;
+                check[diff]++;
+            //cout << a[i] << " " << diff << " " << check[diff] << " " << f << endl;
         }
+
+        for(it = check.begin(); it != check.end(); it++) {
+            if(it -> second != f)
+                continue;
+
+            //cout << 5 << endl;
+            if(cnt.find( it-> first ) == cnt.end())
+                cnt[ it->first] = f;
+            else
+                cnt[ it->first] += f;
+        }
+
+        check.clear();
     }
 
     ll ans = inf;
@@ -88,6 +105,7 @@ int main()
         if(it -> second != n)
             continue;
 
+        //cout << it->first << " " << it->second << endl;
         ans = min(ans, (ll)it->first);
     }
 
