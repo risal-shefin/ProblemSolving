@@ -1,4 +1,6 @@
 #include <bits/stdc++.h>
+#include <ext/pb_ds/assoc_container.hpp>
+using namespace __gnu_pbds;
 using namespace std;
 
 #define ll long long
@@ -24,70 +26,54 @@ using namespace std;
 #define pf printf
 #define fastio std::ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 
-ll n, m, x[200009], y[200009];
-struct node {
-    ll d, x;
-    bool state;
-};
-const bool operator <(const node &a, const node &b) {
-    if(a.d == b.d) {
-        if(a.x==b.x)
-            return a.state < b.state;
-        return a.x < b.x;
+struct custom_hash {
+    static uint64_t splitmix64(uint64_t x) {
+        // http://xorshift.di.unimi.it/splitmix64.c
+        x += 0x9e3779b97f4a7c15;
+        x = (x ^ (x >> 30)) * 0xbf58476d1ce4e5b9;
+        x = (x ^ (x >> 27)) * 0x94d049bb133111eb;
+        return x ^ (x >> 31);
     }
-    return a.d < b.d;
-}
 
-set <node> st;
-deque <node> rmv;
+    size_t operator()(uint64_t x) const {
+        static const uint64_t FIXED_RANDOM = chrono::steady_clock::now().time_since_epoch().count();
+        return splitmix64(x + FIXED_RANDOM);
+    }
+};
+
+ll n, m, x[200009], y[200009];
+queue <pll> q;
+gp_hash_table <int, bool, custom_hash> vis;
+
+ll dx[] = {1, -1};
 
 int main()
 
 {
     cin >> n >> m;
-    for1(i, n)
-        sl(x[i]);
-
-    sort(x+1, x+n+1);
-    x[0] = -inf, x[n+1] = inf;
-
     for1(i, n) {
-        ll d = x[i] - x[i-1] - 1;
-        d /= 2;
-        if(d != 0)
-            st.insert({d, x[i], 0});
-
-        d = x[i+1] - x[i] - 1;
-        d /= 2;
-        if((x[i+1] - x[i] - 1) & 1)
-            d++;
-
-        if(d != 0)
-            st.insert({d, x[i], 1});
+        sl(x[i]);
+        q.push(mp(x[i],0));
+        vis[x[i]] = 1;
     }
 
-    ll tot = 0, dist = 1, idy = 0;
-    while(1) {
-        for(node u: st) {
+    ll idy = 0, tot=0;
+    while(idy < m) {
+        pll u = q.front();
+        q.pop();
 
-            tot += dist;
-            if(u.state == 0)
-                y[idy++] = u.x - dist;
-            else
-                y[idy++] = u.x + dist;
+        for0(i, 2) {
+            ll nxt = u.first + dx[i];
+            if(vis.find(nxt) != vis.end())
+                continue;
 
-            if(idy >= m)    break;
-            if(u.d == dist)
-                rmv.pb(u);
+            vis[nxt] = 1;
+            y[idy++] = nxt;
+            tot += (u.second + 1);
+            q.push(mp(nxt, u.second + 1));
+
+            if(idy >= m) break;
         }
-
-        if(idy >= m)    break;
-
-        dist++;
-        for(node u: rmv)
-            st.erase(u);
-
-        rmv.clear();
     }
 
     pf("%lld\n", tot);
@@ -99,4 +85,3 @@ int main()
 
     return 0;
 }
-
