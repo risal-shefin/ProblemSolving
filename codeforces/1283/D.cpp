@@ -1,6 +1,4 @@
 #include <bits/stdc++.h>
-#include <ext/pb_ds/assoc_container.hpp>
-using namespace __gnu_pbds;
 using namespace std;
 
 #define ll long long
@@ -43,7 +41,7 @@ struct custom_hash {
 
 ll n, m, x[200009], y[200009];
 queue <pll> q;
-gp_hash_table <int, bool, custom_hash> vis;
+unordered_map <int, bool, custom_hash> vis;
 
 ll dx[] = {1, -1};
 
