@@ -25,13 +25,6 @@ using namespace std;
 #define fastio std::ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 
 ll way[12][1009][1009], cs[1009][1009];
-/*
- * way[i][j][k] = Total number of ways if we put j in
-   "a" array and "j,j+1,j+2,,,,,k" in "b" array in ith index.
- *
- * cs[j][k] for a position i = way[i][1][k] + way[i][2][k] +
-   ...........+ way[i][k][k]
-*/
 const ll mod = 1e9 + 7;
 
 int main()
