@@ -13467,6 +13467,24 @@
     ],
     "timestamp": "Jan/12/2020 19:45"
   },
+  "CF68958998": {
+    "contest_id": 891,
+    "language": "GNU C++17",
+    "path": "codeforces\\891\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Envy",
+    "problem_url": "https://codeforces.com/contest/891/problem/C",
+    "submission_id": "CF68958998",
+    "submission_url": "https://codeforces.com/contest/891/submission/68958998",
+    "tags": [
+      "data structures",
+      "dsu",
+      "graphs",
+      "*2300"
+    ],
+    "timestamp": "Jan/17/2020 04:25"
+  },
   "CF69101669": {
     "contest_id": 1293,
     "language": "GNU C++17",
