@@ -26,16 +26,15 @@ using namespace std;
 
 const ll sz = 2e5 + 10;
 vector <ll> g[sz];
-ll far, far2, farNode, lev1[sz], lev2[sz];
-ll node1, node2 = -1, node3;
+ll far, farNode, lev1[sz], lev2[sz], node1, node2 = -1, mx[sz];
 
 void dfs(ll u, ll p, ll lv)
 {
     if(lv > far)
         far = lv, farNode = u;
 
-    if(node2 == -1)     lev1[u] = lv;
-    else                lev2[u] = lv;
+    if(node2 != -1)     lev2[u] = lv;
+    else                lev1[u] = lv;
 
     for(ll v : g[u]) {
         if(v == p)
@@ -47,25 +46,22 @@ void dfs(ll u, ll p, ll lv)
 
 void dfs2(ll u, ll p, ll lv)
 {
-    if(lv > far2 && u != node1 && u != node2)
-        far2 = lv, farNode = u;
-
+    mx[u] = max(mx[u], lv);
     for(ll v : g[u]) {
         if(v == p)
             continue;
 
-        ll nxtLev = lv + 1;
         if(lev1[v] + lev2[v] == far)
-            nxtLev = lv;
-
-        dfs2(v, u, nxtLev);
+            dfs2(v, u, lv);
+        else
+            dfs2(v, u, lv+1);
     }
 }
 
 int main()
 
 {
-    ll n, tot;
+    ll n;
     sl(n);
     for(ll i = 1; i < n; i++) {
         ll u, v;
@@ -75,21 +71,30 @@ int main()
         g[v].pb(u);
     }
 
-    far = -1;
     dfs(1, -1, 0);
     node1 = farNode;
 
-    far = -1;
+    far = 0;
     dfs(node1, -1, 0);
-    tot = far, node2 = farNode;
+    node2 = farNode;
 
     dfs(node2, -1, 0);
 
-    far2 = -1;
     dfs2(node1, -1, 0);
-    tot += far2, node3 = farNode;
+    dfs2(node2, -1, 0);
 
-    cout << tot << endl;
+    ll mxd = -1, node3;
+    for1(i, n) {
+        if(i == node1 || i == node2)
+            continue;
+
+        if(mx[i] > mxd) {
+            mxd = mx[i];
+            node3 = i;
+        }
+    }
+
+    cout << far + mxd << endl;
     cout << node1 << " " << node2 << " " << node3 << endl;
 
     return 0;
