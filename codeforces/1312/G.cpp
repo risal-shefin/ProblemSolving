@@ -27,21 +27,20 @@ using namespace std;
 const ll sz = 1e6 + 10;
 
 struct trie {
-    trie *nxt[28];
-    int idx;
+    int nxt[26], idx;
 
     trie() {
-        for0(i, 26) nxt[i] = nullptr;
+        for0(i, 26) nxt[i] = -1;
         idx = -1;
     }
-};
+} tr[sz];
 
-trie *root, *pos[sz];
+int idt = 0, pos[sz];
 
-void add(trie *cur, ll v)
+void add(int cur, ll v)
 {
-    if(cur->nxt[v] == nullptr)
-        cur->nxt[v] = new trie();
+    if(tr[cur].nxt[v] == -1)
+        tr[cur].nxt[v] = ++idt;
 }
 
 ll ara[sz], ans[sz], tree[4*sz], lazy[4*sz], num = 0;
@@ -90,17 +89,17 @@ ll query(ll lo, ll hi, ll l, ll r, ll node)
                query(mid+1, hi, l, r, node<<1 | 1));
 }
 
-void solve(trie *cur, ll d, ll c)
+void solve(ll cur, ll d, ll c)
 {
     ll v = query(0, sz, d, d, 1);
     update(0, sz, d, d, -v, 1);
 
     ll cst = c;
-    if(cur->idx != -1) {
+    if(tr[cur].idx != -1) {
         ll q = query(0, sz, 0, d-1, 1);
         cst = min(q+1, cst);
         update(0, sz, d, d, cst, 1);
-        ans[cur->idx] = cst;
+        ans[tr[cur].idx] = cst;
 
         update(0, sz, 0, d, 1, 1);
     }
@@ -108,16 +107,15 @@ void solve(trie *cur, ll d, ll c)
         update(0, sz, d, d, cst, 1);
 
     for0(i, 26) {
-        if(cur->nxt[i] == nullptr)
+        if(tr[cur].nxt[i] == -1)
             continue;
-        solve(cur->nxt[i], d+1, cst+1);
+        solve(tr[cur].nxt[i], d+1, cst+1);
     }
 }
 
 int main()
 {
-    root = new trie();
-    pos[0] = root;
+    pos[0] = ++idt;
     ll n;
     cin >> n;
     for1(i, n) {
@@ -126,17 +124,17 @@ int main()
         scanf("%lld %c", &p, &ch);
 
         add(pos[p], ch-'a');
-        pos[i] = pos[p]->nxt[ch-'a'];
+        pos[i] = tr[ pos[p] ].nxt[ch-'a'];
     }
 
     ll k;
     cin >> k;
     for1(i, k) {
         sl(ara[i]);
-        pos[ ara[i] ]->idx = i;
+        tr[ pos[ ara[i] ] ].idx = i;
     }
 
-    solve(root, 0, 0);
+    solve(1, 0, 0);
     for1(i, k) {
         if(i != 1) pf(" ");
         pf("%lld", ans[i]);
@@ -145,3 +143,4 @@ int main()
 
     return 0;
 }
+
