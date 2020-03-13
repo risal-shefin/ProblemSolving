@@ -27,20 +27,21 @@ using namespace std;
 const ll sz = 1e6 + 10;
 
 struct trie {
-    int nxt[26], idx;
+    trie *nxt[28];
+    ll idx;
 
     trie() {
-        for0(i, 26) nxt[i] = -1;
+        for0(i, 26) nxt[i] = nullptr;
         idx = -1;
     }
-} tr[sz];
+};
 
-int idt = 0, pos[sz];
+trie *root, *pos[sz];
 
-void add(int cur, ll v)
+void add(trie *cur, ll v)
 {
-    if(tr[cur].nxt[v] == -1)
-        tr[cur].nxt[v] = ++idt;
+    if(cur->nxt[v] == nullptr)
+        cur->nxt[v] = new trie();
 }
 
 ll ara[sz], ans[sz], tree[4*sz], lazy[4*sz], num = 0;
@@ -89,33 +90,34 @@ ll query(ll lo, ll hi, ll l, ll r, ll node)
                query(mid+1, hi, l, r, node<<1 | 1));
 }
 
-void solve(ll cur, ll d, ll c)
+void solve(trie *cur, ll d, ll c)
 {
     ll v = query(0, sz, d, d, 1);
     update(0, sz, d, d, -v, 1);
 
     ll cst = c;
-    if(tr[cur].idx != -1) {
+    if(d != 0 && cur->idx != -1) {
         ll q = query(0, sz, 0, d-1, 1);
         cst = min(q+1, cst);
         update(0, sz, d, d, cst, 1);
-        ans[tr[cur].idx] = cst;
+        ans[cur->idx] = cst;
 
         update(0, sz, 0, d, 1, 1);
     }
-    else
+    else if(d != 0)
         update(0, sz, d, d, cst, 1);
 
     for0(i, 26) {
-        if(tr[cur].nxt[i] == -1)
+        if(cur->nxt[i] == nullptr)
             continue;
-        solve(tr[cur].nxt[i], d+1, cst+1);
+        solve(cur->nxt[i], d+1, cst+1);
     }
 }
 
 int main()
 {
-    pos[0] = ++idt;
+    root = new trie();
+    pos[0] = root;
     ll n;
     cin >> n;
     for1(i, n) {
@@ -124,17 +126,17 @@ int main()
         scanf("%lld %c", &p, &ch);
 
         add(pos[p], ch-'a');
-        pos[i] = tr[ pos[p] ].nxt[ch-'a'];
+        pos[i] = pos[p]->nxt[ch-'a'];
     }
 
     ll k;
     cin >> k;
     for1(i, k) {
         sl(ara[i]);
-        tr[ pos[ ara[i] ] ].idx = i;
+        pos[ ara[i] ]->idx = i;
     }
 
-    solve(1, 0, 0);
+    solve(root, 0, 0);
     for1(i, k) {
         if(i != 1) pf(" ");
         pf("%lld", ans[i]);
@@ -143,4 +145,3 @@ int main()
 
     return 0;
 }
-
