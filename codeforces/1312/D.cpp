@@ -68,12 +68,13 @@ int main()
 
     ll way = hockeyStick(m-1, n-2) % mod, ans = 0;
     for(ll i = 2; i < n; i++) {
-        ll have = n-2, lft = i-1;
+        ll have = n-2, lft = i-1, rgt = n-i - 1;
 
         ll leftComb = nCr(have, lft);
+        ll rightComb = nCr(have-lft, rgt);
         ll fixComb = lft;
 
-        ll tot = (fixComb * leftComb) % mod;
+        ll tot = (fixComb * (leftComb * rightComb) % mod) % mod;
 
         ans = (ans + (tot * way) % mod) % mod;
     }
