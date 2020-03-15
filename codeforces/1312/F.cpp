@@ -26,9 +26,9 @@ using namespace std;
 
 const ll sz = 3e5 + 10;
 ll ara[sz], n, x, y, z;
-vector < vector <int> > mex;
-map <vector<int>, int> vis;
-map <vector<int>, int> :: iterator it;
+int mex[(ll)2e7][3];
+map < vector<int>, int> vis;
+map < vector<int>, int> :: iterator it;
 
 ll calc_mex(const set <int> &lst)
 {
@@ -44,14 +44,13 @@ ll calc_mex(const set <int> &lst)
 
 pll cycle_grundy()
 {
+    vis.clear();
     vector <int> num;
-    mex.pb(vector<int>(3));
     mex[0][0] = mex[0][1] = mex[0][2] = 0;
     for(ll i = 1; ; i++)
     {
         ll prv0 = max(0LL, i-x), prv1 = max(0LL, i-y), prv2 = max(0LL, i-z);
 
-        mex.pb(vector<int>(3));
         mex[i][0] = calc_mex({mex[prv0][0], mex[prv1][1], mex[prv2][2]});
 
         mex[i][1] = calc_mex({mex[prv0][0], mex[prv2][2]});
@@ -67,7 +66,7 @@ pll cycle_grundy()
             it = vis.find(num);
             if(it != vis.end()) {
                 ll id = it->second;
-                ll cycle_len = i - id, cycle_start = id+1;
+                ll cycle_len = i - id, cycle_start = id;
                 return mp(cycle_start, cycle_len);
             }
             vis[num] = i;
@@ -93,7 +92,6 @@ int main()
             sl(ara[i]);
 
         pll cyc = cycle_grundy();
-        vis.clear();
 
         ll xr = 0;
         for1(i, n)
