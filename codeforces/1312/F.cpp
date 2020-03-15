@@ -13,6 +13,7 @@ using namespace std;
 #define mp make_pair
 #define pb push_back
 #define inf (1LL << 62)
+#define loop(i, start, stop, inc) for(ll i = start; i <= stop; i += inc)
 #define for1(i, stop) for(ll i = 1; i <= stop; i++)
 #define for0(i, stop) for(ll i = 0; i < stop; i++)
 #define rep1(i, start) for(ll i = start; i >= 1; i--)
@@ -26,8 +27,8 @@ using namespace std;
 const ll sz = 3e5 + 10;
 ll ara[sz], n, x, y, z;
 vector < vector <int> > mex;
-map <queue<int>, int> vis;
-map <queue<int>, int> :: iterator it;
+map <deque<int>, int> vis;
+map <deque<int>, int> :: iterator it;
 
 ll calc_mex(const set <int> &lst)
 {
@@ -43,7 +44,7 @@ ll calc_mex(const set <int> &lst)
 
 pll cycle_grundy()
 {
-    queue <int> num;
+    deque <int> num;
     mex.pb(vector<int>(3));
     mex[0][0] = mex[0][1] = mex[0][2] = 0;
     for(ll i = 1; ; i++)
@@ -57,11 +58,11 @@ pll cycle_grundy()
 
         mex[i][2] = calc_mex({mex[prv0][0], mex[prv1][1]});
 
-        num.push(mex[i][0]), num.push(mex[i][1]), num.push(mex[i][2]);
+        num.pb(mex[i][0]), num.pb(mex[i][1]), num.pb(mex[i][2]);
 
         if(i == 5) vis[num] = i;
         if(i > 5) {
-            num.pop(), num.pop(), num.pop();
+            num.pop_front(), num.pop_front(), num.pop_front();
 
             it = vis.find(num);
             if(it != vis.end()) {
