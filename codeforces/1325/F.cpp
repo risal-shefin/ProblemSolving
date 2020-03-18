@@ -25,29 +25,29 @@ using namespace std;
 #define fastio std::ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 
 const ll sz = 1e5 + 10;
-ll sqt, cyc, par[sz], lev[sz];
+ll sqt, cyc, par[sz], vis[sz], lev[sz];
 vector <ll> g[sz], ans;
 pll cycle;
-bool vis[sz];
 
 void cycle_dfs(ll u, ll p, ll d)
 {
+    if(vis[u] == 1) {
+        ll len = lev[p] - lev[u] + 1;
+        if(len > cyc) {
+            cyc = len;
+            cycle = mp(p, u);
+        }
+        return;
+    }
+
     par[u] = p, lev[u] = d, vis[u] = 1;
     for(ll v : g[u]) {
-        if(v == p)
+        if(v == p || vis[v] == 2)
             continue;
-
-        if(vis[v]) {
-            ll len = lev[u] - lev[v] + 1;
-            if(len > cyc) {
-                cyc = len;
-                cycle = mp(u, v);
-            }
-            continue;
-        }
 
         cycle_dfs(v, u, d+1);
     }
+    vis[u] = 2;
 }
 
 ll con[sz];
@@ -119,4 +119,3 @@ int main()
 
     return 0;
 }
-
