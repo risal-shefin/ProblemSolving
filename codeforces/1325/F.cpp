@@ -28,6 +28,7 @@ const ll sz = 1e5 + 10;
 ll sqt, cyc, par[sz], vis[sz], lev[sz];
 vector <ll> g[sz], ans;
 pll cycle;
+ll ctot = 0;
 
 void cycle_dfs(ll u, ll p, ll d)
 {
@@ -42,7 +43,10 @@ void cycle_dfs(ll u, ll p, ll d)
 
     par[u] = p, lev[u] = d, vis[u] = 1;
     for(ll v : g[u]) {
-        if(v == p || vis[v] == 2)
+        ctot++;
+        assert(ctot <= (ll)1e7);
+
+        if(v == p || v == par[u] || vis[v] == 2)
             continue;
 
         cycle_dfs(v, u, d+1);
@@ -75,6 +79,9 @@ int main()
 
         ll cur = cycle.first;
         while(cur != cycle.second) {
+            ctot++;
+            assert(ctot <= (ll)1e7);
+
             cur = par[cur];
             pf(" %lld", cur);
         }
@@ -87,18 +94,29 @@ int main()
         lst.insert(mp(con[i], i));
     }
 
+    ll tot = 0;
     while(ans.size() < sqt) {
+        assert(lst.size() > 0);
+
         pll p = *lst.begin();
         lst.erase(p);
         ans.push_back(p.second);
 
+        tot++;
+        assert(tot <= (ll)3e6);
+
         for(ll v : g[p.second]) {
+            tot++;
+            assert(tot <= (ll)3e6);
 
             auto it = lst.find(mp(con[v], v));
             if(it == lst.end()) continue;
             lst.erase(it);
 
             for(ll w : g[v]) {
+                tot++;
+                assert(tot <= (ll)3e6);
+
                 it = lst.find(mp(con[w], w));
                 if(it == lst.end()) continue;
 
