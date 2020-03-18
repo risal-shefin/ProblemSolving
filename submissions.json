@@ -11677,6 +11677,25 @@
     ],
     "timestamp": "Jan/12/2020 19:45"
   },
+  "CF73575940": {
+    "contest_id": 1325,
+    "language": "GNU C++17",
+    "path": "codeforces\\1325\\F.cpp",
+    "platform": "Codeforces",
+    "problem_index": "F",
+    "problem_name": "Ehab's Last Theorem",
+    "problem_url": "https://codeforces.com/contest/1325/problem/F",
+    "submission_id": "CF73575940",
+    "submission_url": "https://codeforces.com/contest/1325/submission/73575940",
+    "tags": [
+      "constructive algorithms",
+      "dfs and similar",
+      "graphs",
+      "greedy",
+      "*2500"
+    ],
+    "timestamp": "Mar/18/2020 19:49"
+  },
   "CF73666946": {
     "contest_id": 1326,
     "language": "GNU C++17",
