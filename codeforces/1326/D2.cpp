@@ -69,6 +69,7 @@ struct Hash {
 } fw, bw;
 
 /* call pw_calc() for calculating powers less than MAX_N
+ * scanf("%s", s+1);     --> input
  * slen = strlen(s+1);   --> string length
  * fw.init() will calculate the double hashes
  * fw.hashVal(l,r) will return [l,,r] merged double hash value
@@ -76,7 +77,7 @@ struct Hash {
  * fw.hashTwo(l, r) will return [l,,r] base2 hash
 */
 
-inline bool checkPal(int pref, int suf) {
+bool checkPal(int pref, int suf) {
     ll h1 = (fw.hashOne(1, pref) * pw1[slen-suf+1] + fw.hashOne(suf, slen)) % mod;
     ll h2 = (fw.hashTwo(1, pref) * pw2[slen-suf+1] + fw.hashTwo(suf, slen)) % mod;
     h1 = (h1 << 32) | h2;
