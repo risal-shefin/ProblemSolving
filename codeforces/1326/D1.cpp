@@ -24,112 +24,109 @@ using namespace std;
 #define pf printf
 #define fastio std::ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 
-const ll MAX_N = 1e6+10, mod = 2e9+63, base1 = 1e9+21, base2 = 1e9+181;
-char s[MAX_N];  // 1-indexed
-ll pw1[MAX_N], pw2[MAX_N], slen;
-
-void pw_calc() {
-    pw1[0] = pw2[0] = 1;
-    for(int i = 1; i < MAX_N; i++) {
-        pw1[i] = (pw1[i-1] * base1) % mod;
-        pw2[i] = (pw2[i-1] * base2) % mod;
-    }
-}
-
-struct Hash {
-    ll h1[MAX_N], h2[MAX_N];
-
-    void init() {
-        h1[0] = h2[0] = 0;
-        for(int i = 1; i <= slen; i++) {
-            h1[i] = (h1[i-1] * base1 + s[i]) % mod;
-            h2[i] = (h2[i-1] * base2 + s[i]) % mod;
-        }
-    }
-
-    inline ll hashVal(int l, int r) {
-        ll hsh1 = (h1[r] - h1[l-1] * pw1[r-l+1]) % mod;
-        if(hsh1 < 0) hsh1 += mod;
-        ll hsh2 = (h2[r] - h2[l-1] * pw2[r-l+1]) % mod;
-        if(hsh2 < 0) hsh2 += mod;
-        return (hsh1 << 32) | hsh2;
-    }
-
-    inline ll hashOne(int l, int r) {
-        ll hsh1 = (h1[r] - h1[l-1] * pw1[r-l+1]) % mod;
-        if(hsh1 < 0) hsh1 += mod;
-        return hsh1;
-    }
-
-    inline ll hashTwo(int l, int r) {
-        ll hsh2 = (h2[r] - h2[l-1] * pw2[r-l+1]) % mod;
-        if(hsh2 < 0) hsh2 += mod;
-        return hsh2;
-    }
-} fw, bw;
-
-/* call pw_calc() for calculating powers less than MAX_N
- * slen = strlen(s+1);   --> string length
- * fw.init() will calculate the double hashes
- * fw.hashVal(l,r) will return [l,,r] merged double hash value
- * fw.hashOne(l, r) will return [l,,r] base1 hash
- * fw.hashTwo(l, r) will return [l,,r] base2 hash
-*/
-
-bool checkPal(int pref, int suf) {
-    ll h1 = (fw.hashOne(1, pref) * pw1[slen-suf+1] + fw.hashOne(suf, slen)) % mod;
-    ll h2 = (fw.hashTwo(1, pref) * pw2[slen-suf+1] + fw.hashTwo(suf, slen)) % mod;
-    h1 = (h1 << 32) | h2;
-
-    ll rh1 = (bw.hashOne(1, slen-suf+1) * pw1[pref] + bw.hashOne(slen-pref+1, slen)) % mod;
-    ll rh2 = (bw.hashTwo(1, slen-suf+1) * pw2[pref] + bw.hashTwo(slen-pref+1, slen)) % mod;
-    rh1 = (rh1 << 32) | rh2;
-
-    return h1 == rh1;
-}
+const ll mod1 = 1e9 + 93, mod2 = 1e9 + 181, sz = 1e6 + 10;
+const ll base1 = 193, base2 = 181;
+char s[sz];
+unordered_map <ll, int> pre1, pre2;
+ll hsh1[sz], hsh2[sz], rev1[sz], rev2[sz];
+ll pw1[sz], pw2[sz];
 
 int main()
 {
-    pw_calc();
+    pw1[0] = pw2[0] = 1;
+    for(ll i = 1; i < sz; i++) {
+        pw1[i] = (pw1[i-1] * base1) % mod1;
+        pw2[i] = (pw2[i-1] * base2) % mod2;
+    }
 
     ll t;
     cin >> t;
     while(t--) {
         scanf("%s", s+1);
-        slen = strlen(s+1);
+        ll len = strlen(s+1);
 
-        fw.init();
-        reverse(s+1, s+slen+1);
-        bw.init();
-        reverse(s+1, s+slen+1);
+        for(ll i = 1; i <= len; i++) {
+            hsh1[i] = (hsh1[i-1] * base1 + (s[i] - 'a' + 1) ) % mod1;
+            hsh2[i] = (hsh2[i-1] * base2 + (s[i] - 'a' + 1) ) % mod2;
 
-        ll chk = 1, mat = 0, p = -1, sf = -1, mx = 0;
-        for(ll i = 1, j = slen; i <= slen; i++, j--) {
-            if(chk && s[i] == s[j]) mat++;
-            else    chk = 0;
+            pre1[hsh1[i] ] = i;
+            pre2[hsh2[i] ] = i;
+        }
 
-            ll h = fw.hashVal(1, i);
-            ll rh = bw.hashVal(slen-i+1, slen);
-            if(h == rh && i > mx)
-                mx = i, p = i, sf = -1;
+        ll mx = 0, p=-1, sf=-1;
+        rev1[len+1] = rev2[len+1] = 0;
+        for(ll i = len; i >= 1; i--) {
+            rev1[i] = (rev1[i+1] * base1 + (s[i] - 'a' + 1) ) % mod1;
+            rev2[i] = (rev2[i+1] * base2 + (s[i] - 'a' + 1) ) % mod2;
 
-            h = fw.hashVal(j, slen);
-            rh = bw.hashVal(1, slen-j+1);
-            if(h == rh && i > mx)
-                mx = i, p = -1, sf = j;
+            ll h1 = hsh1[len] - (hsh1[i-1] * pw1[len-i+1]) % mod1;
+            if(h1 < 0) h1 += mod1;
+            ll h2 = hsh2[len] - (hsh2[i-1] * pw2[len-i+1]) % mod2;
+            if(h2 < 0) h2 += mod2;
 
-            if(mat > 0 && i+mat <= slen) {
+            //cout << rev1[i] << " " << h1 << " " << i << endl;
 
-                if(checkPal(i, slen-mat+1))
-                    mx = i+mat, p = i, sf = slen-mat+1;
+            if(h1 == rev1[i] && h2 == rev2[i]) {
+                ll l = len-i+1;
+                if(l > mx) {
+                    mx = l;
+                    p = -1, sf = i;
+                }
+            }
 
-                if(checkPal(mat, j))
-                    mx = slen-j+1 + mat, p = mat, sf = j;
+
+            for(ll j = 1; j < i; j++) {
+                ll mh1 = (hsh1[j] * pw1[len-i+1] + h1) % mod1;
+                ll mh2 = (hsh2[j] * pw2[len-i+1] + h2) % mod2;
             }
         }
 
+        for(ll i = len; i >= 1; i--) {
+
+            ll h1 = hsh1[len] - (hsh1[i-1] * pw1[len-i+1]) % mod1;
+            if(h1 < 0) h1 += mod1;
+            ll h2 = hsh2[len] - (hsh2[i-1] * pw2[len-i+1]) % mod2;
+            if(h2 < 0) h2 += mod2;
+
+            for(ll j = 1; j < i; j++) {
+                ll mh1 = (hsh1[j] * pw1[len-i+1] + h1) % mod1;
+                ll mh2 = (hsh2[j] * pw2[len-i+1] + h2) % mod2;
+
+                ll rh1 = rev1[1] - (rev1[j+1] * pw1[j] ) % mod1;
+                if(rh1 < 0) rh1 += mod1;
+                ll rh2 = rev2[1] - (rev2[j+1] * pw2[j] ) % mod2;
+                if(rh2 < 0) rh2 += mod2;
+
+                ll rmh1 = (rev1[i] * pw1[j] + rh1) % mod1;
+                ll rmh2 = (rev2[i] * pw2[j] + rh2) % mod2;
+
+                if(mh1 == rmh1 && mh2 == rmh2) {
+                    ll l = j + (len - i + 1);
+                    if(l > mx) {
+                        mx = l;
+                        p = j, sf = i;
+                    }
+                }
+            }
+        }
+
+        for1(i, len) {
+            ll rh1 = rev1[1] - (rev1[i+1] * pw1[i]) % mod1;
+            if(rh1 < 0) rh1 += mod1;
+            ll rh2 = rev2[1] - (rev2[i+1] * pw2[i]) % mod2;
+            if(rh2 < 0) rh2 += mod2;
+
+            if(hsh1[i] == rh1 && hsh2[i] == rh2) {
+                if(i > mx) {
+                    mx = i;
+                    p = i, sf = -1;
+                }
+            }
+        }
+
+        //cout << p << " " << sf << endl;
         if(p == -1) {
-            for(ll i = sf; i <= slen; i++)
+            for(ll i = sf; i <= len; i++)
                 pf("%c", s[i]);
         }
         else if(sf == -1) {
@@ -139,11 +136,14 @@ int main()
         else {
             for(ll i = 1; i <= p; i++)
                 pf("%c", s[i]);
-            for(ll i = sf; i <= slen; i++)
+            for(ll i = sf; i <= len; i++)
                 pf("%c", s[i]);
         }
         pn;
+
+        pre1.clear(), pre2.clear();
     }
 
     return 0;
 }
+
