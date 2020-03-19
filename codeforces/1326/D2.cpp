@@ -71,23 +71,11 @@ struct Hash {
 /* call pw_calc() for calculating powers less than MAX_N
  * scanf("%s", s+1);     --> input
  * slen = strlen(s+1);   --> string length
- * fw.init() will calculate the double hashes
- * fw.hashVal(l,r) will return [l,,r] merged double hash value
- * fw.hashOne(l, r) will return [l,,r] base1 hash
- * fw.hashTwo(l, r) will return [l,,r] base2 hash
+ * example.init() will calculate the double hashes
+ * example.hashVal(l,r) will return [l,..,r] merged double hash value
+ * example.hashOne(l, r) will return [l,,r] base1 hash
+ * example.hashTwo(l, r) will return [l,,r] base2 hash
 */
-
-bool checkPal(int pref, int suf) {
-    ll h1 = (fw.hashOne(1, pref) * pw1[slen-suf+1] + fw.hashOne(suf, slen)) % mod;
-    ll h2 = (fw.hashTwo(1, pref) * pw2[slen-suf+1] + fw.hashTwo(suf, slen)) % mod;
-    h1 = (h1 << 32) | h2;
-
-    ll rh1 = (bw.hashOne(1, slen-suf+1) * pw1[pref] + bw.hashOne(slen-pref+1, slen)) % mod;
-    ll rh2 = (bw.hashTwo(1, slen-suf+1) * pw2[pref] + bw.hashTwo(slen-pref+1, slen)) % mod;
-    rh1 = (rh1 << 32) | rh2;
-
-    return h1 == rh1;
-}
 
 int main()
 {
@@ -112,19 +100,34 @@ int main()
             ll h = fw.hashVal(1, i);
             ll rh = bw.hashVal(slen-i+1, slen);
             if(h == rh && i > mx)
-                mx = i, p = i, sf = -1;
+                mx = i, sf = -1, p = i;
 
             h = fw.hashVal(j, slen);
             rh = bw.hashVal(1, slen-j+1);
             if(h == rh && i > mx)
-                mx = i, p = -1, sf = j;
+                mx = i, sf = j, p = -1;
 
             if(mat > 0 && i+mat <= slen) {
+                ll h1 = (fw.hashOne(1, i) * pw1[mat] + fw.hashOne(slen-mat+1, slen)) % mod;
+                ll h2 = (fw.hashTwo(1, i) * pw2[mat] + fw.hashTwo(slen-mat+1, slen)) % mod;
+                h1 = (h1 << 32) | h2;
 
-                if(checkPal(i, slen-mat+1))
+                ll rh1 = (bw.hashOne(1, mat) * pw1[i] + bw.hashOne(slen-i+1, slen)) % mod;
+                ll rh2 = (bw.hashTwo(1, mat) * pw2[i] + bw.hashTwo(slen-i+1, slen)) % mod;
+                rh1 = (rh1 << 32) | rh2;
+
+                if(h1 == rh1 && i + mat > mx)
                     mx = i+mat, p = i, sf = slen-mat+1;
 
-                if(checkPal(mat, j))
+                h1 = (fw.hashOne(1, mat) * pw1[slen-j+1] + fw.hashOne(j, slen)) % mod;
+                h2 = (fw.hashTwo(1, mat) * pw2[slen-j+1] + fw.hashTwo(j, slen)) % mod;
+                h1 = (h1 << 32) | h2;
+
+                rh1 = (bw.hashOne(1, slen-j+1) * pw1[mat] + bw.hashOne(slen-mat+1, slen)) % mod;
+                rh2 = (bw.hashTwo(1, slen-j+1) * pw2[mat] + bw.hashTwo(slen-mat+1, slen)) % mod;
+                rh1 = (rh1 << 32) | rh2;
+
+                if(h1 == rh1 && (slen-j+1) + mat > mx)
                     mx = slen-j+1 + mat, p = mat, sf = j;
             }
         }
