@@ -11677,6 +11677,23 @@
     ],
     "timestamp": "Jan/12/2020 19:45"
   },
+  "CF75365848": {
+    "contest_id": 1330,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1330\\B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "Dreamoon Likes Permutations",
+    "problem_url": "https://codeforces.com/contest/1330/problem/B",
+    "submission_id": "CF75365848",
+    "submission_url": "https://codeforces.com/contest/1330/submission/75365848",
+    "tags": [
+      "implementation",
+      "math",
+      "*1400"
+    ],
+    "timestamp": "Apr/03/2020 20:56"
+  },
   "CF75399567": {
     "contest_id": 1330,
     "language": "GNU C++17 (64)",
