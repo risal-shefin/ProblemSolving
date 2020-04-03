@@ -11677,6 +11677,25 @@
     ],
     "timestamp": "Jan/12/2020 19:45"
   },
+  "CF75426976": {
+    "contest_id": 1330,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1330\\D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "Dreamoon Likes Sequences",
+    "problem_url": "https://codeforces.com/contest/1330/problem/D",
+    "submission_id": "CF75426976",
+    "submission_url": "https://codeforces.com/contest/1330/submission/75426976",
+    "tags": [
+      "bitmasks",
+      "constructive algorithms",
+      "dp",
+      "math",
+      "*1700"
+    ],
+    "timestamp": "Apr/04/2020 00:47"
+  },
   "CF75853108": {
     "contest_id": 1333,
     "language": "GNU C++17 (64)",
