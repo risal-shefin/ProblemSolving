@@ -11677,6 +11677,26 @@
     ],
     "timestamp": "Jan/12/2020 19:45"
   },
+  "CF77582305": {
+    "contest_id": 1343,
+    "language": "GNU C++17",
+    "path": "codeforces\\1343\\E.cpp",
+    "platform": "Codeforces",
+    "problem_index": "E",
+    "problem_name": "Weights Distributing",
+    "problem_url": "https://codeforces.com/contest/1343/problem/E",
+    "submission_id": "CF77582305",
+    "submission_url": "https://codeforces.com/contest/1343/submission/77582305",
+    "tags": [
+      "brute force",
+      "graphs",
+      "greedy",
+      "shortest paths",
+      "sortings",
+      "*2100"
+    ],
+    "timestamp": "Apr/22/2020 00:47"
+  },
   "CF77671471": {
     "contest_id": 1056,
     "language": "GNU C++17",
