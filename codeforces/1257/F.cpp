@@ -25,7 +25,7 @@ using namespace std;
 #define EL '\n'
 #define fastio std::ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 
-const ll sz = 102, ad = 40;
+const ll sz = 102;
 ll n;
 int ara[sz], cnt[sz], ans = -1;
 int half = (1<<15) - 1, half2 = ~half;
@@ -75,10 +75,9 @@ void solve1(int x, int pos)
         for1(i, n) {
             int v = ara[i] & half;
             int xr = v ^ x;
-            cnt[i] = bitcount(xr);
+            s[i] = bitcount(xr) + 1;
         }
-
-        for(ll i = 1; i < n; i++) s[i] = (cnt[i] - cnt[i+1]) + ad;
+        //if(s[1] == 1 && s[2] == 1) cout << x << endl;
         slen = n;
         fw.init();
         hsh[ fw.hashVal(1, n) ] = x;
@@ -101,13 +100,27 @@ void solve2(int x, int pos)
             cnt[i] = bitcount(xr);
         }
 
-        for(ll i = 1; i < n; i++) s[i] = (cnt[i+1] - cnt[i]) + ad;
-        slen = n;
-        fw.init();
-        auto it = hsh.find(fw.hashVal(1, n));
-        if(it != hsh.end()) {
-            //cout << (it->second) << " " << i << " " << x << " " << (ll)s[1] << " " << (ll)s[2] << endl;
-            ans = x | (it->second);
+        for(ll i = 0; i <= 30; i++) {
+            bool chk = 1;
+            for1(j, n) {
+                int lagbe = i - cnt[j];
+                if(lagbe < 0) {
+                    chk = 0;
+                    break;
+                }
+                s[j] = lagbe+1;
+            }
+            if(!chk)
+                continue;
+
+            slen = n;
+            fw.init();
+            auto it = hsh.find(fw.hashVal(1, n));
+            if(it != hsh.end()) {
+                //cout << (it->second) << " " << i << " " << x << " " << (ll)s[1] << " " << (ll)s[2] << endl;
+                ans = x | (it->second);
+                break;
+            }
         }
 
         return;
