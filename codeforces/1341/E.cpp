@@ -29,7 +29,7 @@ using namespace std;
 #define fastio std::ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 
 const ll sz = 1e4 + 10;
-ll vis[sz][1009];
+ll vis[sz][1002];
 
 int land[sz];
 
@@ -41,12 +41,25 @@ const bool operator <(const node &a, const node &b) {
     return a.tot > b.tot;
 }
 
+
+//#define gc getchar_unlocked
+#define gc getchar   // for windows
+inline void read_int(int &x)
+{
+	x=0;
+	register char c=gc();
+	for(;c<'0' || c>'9';c=gc());
+	for(;c>='0' && c<='9';c=gc())
+    x=(x<<3)+(x<<1)+(c-'0');
+}
+
+
 int main()
 {
     ll n, m;
-    cin >> n >> m;
+    read_int(n), read_int(m);
 
-    for1(i, m) si(land[i]);
+    for1(i, m) read_int(land[i]);
     sort(land + 1, land + m+1);
 
     ll g, r;
@@ -139,3 +152,4 @@ int main()
 
     return 0;
 }
+

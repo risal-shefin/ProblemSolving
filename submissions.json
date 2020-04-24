@@ -14624,6 +14624,24 @@
     ],
     "timestamp": "Apr/23/2020 20:59"
   },
+  "CF77889787": {
+    "contest_id": 1341,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1341\\E.cpp",
+    "platform": "Codeforces",
+    "problem_index": "E",
+    "problem_name": "Nastya and Unexpected Guest",
+    "problem_url": "https://codeforces.com/contest/1341/problem/E",
+    "submission_id": "CF77889787",
+    "submission_url": "https://codeforces.com/contest/1341/submission/77889787",
+    "tags": [
+      "graphs",
+      "implementation",
+      "shortest paths",
+      "*2400"
+    ],
+    "timestamp": "Apr/24/2020 13:46"
+  },
   "CF77889933": {
     "contest_id": 1341,
     "language": "GNU C++17 (64)",
