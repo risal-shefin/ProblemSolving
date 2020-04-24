@@ -4,7 +4,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define ll long long
+#define ll int
 #define ull unsigned long long
 #define dd double
 #define ld long double
@@ -15,7 +15,7 @@ using namespace std;
 #define pii pair <int, int>
 #define mp make_pair
 #define pb push_back
-#define inf (1LL << 62)
+#define inf (1LL << 30)
 #define loop(i, start, stop, inc) for(ll i = start; i <= stop; i += inc)
 #define for1(i, stop) for(ll i = 1; i <= stop; i++)
 #define for0(i, stop) for(ll i = 0; i < stop; i++)
@@ -31,12 +31,13 @@ using namespace std;
 const ll sz = 1e4 + 10;
 ll vis[sz][1009];
 
-ll land[sz];
+int land[sz];
 
 struct node {
-    ll pos, tim, tot;
+    int pos, tim;
+    ll tot;
 };
-bool operator <(const node &a, const node &b) {
+const bool operator <(const node &a, const node &b) {
     return a.tot > b.tot;
 }
 
@@ -45,7 +46,7 @@ int main()
     ll n, m;
     cin >> n >> m;
 
-    for1(i, m) sl(land[i]);
+    for1(i, m) si(land[i]);
     sort(land + 1, land + m+1);
 
     ll g, r;
@@ -63,14 +64,16 @@ int main()
             vis[i][j] = inf;
     }
 
-    priority_queue <node> q;
-    q.push({1, f, f});
+    priority_queue <node> pq;
+    pq.push({1, f, f});
     vis[1][f] = f;
 
-    ll ans = inf;
-    while(!q.empty()) {
-        node u = q.top();
-        q.pop();
+    ll ans = inf, tot;
+    int baki, lagbe, lft, rgt, rest, need, now;
+    node u;
+    while(!pq.empty()) {
+        u = pq.top();
+        pq.pop();
 
         //cout << u.pos << " || " << u.tot << endl;
         if(land[u.pos] == n) {
@@ -78,17 +81,17 @@ int main()
             continue;
         }
 
-        ll baki = g - u.tim;
+        baki = g - u.tim;
         if(baki == 0) {
             u.tot += r, u.tim = 0;
             if(vis[u.pos][u.tim] <= u.tot)
                 continue;
 
             vis[u.pos][u.tim] = u.tot;
-            q.push({u.pos, u.tim, u.tot});
+            pq.push({u.pos, u.tim, u.tot});
             continue;
         }
-        ll lagbe = n - land[u.pos];
+        lagbe = n - land[u.pos];
         if(lagbe <= baki) {
             ans = min(ans, u.tot + lagbe);
         }
@@ -96,34 +99,34 @@ int main()
         if(vis[u.pos][u.tim] < u.tot)
             continue;
 
-        ll lft = u.pos - 1, rgt = u.pos + 1;
+        lft = u.pos - 1, rgt = u.pos + 1;
 
         if(lft >= 1) {
-            ll rest = g - u.tim;
-            ll need = abs(land[u.pos] - land[lft]);
+            rest = g - u.tim;
+            need = abs(land[u.pos] - land[lft]);
             if(need <= rest) {
-                ll now = u.tim + need;
-                ll tot = u.tot + need;
+                now = u.tim + need;
+                tot = u.tot + need;
 
                 if(vis[lft][now] > tot) {
                     vis[lft][now] = tot;
-                    q.push({lft, now, tot});
+                    pq.push({lft, now, tot});
                 }
             }
         }
         if(rgt <= n) {
 
-            ll rest = g - u.tim;
-            ll need = abs(land[u.pos] - land[rgt]);
+            rest = g - u.tim;
+            need = abs(land[u.pos] - land[rgt]);
             if(need <= rest) {
-                ll now = u.tim + need;
-                ll tot = u.tot + need;
+                now = u.tim + need;
+                tot = u.tot + need;
 
                 //cout << tot <<"   " << vis[rgt][now] << endl;
                 if(vis[rgt][now] > tot) {
                     vis[rgt][now] = tot;
                     //cout << tot << endl;
-                    q.push({rgt, now, tot});
+                    pq.push({rgt, now, tot});
                 }
             }
         }
