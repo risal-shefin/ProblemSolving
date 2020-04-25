@@ -14624,6 +14624,25 @@
     ],
     "timestamp": "Apr/23/2020 20:59"
   },
+  "CF77992390": {
+    "contest_id": 1257,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1257\\F.cpp",
+    "platform": "Codeforces",
+    "problem_index": "F",
+    "problem_name": "Make Them Similar",
+    "problem_url": "https://codeforces.com/contest/1257/problem/F",
+    "submission_id": "CF77992390",
+    "submission_url": "https://codeforces.com/contest/1257/submission/77992390",
+    "tags": [
+      "bitmasks",
+      "brute force",
+      "hashing",
+      "meet-in-the-middle",
+      "*2400"
+    ],
+    "timestamp": "Apr/25/2020 14:11"
+  },
   "CF78012049": {
     "contest_id": 244,
     "language": "GNU C++17 (64)",
