@@ -14624,6 +14624,24 @@
     ],
     "timestamp": "Apr/23/2020 20:59"
   },
+  "CF78012049": {
+    "contest_id": 244,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\244\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "The Brand New Function",
+    "problem_url": "https://codeforces.com/contest/244/problem/C",
+    "submission_id": "CF78012049",
+    "submission_url": "https://codeforces.com/contest/244/submission/78012049",
+    "tags": [
+      "bitmasks",
+      "divide and conquer",
+      "math",
+      "*1600"
+    ],
+    "timestamp": "Apr/25/2020 16:15"
+  },
   "CF78012281": {
     "contest_id": 244,
     "language": "GNU C++17 (64)",

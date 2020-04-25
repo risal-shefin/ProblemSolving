@@ -30,7 +30,7 @@ using namespace std;
 
 const ll sz = 1e5 + 10;
 ll ara[sz], nxt[sz][20];
-bitset <(1LL << 20)> num;
+set <ll> num;
 vector <ll> one;
 
 int main()
@@ -53,7 +53,7 @@ int main()
 
     for1(i, n) {
         ll x = ara[i], now = i;
-        num[x] = 1;
+        num.insert(x);
 
         while(now <= n) {
             ll mn = inf;
@@ -72,12 +72,12 @@ int main()
             }
 
             for(ll bt : one) x |= (1 << bt);
-            num[x] = 1;
+            num.insert(x);
             now = mn;
         }
     }
 
-    cout << num.count() << endl;
+    cout << num.size() << endl;
 
     return 0;
 }
