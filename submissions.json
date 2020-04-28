@@ -11677,6 +11677,23 @@
     ],
     "timestamp": "Jan/12/2020 19:45"
   },
+  "CF78421440": {
+    "contest_id": 508,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\508\\E.cpp",
+    "platform": "Codeforces",
+    "problem_index": "E",
+    "problem_name": "Arthur and Brackets",
+    "problem_url": "https://codeforces.com/contest/508/problem/E",
+    "submission_id": "CF78421440",
+    "submission_url": "https://codeforces.com/contest/508/submission/78421440",
+    "tags": [
+      "dp",
+      "greedy",
+      "*2200"
+    ],
+    "timestamp": "Apr/29/2020 02:06"
+  },
   "CF78674232": {
     "contest_id": 1348,
     "language": "GNU C++17 (64)",
