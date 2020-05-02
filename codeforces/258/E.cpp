@@ -38,7 +38,7 @@ struct qnode {
 
 ll tim, n, m, start[sz], stop[sz], ans[sz];
 
-const ll psz = 4*sz + sz*100;
+const ll psz = 4*sz + 2*sz*54;
 int root[psz], val[psz], lazy[psz], Left[psz], Right[psz], per = 0;
 
 void build(ll lo, ll hi, ll node)
@@ -114,16 +114,17 @@ void dfs(ll u, ll p)
 
 void ans_dfs(ll u, ll p)
 {
-    int lastPer = per;
     root[u] = root[p];
-    
+    //cout << u << endl;
     for(ll &idx : got[u]) {
         ll a = qry[idx].a, b = qry[idx].b;
 
         root[u] = update(1, tim, start[a], stop[a], 1, root[u]);
         root[u] = update(1, tim, start[b], stop[b], 1, root[u]);
     }
-    
+    //cout << u << "  " << 5 << " " << n << endl;
+
+    int lastPer = per;
     ans[u] = val[ root[u] ] - 1;
 
     for(ll &v : g[u]) {
