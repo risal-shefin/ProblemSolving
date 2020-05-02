@@ -36,64 +36,69 @@ struct qnode {
     ll a, b;
 } qry[sz];
 
-ll tim, n, m, start[sz], stop[sz], ans[sz], tree[4*sz], lazy[4*sz];
+ll tim, n, m, start[sz], stop[sz], ans[sz];
 
-struct info {
-    ll tree, lazy, node;
-};
-stack <info> rollback;
+const ll psz = 4*sz + sz*100;
+int root[psz], val[psz], lazy[psz], Left[psz], Right[psz], per = 0;
 
 void build(ll lo, ll hi, ll node)
 {
     if(lo == hi) {
-        tree[node] = 0, lazy[node] = -1;
+        val[node] = 0, lazy[node] = -1;
         return;
     }
 
     ll mid = lo+hi >> 1;
+    Left[node] = ++per, Right[node] = ++per;
 
-    build(lo, mid, node<<1);
-    build(mid+1, hi, node<<1 | 1);
+    build(lo, mid, Left[node]);
+    build(mid+1, hi, Right[node]);
 
-    tree[node] = 0, lazy[node] = -1;
+    val[node] = 0, lazy[node] = -1;
 }
 
-void prop(ll lo, ll hi, ll node)
+int update_prop(int l, int r, int v, int node)
 {
-    if(lo == hi) return;
+    int nnode = ++per;
+    val[nnode] = (r-l+1) * v;
+    lazy[nnode] = v;
+    Left[nnode] = Left[node], Right[nnode] = Right[node];
 
-    ll mid = lo+hi >> 1, l = node<<1, r = node<<1 | 1;
-
-    rollback.push({tree[l], lazy[l], l}), rollback.push({tree[r], lazy[r], r});
-
-    tree[l] = (mid-lo+1) * lazy[node], tree[r] = (hi - mid) * lazy[node];
-    lazy[l] = lazy[r] = lazy[node];
-
-    rollback.push({tree[node], lazy[node], node});
-    lazy[node] = -1;
+    return nnode;
 }
 
-void update(ll lo, ll hi, ll l, ll r, ll v, ll node)
+int update(ll lo, ll hi, ll l, ll r, ll v, ll node)
 {
-    if(lo > r || hi < l) return;
+    if(lo > r || hi < l) return node;
+
+    int nnode = ++per;
 
     if(lo >= l && hi <= r) {
-        rollback.push({tree[node], lazy[node], node});
+        val[nnode] = (hi - lo + 1) * v;
+        lazy[nnode] = v;
 
-        tree[node] = (hi - lo + 1) * v;
-        lazy[node] = v;
-        return;
+        Left[nnode] = Left[node];
+        Right[nnode] = Right[node];
+
+        return nnode;
     }
-
-    if(lazy[node] != -1) prop(lo, hi, node);
 
     ll mid = lo+hi >> 1;
 
-    update(lo, mid, l, r, v, node<<1);
-    update(mid+1, hi, l, r, v, node<<1 | 1);
+    lazy[nnode] = lazy[node], Left[nnode] = Left[node], Right[nnode] = Right[node];
 
-    rollback.push({tree[node], lazy[node], node});
-    tree[node] = tree[node << 1] + tree[node<<1 | 1];
+    if(lazy[nnode] != -1) {
+        Left[nnode] = update_prop(lo, mid, lazy[nnode], Left[nnode]);
+        Right[nnode] = update_prop(mid+1, hi, lazy[nnode], Right[nnode]);
+        lazy[nnode] = -1;
+    }
+
+    Left[nnode] = update(lo, mid, l, r, v, Left[nnode]);
+    Right[nnode] = update(mid+1, hi, l, r, v, Right[nnode]);
+
+    val[nnode] = val[ Left[nnode] ] + val[ Right[nnode] ];
+
+    return nnode;
 }
 
 void dfs(ll u, ll p)
@@ -109,29 +114,24 @@ void dfs(ll u, ll p)
 
 void ans_dfs(ll u, ll p)
 {
-    int stSize = rollback.size();
-
+    int lastPer = per;
+    root[u] = root[p];
+    
     for(ll &idx : got[u]) {
         ll a = qry[idx].a, b = qry[idx].b;
 
-        update(1, tim, start[a], stop[a], 1, 1);
-        update(1, tim, start[b], stop[b], 1, 1);
+        root[u] = update(1, tim, start[a], stop[a], 1, root[u]);
+        root[u] = update(1, tim, start[b], stop[b], 1, root[u]);
     }
-
-    ans[u] = tree[1] - 1;
+    
+    ans[u] = val[ root[u] ] - 1;
 
     for(ll &v : g[u]) {
         if(v == p)
             continue;
         ans_dfs(v, u);
     }
-
-    while(rollback.size() != stSize) {
-        info u = rollback.top();
-        rollback.pop();
-
-        tree[u.node] = u.tree, lazy[u.node] = u.lazy;
-    }
+    per = lastPer;
 }
 
 int main()
@@ -157,7 +157,8 @@ int main()
 
     dfs(1, -1);
 
-    build(1, tim, 1);
+    root[0] = ++per;
+    build(1, tim, root[0]);
 
     ans_dfs(1, 0);
 
