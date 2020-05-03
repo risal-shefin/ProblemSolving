@@ -14752,6 +14752,25 @@
     ],
     "timestamp": "May/03/2020 02:39"
   },
+  "CF78891062": {
+    "contest_id": 1348,
+    "language": "GNU C++17",
+    "path": "codeforces\\1348\\E.cpp",
+    "platform": "Codeforces",
+    "problem_index": "E",
+    "problem_name": "Phoenix and Berries",
+    "problem_url": "https://codeforces.com/contest/1348/problem/E",
+    "submission_id": "CF78891062",
+    "submission_url": "https://codeforces.com/contest/1348/submission/78891062",
+    "tags": [
+      "brute force",
+      "dp",
+      "greedy",
+      "math",
+      "*2400"
+    ],
+    "timestamp": "May/03/2020 18:28"
+  },
   "CF78891118": {
     "contest_id": 1348,
     "language": "GNU C++17 (64)",
