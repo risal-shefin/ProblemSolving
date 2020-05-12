@@ -3611,6 +3611,26 @@
     ],
     "timestamp": "Sep/16/2021 03:19"
   },
+  "CF79924920": {
+    "contest_id": 455,
+    "language": "GNU C++17",
+    "path": "codeforces\\455\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Civilization",
+    "problem_url": "https://codeforces.com/contest/455/problem/C",
+    "submission_id": "CF79924920",
+    "submission_url": "https://codeforces.com/contest/455/submission/79924920",
+    "tags": [
+      "dfs and similar",
+      "dp",
+      "dsu",
+      "ternary search",
+      "trees",
+      "*2100"
+    ],
+    "timestamp": "May/13/2020 03:31"
+  },
   "CF79924933": {
     "contest_id": 1245,
     "language": "GNU C++17",
