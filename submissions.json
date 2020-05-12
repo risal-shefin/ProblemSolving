@@ -3611,6 +3611,23 @@
     ],
     "timestamp": "Sep/16/2021 03:19"
   },
+  "CF79924912": {
+    "contest_id": 369,
+    "language": "GNU C++17",
+    "path": "codeforces\\369\\E.cpp",
+    "platform": "Codeforces",
+    "problem_index": "E",
+    "problem_name": "Valera and Queries",
+    "problem_url": "https://codeforces.com/contest/369/problem/E",
+    "submission_id": "CF79924912",
+    "submission_url": "https://codeforces.com/contest/369/submission/79924912",
+    "tags": [
+      "binary search",
+      "data structures",
+      "*2200"
+    ],
+    "timestamp": "May/13/2020 03:30"
+  },
   "CF79924920": {
     "contest_id": 455,
     "language": "GNU C++17",
