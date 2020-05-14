@@ -37,9 +37,9 @@ struct query {
     ll l, r, i;
 } qry[sz];
 
-const bool compare(const query &a, const query &b)
+bool compare(const query &a, const query &b)
 {
-    int tmp = a.l / block;
+    ll tmp = a.l / block;
     if(tmp != b.l / block)
         return a.l < b.l;
 
@@ -49,24 +49,18 @@ const bool compare(const query &a, const query &b)
     return a.r > b.r;
 }
 
-inline ll sq(ll num) {return num*num;}
-
-inline void del(int indx)
+inline void del(ll indx)
 {
-    ll &val = ara[indx];
-
-    answer -= sq(cnt[val]) * val;
-    --cnt[val];
-    answer += sq(cnt[val]) * val;
+    answer -= (cnt[ ara[indx] ] * cnt[ ara[indx] ]) * ara[indx];
+    cnt[ ara[indx] ]--;
+    answer += (cnt[ ara[indx] ] * cnt[ ara[indx] ]) * ara[indx];
 }
 
-inline void add(int indx)
+inline void add(ll indx)
 {
-    ll &val = ara[indx];
-
-    answer -= sq(cnt[val]) * val;
-    ++cnt[val];
-    answer += sq(cnt[val]) * val;
+    answer -= (cnt[ ara[indx] ] * cnt[ ara[indx] ]) * ara[indx];
+    cnt[ ara[indx] ]++;
+    answer += (cnt[ ara[indx] ] * cnt[ ara[indx] ]) * ara[indx];
 }
 int main()
 {
