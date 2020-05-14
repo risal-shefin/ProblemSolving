@@ -29,7 +29,7 @@ using namespace std;
 #define EL '\n'
 #define fastio std::ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 
-#define block 900
+#define block 450
 const ll sz = 2e5 + 10;
 ll ara[sz], ans[sz], answer = 0, cnt[1000009];
 
@@ -37,9 +37,9 @@ struct query {
     ll l, r, i;
 } qry[sz];
 
-bool compare(const query &a, const query &b)
+const bool compare(const query &a, const query &b)
 {
-    ll tmp = a.l / block;
+    int tmp = a.l / block;
     if(tmp != b.l / block)
         return a.l < b.l;
 
@@ -49,18 +49,24 @@ bool compare(const query &a, const query &b)
     return a.r > b.r;
 }
 
-inline void del(ll indx)
+inline ll sq(ll num) {return num*num;}
+
+inline void del(int indx)
 {
-    answer -= (cnt[ ara[indx] ] * cnt[ ara[indx] ]) * ara[indx];
-    cnt[ ara[indx] ]--;
-    answer += (cnt[ ara[indx] ] * cnt[ ara[indx] ]) * ara[indx];
+    ll &val = ara[indx];
+
+    answer -= sq(cnt[val]) * val;
+    --cnt[val];
+    answer += sq(cnt[val]) * val;
 }
 
-inline void add(ll indx)
+inline void add(int indx)
 {
-    answer -= (cnt[ ara[indx] ] * cnt[ ara[indx] ]) * ara[indx];
-    cnt[ ara[indx] ]++;
-    answer += (cnt[ ara[indx] ] * cnt[ ara[indx] ]) * ara[indx];
+    ll &val = ara[indx];
+
+    answer -= sq(cnt[val]) * val;
+    ++cnt[val];
+    answer += sq(cnt[val]) * val;
 }
 int main()
 {
