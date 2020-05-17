@@ -35,7 +35,7 @@ struct pt {
     double x, y;
 };
 
-inline pt rot(pt c, pt p, double a)
+pt rot(pt p, pt c, double a)
 {
     p.x -= c.x, p.y -= c.y;
     pt ret = p;
@@ -48,16 +48,18 @@ inline pt rot(pt c, pt p, double a)
     return ret;
 }
 
-ll n, v;
-double angle;
+ll n;
 
 double solve(pt now, pt b)
 {
+    pt now2 = now, b2 = b;
+    ll v = 2*n;
+    double angle = (v-2) * pi / v;
     double minx = min(b.x, now.x), maxx = max(b.x,now.x), miny = min(b.y,now.y), maxy = max(b.y,now.y);
 
     for(ll i = 1; i <= v-2; i++) {
         pt tmp = now;
-        now = rot(now, b, angle);
+        now = rot(b, now, angle);
         b = tmp;
 
         minx = min(minx, now.x), maxx = max(maxx, now.x);
@@ -69,22 +71,27 @@ double solve(pt now, pt b)
 
 int main()
 {
-    ll t, cnt;
+    n = 3;
+    solve({0,0}, {1,0});
+
+    ll t;
     cin >> t;
     while(t--) {
         sl(n);
-        v = 2*n, angle = (v-2) * pi / v, cnt = 100;
+        ll v = 2 * n, cnt = 100;
 
-        pt now = {0, 0}, b = {1, 0}, newb;
+        double angle = (v-2) * pi / v, ad = 0;
+
+        pt now = {0, 0}, b = {1, 0};
 
         double lo = 0, hi = pi - angle, ans = inf;
         while(cnt--) {
             double mid1 = (2*lo + hi) / 3, mid2 = (lo + 2*hi) / 3;
 
-            newb = rot(now, b, mid1);
+            pt newb = rot(b, now, mid1);
             double ans1 = solve(now, newb);
 
-            newb = rot(now, b, mid2);
+            newb = rot(b, now, mid2);
             double ans2 = solve(now, newb);
 
             if(ans1 < ans2) {
