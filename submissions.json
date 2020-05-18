@@ -3611,6 +3611,27 @@
     ],
     "timestamp": "Sep/16/2021 03:19"
   },
+  "CF80622621": {
+    "contest_id": 1354,
+    "language": "GNU C++17",
+    "path": "codeforces\\1354\\F.cpp",
+    "platform": "Codeforces",
+    "problem_index": "F",
+    "problem_name": "Summoning Minions",
+    "problem_url": "https://codeforces.com/contest/1354/problem/F",
+    "submission_id": "CF80622621",
+    "submission_url": "https://codeforces.com/contest/1354/submission/80622621",
+    "tags": [
+      "constructive algorithms",
+      "dp",
+      "flows",
+      "graph matchings",
+      "greedy",
+      "sortings",
+      "*2500"
+    ],
+    "timestamp": "May/18/2020 22:28"
+  },
   "CF80623569": {
     "contest_id": 1354,
     "language": "GNU C++17",

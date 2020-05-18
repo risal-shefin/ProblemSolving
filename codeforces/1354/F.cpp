@@ -40,42 +40,44 @@ const bool operator <(const info &a, const info &b) {
     return a.b < b.b;
 }
 
-ll solve(ll pos, ll last, ll taken)
+ll solve(ll pos, ll bad, ll taken)
 {
     if(pos > n) {
         if(taken < k) return -inf;
         return 0;
     }
 
-    ll &ret = dp[pos][last][taken];
+    ll &ret = dp[pos][bad][taken];
     if(ret != -1)
         return ret;
 
-    if(pos == last) return ret = solve(pos+1, last, taken);
+    if(pos == bad) return ret = solve(pos+1, bad, taken);
 
     ll notTakeAdd = k*ara[pos].b, takeAdd = ara[pos].a + taken*ara[pos].b;
-
-    ll rt = notTakeAdd + solve(pos+1, last, taken);
+    ll rt = notTakeAdd + solve(pos+1, bad, taken);
     if(taken < k)
-        rt = max(rt, takeAdd + solve(pos+1, last, taken+1));
+        rt = max(rt, takeAdd + solve(pos+1, bad, taken+1));
 
     return ret = rt;
 }
 
-void assign_ans(ll pos, ll last, ll taken, ll sum)
+void assign_ans(ll pos, ll bad, ll taken, ll sum)
 {
     if(pos > n) return;
+    if(pos == bad) {
+        assign_ans(pos+1, bad, taken, sum);
+        return;
+    }
+    ll rest1 = sum - k*ara[pos].b, rest2 = sum - (ara[pos].a+ taken*ara[pos].b);
 
-    ll notTakeAdd = k*ara[pos].b, takeAdd = ara[pos].a + taken*ara[pos].b;
-    ll rest1 = sum - notTakeAdd, rest2 = sum - takeAdd;
-
-    if(pos == last || solve(pos+1, last, taken) == rest1) {
-        assign_ans(pos+1, last, taken, pos==last? sum : rest1);
+    //cout << rest1 << " || " << ara[pos].id << " " << solve(pos+1, bad, taken) << endl;
+    if(solve(pos+1, bad, taken) == rest1) {
+        assign_ans(pos+1, bad, taken, rest1);
         return;
     }
 
     ans[++ida] = ara[pos].id, take[pos] = 1;
-    assign_ans(pos+1, last, taken+1, rest2);
+    assign_ans(pos+1, bad, taken+1, rest2);
 }
 
 int main()
@@ -94,7 +96,7 @@ int main()
         ll last, mx = -inf;
         ms(dp, -1);
         for1(i, n) {
-            ll got = solve(1, i, 0) + ara[i].a + k*ara[i].b;
+            ll got = solve(1, i, 0) + ara[i].a + ara[i].b*k;
             if(got > mx) {
                 mx = got;
                 last = i;
@@ -103,7 +105,7 @@ int main()
 
         ida = 0;
         ms(take, 0);
-        assign_ans(1, last, 0, mx - (ara[last].a + k*ara[last].b) );
+        assign_ans(1, last, 0, mx - (ara[last].a + ara[last].b*k) );
 
         for1(i, n) {
             if(take[i] || last == i) continue;
