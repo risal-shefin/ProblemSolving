@@ -30,7 +30,7 @@ using namespace std;
 
 const ll MAX = 1e9, last = 1e18;
 const ll MAX4 = (ll)1e9 / (2*2), lim4 = cbrtl(MAX4);
-vector <ll> p, lst, factor[16], pf;
+vector <ll> p, lst, factor[20], pf;
 bool mark[lim4 + 10];
 
 ll makeNum(ll p1, ll p2)
@@ -52,21 +52,6 @@ ll factorCount(ll &val, ll p1)
     return cnt;
 }
 
-void genQueryList() {
-    ll mul = 1;
-    for(ll &prime : p) {
-        if(mul > last / prime) {
-            lst.pb(mul);
-            mul = prime;
-        }
-        else
-            mul *= prime;
-
-        factor[lst.size()].pb(prime);
-    }
-    if(mul > 1) lst.pb(mul);
-}
-
 inline ll ask(ll num) {
     cout << "? " << num << endl;
     ll g; cin >> g;
@@ -85,7 +70,20 @@ int main()
         }
     }
 
-    genQueryList();
+    ll mul = 1, ptr = 0;
+    for(ll i = p.size() - 1; i >= ptr; i--) {
+        mul = p[i], factor[lst.size()].pb(p[i]);
+        while(ptr < i) {
+            ll rhs = last / p[ptr];
+            if(mul > rhs) break;
+
+            mul *= p[ptr];
+            factor[lst.size()].pb(p[ptr]);
+            ptr++;
+        }
+
+        lst.pb(mul);
+    }
 
     ll t;
     cin >> t;
