@@ -32,6 +32,7 @@ const ll MAX = 1e9, last = 1e18;
 const ll MAX4 = (ll)1e9 / (2*2), lim4 = cbrtl(MAX4);
 vector <ll> p, lst, factor[20], pf;
 bool mark[lim4 + 10];
+ll tinyp[] = {2,3};
 
 ll makeNum(ll p1, ll p2)
 {
@@ -53,25 +54,27 @@ ll factorCount(ll &val, ll p1)
 }
 
 inline ll ask(ll num) {
+    ll g;
     cout << "? " << num << endl;
-    ll g; cin >> g;
+    cin >> g;
     return g;
 }
 
 int main()
 {
     fastio;
+
     for(ll i = 2; i <= lim4; i++) {
         if(mark[i] == 0) {
             for(ll j = i*i; j <= lim4; j += i)
                 mark[j] = 1;
 
-            p.pb(i);
+            if(i>=5) p.pb(i);
         }
     }
 
     ll mul = 1, ptr = 0;
-    for(ll i = p.size() - 1; i >= ptr; i--) {
+    for(ll i = p.size() - 1; i >= 0 && i >= ptr; i--) {
         mul = p[i], factor[lst.size()].pb(p[i]);
         while(ptr < i) {
             ll rhs = last / p[ptr];
@@ -85,16 +88,28 @@ int main()
         lst.pb(mul);
     }
 
+    ll twr = makeNum(2, 3);
+
     ll t;
     cin >> t;
     while(t--) {
+        ll g23 = ask(twr);
+
         ll ans = 1;
+        for0(i, 2) {
+            ll now = tinyp[i], val = g23;
+
+            ll cnt = factorCount(val, now);
+            ans *= (cnt+1);
+        }
 
         for(ll i = 0; i < lst.size(); i++) {
             ll g = ask(lst[i]);
+            if(g == 1) continue;
 
-            for(ll &f : factor[i])
+            for(ll &f : factor[i]) {
                 if(g % f == 0) pf.pb(f);
+            }
         }
 
         for(ll i = 0; i < pf.size(); i += 2) {
