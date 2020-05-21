@@ -4,7 +4,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define ll long long
+#define ll int
 #define ull unsigned long long
 #define dd double
 #define ld long double
@@ -57,10 +57,10 @@ int main()
     cin >> t;
     while(t--) {
         ll n, m, u, v;
-        sl(n), sl(m);
+        si(n), si(m);
 
         for1(i, m) {
-            sl(u), sl(v);
+            si(u), si(v);
             g[u].pb(v);
             rev[v].pb(u);
         }
@@ -90,13 +90,13 @@ int main()
 
             for0(i, jury.size()) {
                 if(i != 0) pf(" ");
-                pf("%lld", jury[i]);
+                pf("%d", jury[i]);
             }
             pn;
 
             for0(i, cat.size()) {
                 if(i != 0) pf(" ");
-                pf("%lld", cat[i]);
+                pf("%d", cat[i]);
             }
             pn;
         }
