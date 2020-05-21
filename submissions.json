@@ -3611,6 +3611,23 @@
     ],
     "timestamp": "Sep/16/2021 03:19"
   },
+  "CF80859813": {
+    "contest_id": 1248,
+    "language": "GNU C++17",
+    "path": "codeforces\\1248\\F.cpp",
+    "platform": "Codeforces",
+    "problem_index": "F",
+    "problem_name": "Catowice City",
+    "problem_url": "https://codeforces.com/contest/1248/problem/F",
+    "submission_id": "CF80859813",
+    "submission_url": "https://codeforces.com/contest/1248/submission/80859813",
+    "tags": [
+      "dfs and similar",
+      "graphs",
+      "*2400"
+    ],
+    "timestamp": "May/21/2020 20:09"
+  },
   "CF81488948": {
     "contest_id": 1358,
     "language": "GNU C++17",
