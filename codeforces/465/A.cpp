@@ -33,12 +33,16 @@ char bt[105];
 
 int main()
 {
-    ll n, ans = 0;
-    cin >> n >> bt;
+    ll n;
+    cin >> n >> (bt+1);
 
-    for0(i, n) {
-        ans++;
-        if(bt[i] == '0') break;
+    ll c = 1, ans = 0;
+    for1(i, n) {
+        ll s = c + bt[i] - '0';
+        c = s / 2;
+        s = s % 2;
+
+        if(s != (bt[i] - '0') ) ans++;
     }
 
     cout << ans << endl;
