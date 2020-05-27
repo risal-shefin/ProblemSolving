@@ -3611,6 +3611,25 @@
     ],
     "timestamp": "Sep/16/2021 03:19"
   },
+  "CF81627199": {
+    "contest_id": 1358,
+    "language": "GNU C++17",
+    "path": "codeforces\\1358\\E.cpp",
+    "platform": "Codeforces",
+    "problem_index": "E",
+    "problem_name": "Are You Fired?",
+    "problem_url": "https://codeforces.com/contest/1358/problem/E",
+    "submission_id": "CF81627199",
+    "submission_url": "https://codeforces.com/contest/1358/submission/81627199",
+    "tags": [
+      "constructive algorithms",
+      "data structures",
+      "greedy",
+      "implementation",
+      "*2400"
+    ],
+    "timestamp": "May/27/2020 20:16"
+  },
   "CF81657843": {
     "contest_id": 465,
     "language": "GNU C++17",
