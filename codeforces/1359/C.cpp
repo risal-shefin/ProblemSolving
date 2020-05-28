@@ -30,15 +30,15 @@ using namespace std;
 #define fastio std::ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 
 ll h, c, t, ans;
-ld diff;
+long double diff;
 
-inline ld solve(ll k)
+inline long double solve(ll k)
 {
     ll htake = (k+1) / 2, ctake = (k-1) / 2;
-    return (ld)(htake * h + ctake * c) / k;
+    return (htake * h + ctake * c) / (k * 1.0);
 }
 
-inline void update_ans(ld d, ll k)
+inline void update_ans(long double d, ll k)
 {
     if(d < diff)
     {
@@ -57,7 +57,7 @@ int main()
         ans = 2;
         sl(h), sl(c), sl(t);
 
-        ld nowt = (ld)(h+c) / 2;
+        long double nowt = (h+c) / 2.0;
         diff = abs(t - nowt);
 
         ll lo = 1, hi = 1 + 1e12, cnt = 200;
@@ -65,8 +65,8 @@ int main()
             ll mid = (lo+hi) / 2;
             if(mid % 2 == 0) mid++;
 
-            ld tval1 = solve(mid), tval2 = solve(mid+2);
-            ld d1 = abs(t-tval1), d2 = abs(t-tval2);
+            long double tval1 = solve(mid), tval2 = solve(mid+2);
+            long double d1 = abs(t-tval1), d2 = abs(t-tval2);
 
             //cout << lo << " " << hi << " " << mid << endl;
 
@@ -80,7 +80,7 @@ int main()
             }
         }
 
-        ld tmp = solve(lo), d = abs(tmp - t);
+        long double tmp = solve(lo), d = abs(tmp - t);
         update_ans(d, lo);
         tmp = solve(hi), d = abs(tmp - t);
         update_ans(d, hi);
@@ -91,3 +91,4 @@ int main()
 
     return 0;
 }
+
