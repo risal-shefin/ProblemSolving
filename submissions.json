@@ -3611,6 +3611,23 @@
     ],
     "timestamp": "Sep/16/2021 03:19"
   },
+  "CF81917259": {
+    "contest_id": 479,
+    "language": "GNU C++17",
+    "path": "codeforces\\479\\A.cpp",
+    "platform": "Codeforces",
+    "problem_index": "A",
+    "problem_name": "Expression",
+    "problem_url": "https://codeforces.com/contest/479/problem/A",
+    "submission_id": "CF81917259",
+    "submission_url": "https://codeforces.com/contest/479/submission/81917259",
+    "tags": [
+      "brute force",
+      "math",
+      "*1000"
+    ],
+    "timestamp": "May/29/2020 23:49"
+  },
   "CF81927458": {
     "contest_id": 483,
     "language": "GNU C++17",
