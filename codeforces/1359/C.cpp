@@ -60,13 +60,15 @@ int main()
         ld nowt = (ld)(h+c) / 2;
         diff = abs(t - nowt);
 
-        ll lo = 1, hi = 1 + 1e12;
-        while(lo + 1 < hi) {
+        ll lo = 1, hi = 1 + 1e12, cnt = 200;
+        while(cnt-- && lo + 1 < hi) {
             ll mid = (lo+hi) / 2;
-            if(mid % 2 == 0) mid--;
+            if(mid % 2 == 0) mid++;
 
             ld tval1 = solve(mid), tval2 = solve(mid+2);
             ld d1 = abs(t-tval1), d2 = abs(t-tval2);
+
+            //cout << lo << " " << hi << " " << mid << endl;
 
             if(d1 <= d2) {
                 hi = mid;
@@ -77,6 +79,12 @@ int main()
                 update_ans(d2, mid+2);
             }
         }
+
+        ld tmp = solve(lo), d = abs(tmp - t);
+        update_ans(d, lo);
+        tmp = solve(hi), d = abs(tmp - t);
+        update_ans(d, hi);
+
 
         pf("%lld\n", ans);
     }
