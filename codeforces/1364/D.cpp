@@ -1,6 +1,3 @@
-// #pragma GCC optimize("Ofast,unroll-loops")
-// #pragma GCC target("avx,avx2,fma")
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -15,50 +12,40 @@ using namespace std;
 #define pii pair <int, int>
 #define mp make_pair
 #define pb push_back
-#define all(v) v.begin(), v.end()
 #define inf (1LL << 62)
 #define loop(i, start, stop, inc) for(ll i = start; i <= stop; i += inc)
-#define for1(i, stop) for(ll i = 1; i <= stop; ++i)
-#define for0(i, stop) for(ll i = 0; i < stop; ++i)
-#define rep1(i, start) for(ll i = start; i >= 1; --i)
-#define rep0(i, start) for(ll i = (start-1); i >= 0; --i)
+#define for1(i, stop) for(ll i = 1; i <= stop; i++)
+#define for0(i, stop) for(ll i = 0; i < stop; i++)
+#define rep1(i, start) for(ll i = start; i >= 1; i--)
+#define rep0(i, start) for(ll i = (start-1); i >= 0; i--)
 #define ms(n, i) memset(n, i, sizeof(n))
 #define casep(n) printf("Case %lld:", ++n)
 #define pn printf("\n")
 #define pf printf
-#define EL '\n'
 #define fastio std::ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 
 const ll sz = 1e5 + 10;
-vector <int> g[sz], ans;
-
-struct node {
-    int con, u;
-};
-const bool operator <(const node &a, const node &b) {
-    if(a.con != b.con)
-        return a.con < b.con;
-    return a.u < b.u;
-}
-set <node> lst;
-
-ll n, m, k, vis[sz], cyc = inf, par[sz], lev[sz], cnt[sz];
-pii cycle;
+ll k, cyc = inf, par[sz], lev[sz];
+vector <ll> g[sz], ans;
+pll cycle;
+bool vis[sz];
 
 void cycle_dfs(ll u, ll p, ll d)
 {
     if(vis[u] == 1) {
-        ll len = lev[p] - lev[u] + 1;
-        if(len >= 3 && len < cyc) {
+        ll len = abs(lev[p] - lev[u]) + 1;
+        //cout << u << " || " << p << " || " << lev[u] << " " << lev[p] << " " << len << endl;
+        if(len < cyc) {
             cyc = len;
             cycle = mp(p, u);
         }
         return;
     }
 
-    lev[u] = d, par[u] = p, vis[u] = 1;
-    for(int &v : g[u]) {
-        if(v == p || vis[v] == 2)
+    par[u] = p, lev[u] = d, vis[u] = 1;
+    for(ll v : g[u]) {
+
+        if(v == p || v == par[u] || vis[v] == 2)
             continue;
 
         cycle_dfs(v, u, d+1);
@@ -66,8 +53,12 @@ void cycle_dfs(ll u, ll p, ll d)
     vis[u] = 2;
 }
 
+ll con[sz];
+set <pii> lst;
+
 int main()
 {
+    ll n, m;
     cin >> n >> m >> k;
     for1(i, m) {
         ll u, v;
@@ -77,32 +68,41 @@ int main()
         g[v].pb(u);
     }
 
-    for1(i, n) cnt[i] = g[i].size(), lst.insert({cnt[i], i});
+    for1(i, n) {
+        con[i] = g[i].size();
+        lst.insert(mp(con[i], i));
+    }
 
-    while(!lst.empty() && ans.size() < (k+1)/2) {
-        node now = *lst.begin();
-        lst.erase(now);
-        ans.pb(now.u);
+    ll half = k / 2;
+    if(k & 1) half++;
+    while(ans.size() < half && !lst.empty()) {
+        pll p = *lst.begin();
+        lst.erase(p);
+        ans.push_back(p.second);
 
-        for(int &v : g[now.u]) {
-            if(lst.find({cnt[v], v}) != lst.end()) lst.erase({cnt[v], v});
+        for(ll &v : g[p.second]) {
 
-            for(int &w : g[v]) {
-                auto it = lst.find({cnt[w], w});
-                if(it == lst.end())
-                    continue;
+            auto it = lst.find(mp(con[v], v));
+            if(it == lst.end()) continue;
+            lst.erase(it);
+
+            for(ll &w : g[v]) {
+                it = lst.find(mp(con[w], w));
+                if(it == lst.end()) continue;
 
                 lst.erase(it);
-                lst.insert({--cnt[w], w});
+                con[w]--;
+                lst.insert(mp(con[w], w));
             }
         }
     }
 
-    if(ans.size() == (k+1)/2) {
+    if(ans.size() == half) {
         pf("1\n");
         for0(i, (ll)ans.size()) {
-            if(i != 0) pf(" ");
-            pf("%d", ans[i]);
+            if(i != 0)
+                pf(" ");
+            pf("%lld", ans[i]);
         }
         pn;
         return 0;
@@ -110,12 +110,13 @@ int main()
 
     cycle_dfs(1, -1, 0);
 
-    pf("2\n%lld\n%lld", cyc, cycle.first);
+    pf("2\n%lld\n", cyc);
+    pf("%lld", cycle.first);
 
-    ll now = cycle.first;
-    while(now != cycle.second) {
-        now = par[now];
-        pf(" %lld", now);
+    ll cur = cycle.first;
+    while(cur != cycle.second) {
+        cur = par[cur];
+        pf(" %lld", cur);
     }
     pn;
 
