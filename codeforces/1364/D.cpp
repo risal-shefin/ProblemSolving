@@ -1,4 +1,3 @@
-
 // #pragma GCC optimize("Ofast,unroll-loops")
 // #pragma GCC target("avx,avx2,fma")
 
@@ -31,38 +30,40 @@ using namespace std;
 #define fastio std::ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 
 const ll sz = 1e5 + 10;
-vector <int> g[sz], cyc, col[2];
-ll n, m, k, lev[sz], par[sz];
-bool vis[sz];
+vector <int> g[sz], ans;
 
-void dfs(ll u, ll p, ll d)
+struct node {
+    int con, u;
+};
+const bool operator <(const node &a, const node &b) {
+    if(a.con != b.con)
+        return a.con < b.con;
+    return a.u < b.u;
+}
+set <node> lst;
+
+ll n, m, k, vis[sz], cyc = inf, par[sz], lev[sz], cnt[sz];
+pii cycle;
+
+void cycle_dfs(ll u, ll p, ll d)
 {
-    if(!cyc.empty()) return;
-    col[d & 1].pb(u);
-
-    par[u] = p, lev[u] = d, vis[u] = 1;
-
-    ll low = -inf, cycStart = -1;
-    for(int &v : g[u]) {
-        if(v != p && lev[v] < d && lev[v] > low) {
-            low = lev[v];
-            cycStart = v;
+    if(vis[u] == 1) {
+        ll len = lev[p] - lev[u] + 1;
+        if(len >= 3 && len < cyc) {
+            cyc = len;
+            cycle = mp(p, u);
         }
+        return;
     }
 
-    if(cycStart != -1) cyc.pb(u);
-    while(cycStart != -1 && u != cycStart) {
-        u = par[u];
-        cyc.pb(u);
-    }
-    if(cycStart != -1) return;
-
+    lev[u] = d, par[u] = p, vis[u] = 1;
     for(int &v : g[u]) {
-        if(vis[v])
+        if(v == p || vis[v] == 2)
             continue;
 
-        dfs(v, u, d+1);
+        cycle_dfs(v, u, d+1);
     }
+    vis[u] = 2;
 }
 
 int main()
@@ -76,27 +77,46 @@ int main()
         g[v].pb(u);
     }
 
-    for1(i, n) lev[i] = inf;
-    dfs(1, -1, 1);
+    for1(i, n) cnt[i] = g[i].size(), lst.insert({cnt[i], i});
 
-    if(m == n-1) {
+    while(!lst.empty() && ans.size() < (k+1)/2) {
+        node now = *lst.begin();
+        lst.erase(now);
+        ans.pb(now.u);
+
+        for(int &v : g[now.u]) {
+            if(lst.find({cnt[v], v}) != lst.end()) lst.erase({cnt[v], v});
+
+            for(int &w : g[v]) {
+                auto it = lst.find({cnt[w], w});
+                if(it == lst.end())
+                    continue;
+
+                lst.erase(it);
+                lst.insert({--cnt[w], w});
+            }
+        }
+    }
+
+    if(ans.size() == (k+1)/2) {
         pf("1\n");
-        if(col[0].size() > col[1].size())
-            for(int i = 0; i < (k+1)/2; i++) pf("%d ", col[0][i]);
-        else
-            for(int i = 0; i < (k+1)/2; i++) pf("%d ", col[1][i]);
-
-        pn; return 0;
+        for0(i, (ll)ans.size()) {
+            if(i != 0) pf(" ");
+            pf("%d", ans[i]);
+        }
+        pn;
+        return 0;
     }
 
-    if(cyc.size() <= k) {
-        pf("2\n%lld\n", (ll)cyc.size());
-        for(int &u : cyc) pf("%d ", u);
-        pn; return 0;
-    }
+    cycle_dfs(1, -1, 0);
 
-    pf("1\n");
-    for(int i = 0, j = 1; j <= (k+1)/2; i += 2, j++) pf("%d ", cyc[i]);
+    pf("2\n%lld\n%lld", cyc, cycle.first);
+
+    ll now = cycle.first;
+    while(now != cycle.second) {
+        now = par[now];
+        pf(" %lld", now);
+    }
     pn;
 
     return 0;
