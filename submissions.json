@@ -24825,6 +24825,24 @@
     ],
     "timestamp": "Jun/20/2020 20:38"
   },
+  "CF84617510": {
+    "contest_id": 442,
+    "language": "GNU C++17",
+    "path": "codeforces\\442\\B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "Andrey and Problem",
+    "problem_url": "https://codeforces.com/contest/442/problem/B",
+    "submission_id": "CF84617510",
+    "submission_url": "https://codeforces.com/contest/442/submission/84617510",
+    "tags": [
+      "greedy",
+      "math",
+      "probabilities",
+      "*1800"
+    ],
+    "timestamp": "Jun/22/2020 03:14"
+  },
   "CF84619146": {
     "contest_id": 126,
     "language": "GNU C++17 (64)",
