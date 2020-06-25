@@ -24858,6 +24858,25 @@
     ],
     "timestamp": "Jun/22/2020 17:59"
   },
+  "CF84957178": {
+    "contest_id": 389,
+    "language": "GNU C++17",
+    "path": "codeforces\\389\\D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "Fox and Minimal path",
+    "problem_url": "https://codeforces.com/contest/389/problem/D",
+    "submission_id": "CF84957178",
+    "submission_url": "https://codeforces.com/contest/389/submission/84957178",
+    "tags": [
+      "constructive algorithms",
+      "graphs",
+      "implementation",
+      "shortest paths",
+      "*1900"
+    ],
+    "timestamp": "Jun/25/2020 15:48"
+  },
   "CF84985421": {
     "contest_id": 1373,
     "language": "GNU C++17",
