@@ -24858,6 +24858,24 @@
     ],
     "timestamp": "Jun/22/2020 17:59"
   },
+  "CF85289929": {
+    "contest_id": 1373,
+    "language": "GNU C++17",
+    "path": "codeforces\\1373\\G.cpp",
+    "platform": "Codeforces",
+    "problem_index": "G",
+    "problem_name": "Pawns",
+    "problem_url": "https://codeforces.com/contest/1373/problem/G",
+    "submission_id": "CF85289929",
+    "submission_url": "https://codeforces.com/contest/1373/submission/85289929",
+    "tags": [
+      "data structures",
+      "divide and conquer",
+      "greedy",
+      "*2600"
+    ],
+    "timestamp": "Jun/28/2020 19:14"
+  },
   "CF85467464": {
     "contest_id": 1374,
     "language": "GNU C++17",
