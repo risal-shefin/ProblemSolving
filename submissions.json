@@ -24858,6 +24858,25 @@
     ],
     "timestamp": "Jun/22/2020 17:59"
   },
+  "CF85567672": {
+    "contest_id": 1374,
+    "language": "GNU C++17",
+    "path": "codeforces\\1374\\F.cpp",
+    "platform": "Codeforces",
+    "problem_index": "F",
+    "problem_name": "Cyclic Shifts Sorting",
+    "problem_url": "https://codeforces.com/contest/1374/problem/F",
+    "submission_id": "CF85567672",
+    "submission_url": "https://codeforces.com/contest/1374/submission/85567672",
+    "tags": [
+      "brute force",
+      "constructive algorithms",
+      "implementation",
+      "sortings",
+      "*2400"
+    ],
+    "timestamp": "Jul/01/2020 00:06"
+  },
   "CF85631331": {
     "contest_id": 1371,
     "language": "GNU C++17",
