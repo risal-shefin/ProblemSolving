@@ -46,7 +46,10 @@ int main()
             mat[r++][c++] = 1;
 
             if(c > n) c = 1;
-            if(r > n) r = 1, c++;
+            if(r > n) {
+                r = 1, c++;
+                if(c > n) c = 1;
+            }
             k--;
         }
 
