@@ -1,4 +1,20 @@
 {
+  "AC14976933": {
+    "contest_id": "abc173",
+    "language": "C++ (GCC 9.2.1)",
+    "path": "atcoder\\abc173\\B.cpp",
+    "platform": "AtCoder",
+    "problem_index": "B",
+    "problem_name": "Judge Status Summary",
+    "problem_url": "https://atcoder.jp/contests/abc173/tasks/abc173_b",
+    "submission_id": "AC14976933",
+    "submission_url": "https://atcoder.jp/contests/abc173/submissions/14976933",
+    "tags": [
+      "AtCoder",
+      "*200"
+    ],
+    "timestamp": "Jul/05/2020 18:07"
+  },
   "AC14993875": {
     "contest_id": "abc173",
     "language": "C++ (GCC 9.2.1)",
