@@ -1,4 +1,20 @@
 {
+  "AC15161384": {
+    "contest_id": "aising2020",
+    "language": "C++ (GCC 9.2.1)",
+    "path": "atcoder\\aising2020\\C.cpp",
+    "platform": "AtCoder",
+    "problem_index": "C",
+    "problem_name": "XYZ Triplets",
+    "problem_url": "https://atcoder.jp/contests/aising2020/tasks/aising2020_c",
+    "submission_id": "AC15161384",
+    "submission_url": "https://atcoder.jp/contests/aising2020/submissions/15161384",
+    "tags": [
+      "AtCoder",
+      "*300"
+    ],
+    "timestamp": "Jul/11/2020 18:25"
+  },
   "AC15190710": {
     "contest_id": "aising2020",
     "language": "C++ (GCC 9.2.1)",
