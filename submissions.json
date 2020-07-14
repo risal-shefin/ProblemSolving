@@ -24858,6 +24858,25 @@
     ],
     "timestamp": "Jun/22/2020 17:59"
   },
+  "CF86867118": {
+    "contest_id": 632,
+    "language": "GNU C++17",
+    "path": "codeforces\\632\\E.cpp",
+    "platform": "Codeforces",
+    "problem_index": "E",
+    "problem_name": "Thief in a Shop",
+    "problem_url": "https://codeforces.com/contest/632/problem/E",
+    "submission_id": "CF86867118",
+    "submission_url": "https://codeforces.com/contest/632/submission/86867118",
+    "tags": [
+      "divide and conquer",
+      "dp",
+      "fft",
+      "math",
+      "*2400"
+    ],
+    "timestamp": "Jul/15/2020 03:09"
+  },
   "CF87355608": {
     "contest_id": 1385,
     "language": "GNU C++17",
