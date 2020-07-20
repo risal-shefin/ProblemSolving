@@ -24191,6 +24191,24 @@
     ],
     "timestamp": "Jun/22/2020 17:59"
   },
+  "CF87441016": {
+    "contest_id": 932,
+    "language": "GNU C++17",
+    "path": "codeforces\\932\\F.cpp",
+    "platform": "Codeforces",
+    "problem_index": "F",
+    "problem_name": "Escape Through Leaf",
+    "problem_url": "https://codeforces.com/contest/932/problem/F",
+    "submission_id": "CF87441016",
+    "submission_url": "https://codeforces.com/contest/932/submission/87441016",
+    "tags": [
+      "data structures",
+      "dp",
+      "geometry",
+      "*2700"
+    ],
+    "timestamp": "Jul/20/2020 21:04"
+  },
   "CF87441376": {
     "contest_id": 311,
     "language": "GNU C++17 (64)",
