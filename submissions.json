@@ -24858,6 +24858,23 @@
     ],
     "timestamp": "Jun/22/2020 17:59"
   },
+  "CF87424357": {
+    "contest_id": 265,
+    "language": "GNU C++17",
+    "path": "codeforces\\265\\D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "Good Sequences",
+    "problem_url": "https://codeforces.com/contest/265/problem/D",
+    "submission_id": "CF87424357",
+    "submission_url": "https://codeforces.com/contest/265/submission/87424357",
+    "tags": [
+      "dp",
+      "number theory",
+      "*1500"
+    ],
+    "timestamp": "Jul/20/2020 17:15"
+  },
   "CF87432667": {
     "contest_id": 295,
     "language": "GNU C++17",
