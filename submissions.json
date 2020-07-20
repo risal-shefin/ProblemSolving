@@ -24191,6 +24191,22 @@
     ],
     "timestamp": "Jun/22/2020 17:59"
   },
+  "CF87441394": {
+    "contest_id": 312,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\312\\D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "Cats Transport",
+    "problem_url": "https://codeforces.com/contest/312/problem/D",
+    "submission_id": "CF87441394",
+    "submission_url": "https://codeforces.com/contest/312/submission/87441394",
+    "tags": [
+      "dp",
+      "*2400"
+    ],
+    "timestamp": "Jul/20/2020 21:09"
+  },
   "CF87454663": {
     "contest_id": 451,
     "language": "GNU C++17 (64)",
