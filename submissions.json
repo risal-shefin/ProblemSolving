@@ -24858,6 +24858,26 @@
     ],
     "timestamp": "Jun/22/2020 17:59"
   },
+  "CF87440450": {
+    "contest_id": 660,
+    "language": "GNU C++17",
+    "path": "codeforces\\660\\F.cpp",
+    "platform": "Codeforces",
+    "problem_index": "F",
+    "problem_name": "Bear and Bowling 4",
+    "problem_url": "https://codeforces.com/contest/660/problem/F",
+    "submission_id": "CF87440450",
+    "submission_url": "https://codeforces.com/contest/660/submission/87440450",
+    "tags": [
+      "binary search",
+      "data structures",
+      "divide and conquer",
+      "geometry",
+      "ternary search",
+      "*2500"
+    ],
+    "timestamp": "Jul/20/2020 20:57"
+  },
   "CF87440618": {
     "contest_id": 631,
     "language": "GNU C++17",
