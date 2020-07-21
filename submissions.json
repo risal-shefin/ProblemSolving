@@ -24191,6 +24191,23 @@
     ],
     "timestamp": "Jun/22/2020 17:59"
   },
+  "CF87619221": {
+    "contest_id": 447,
+    "language": "GNU C++17",
+    "path": "codeforces\\447\\D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "DZY Loves Modification",
+    "problem_url": "https://codeforces.com/contest/447/problem/D",
+    "submission_id": "CF87619221",
+    "submission_url": "https://codeforces.com/contest/447/submission/87619221",
+    "tags": [
+      "data structures",
+      "greedy",
+      "*2000"
+    ],
+    "timestamp": "Jul/22/2020 05:02"
+  },
   "CF87680567": {
     "contest_id": 329,
     "language": "GNU C++17",
