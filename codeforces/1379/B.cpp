@@ -37,7 +37,7 @@ int main()
         ll l, r, m;
         sl(l), sl(r), sl(m);
 
-        ll mxbc = r - l, mnbc = l-r, b, c;
+        ll mxbc = r - l, mnbc = l-r;
 
         for(ll i = l; i <= r; i++) {
 
@@ -51,10 +51,12 @@ int main()
 
             if(rem >= mnbc && rem <= mxbc) {
 
-                if(rem < 0) b = l;
-                else b = r;
-
-                c = n*i + b - m;
+                ll b, c;
+                for(b = l; b <= r; b++) {
+                    c = n*i + b - m;
+                    if(c >= l && c <= r)
+                        break;
+                }
 
                 pf("%lld %lld %lld\n", i, b, c);
 
