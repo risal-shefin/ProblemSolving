@@ -68,6 +68,8 @@ int main()
     ll ans = 0;
     for1(i, n) {
 
+        ms(way, 0);
+
         dfs(val[i], i, -1, i);
 
         ans = (ans + way[i]) % mod;
