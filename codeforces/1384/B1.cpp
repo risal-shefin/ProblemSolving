@@ -29,53 +29,62 @@ using namespace std;
 #define EL '\n'
 #define fastio std::ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 
-const ll sz = 3e5 + 10;
+const ll sz = 105, tsz = sz*sz*2;
+ll n, k, l;
 
-ll d[sz];
+ll d[sz], p[2*sz], dp[sz][tsz];
+
+ll solve(ll pos, ll tim)
+{
+    if(pos > n) return 1;
+    if(tim > tsz) return 0;
+
+    ll &ret = dp[pos][tim];
+    if(ret != -1)
+        return ret;
+
+    ll asi = d[pos] + p[tim % (2*k)];
+    if(pos == 0) asi = 0;
+
+    //cout << pos << " " << asi << " " << tim << endl;
+    if(asi > l) return 0;
+
+    ret = 0;
+
+    ret |= solve(pos, tim+1);
+    ret |= solve(pos+1, tim+1);
+
+    return ret;
+}
 
 int main()
 {
     ll t;
     cin >> t;
     while(t--) {
-        ll n, k, l;
-        sl(n), sl(k), sl(l);
+        sl(n), sl(k),sl(l);
 
         for1(i, n) sl(d[i]);
 
-        ll tim = k+1;
-        bool ok = 1;
+        ll now = 0, incr = 1;
+        for(ll i = 0; i < 2*k; i++) {
+            p[i] = now;
 
-        for(ll i = 1; i <= n; i++) {
+            if(now == k) incr = 0;
 
-            if(d[i] + k <= l)
-                tim = k;
-            else {
-
-                ll extra = 0;
-                if(tim <= k) extra += tim;
-                else extra += (k - (tim - k));
-
-                ll depth = d[i] + extra;
-
-                if(depth > l) {
-                    if(tim <= k || d[i] > l) {
-                        ok = 0;
-                        break;
-                    }
-
-                    ll h = l - d[i];
-                    tim = k + (k - h);
-                }
-            }
-
-            tim++;
-            tim %= (2*k);
+            if(incr) now++;
+            else now--;
         }
 
-        if(ok) pf("Yes\n");
-        else pf("No\n");
+        for(ll i = 0; i <= n; i++)
+            for0(j, tsz) dp[i][j] = -1;
+
+        bool got = solve(0, 0);
+
+        if(got) pf("YES\n");
+        else pf("NO\n");
     }
 
     return 0;
 }
+
