@@ -13380,6 +13380,28 @@
     ],
     "timestamp": "Jun/20/2020 20:38"
   },
+  "CF88783447": {
+    "contest_id": 776,
+    "language": "GNU C++17",
+    "path": "codeforces\\776\\F.cpp",
+    "platform": "Codeforces",
+    "problem_index": "F",
+    "problem_name": "Sherlock's bet to Moriarty",
+    "problem_url": "https://codeforces.com/contest/776/problem/F",
+    "submission_id": "CF88783447",
+    "submission_url": "https://codeforces.com/contest/776/submission/88783447",
+    "tags": [
+      "constructive algorithms",
+      "data structures",
+      "divide and conquer",
+      "geometry",
+      "graphs",
+      "implementation",
+      "trees",
+      "*2800"
+    ],
+    "timestamp": "Aug/03/2020 14:31"
+  },
   "CF90180062": {
     "contest_id": 359,
     "language": "GNU C++17",
