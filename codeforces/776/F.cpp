@@ -38,10 +38,10 @@ struct info {
 
 const bool operator <(const info &a, const info &b) {
 
-    ll aTotalNodes = min(a.v2-a.v1-1, n-2 - (a.v2-a.v1-1));
-    ll bTotalNodes = min(b.v2-b.v1-1, n-2 - (b.v2-b.v1-1));
+    ll tot1 = min(a.v2-a.v1-1, n-2 - (a.v2-a.v1-1));
+    ll tot2 = min(b.v2-b.v1-1, n-2 - (b.v2-b.v1-1));
 
-    return aTotalNodes < bTotalNodes;
+    return tot1 < tot2;
 }
 
 vector <int> region[siz];
@@ -52,44 +52,46 @@ vector <ll> g[MAX + 9];
 ll del[MAX + 9], sz[MAX + 9], par[MAX + 9], curSize, col[siz];
 
 void dfs(ll u, ll p)
+
 {
-    sz[u] = 1;
-    for(ll i = 0; i < g[u].size(); i++) {
-        ll nd = g[u][i];
-        if(nd == p || del[nd])
-            continue;
-        dfs(nd, u);
-        sz[u] += sz[nd];
-    }
+	sz[u] = 1;
+	for(ll i = 0; i < g[u].size(); i++) {
+    	ll nd = g[u][i];
+    	if(nd == p || del[nd])
+        	continue;
+    	dfs(nd, u);
+    	sz[u] += sz[nd];
+	}
 }
 
 ll findCentroid(ll u, ll p)
-{
-    for(ll i = 0; i < g[u].size(); i++) {
-        ll nd = g[u][i];
-        if(nd == p || del[nd] || sz[nd] <= curSize / 2)
-            continue;
 
-        return findCentroid(nd, u);
-    }
-    return u;
+{
+	for(ll i = 0; i < g[u].size(); i++) {
+    	ll nd = g[u][i];
+    	if(nd == p || del[nd] || sz[nd] <= curSize / 2)
+        	continue;
+
+    	return findCentroid(nd, u);
+	}
+	return u;
 }
 
 void decompose(ll u, ll p, ll lev)
+
 {
-    dfs(u, -1);
-    curSize = sz[u];
-    ll cen = findCentroid(u, -1);
-    if(p == -1)
-        p = cen;
-    par[cen] = p, del[cen] = 1, col[cen] = lev;
+	dfs(u, -1);
+	curSize = sz[u];
+	ll cen = findCentroid(u, -1);
+	if(p == -1) p = cen;
+	par[cen] = p, del[cen] = 1, col[cen] = lev;
 
-    for(ll i = 0; i < g[cen].size(); i++) {
-        ll nd = g[cen][i];
+	for(ll i = 0; i < g[cen].size(); i++) {
+    	ll nd = g[cen][i];
 
-        if(!del[nd])
-            decompose(nd, cen, lev+1);
-    }
+    	if(!del[nd])
+        	decompose(nd, cen, lev+1);
+	}
 }
 
 int main()
