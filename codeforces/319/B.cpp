@@ -30,35 +30,9 @@ using namespace std;
 #define fastio std::ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 
 const ll sz = 1e5 + 10;
-ll ara[sz], tree[4*sz];
+ll ara[sz], step[sz];
 
-void update(ll lo, ll hi, ll idx, ll v, ll node)
-{
-    if(lo > idx || hi < idx)
-        return;
-    if(lo == hi) {
-        tree[node] = v;
-        return;
-    }
-
-    ll mid = lo+hi >> 1;
-    update(lo, mid, idx, v, node<<1);
-    update(mid+1, hi, idx, v, node<<1|1);
-
-    tree[node] = max(tree[node<<1], tree[node<<1|1]);
-}
-
-ll query(ll lo, ll hi, ll l, ll r, ll node)
-{
-    if(lo > r || hi < l)
-        return 0;
-    if(lo >= l && hi <= r)
-        return tree[node];
-
-    ll mid = lo+hi >> 1;
-    return max(query(lo, mid, l, r, node<<1),
-               query(mid+1, hi, l, r, node<<1|1));
-}
+stack <ll> psycho;
 
 int main()
 {
@@ -66,22 +40,22 @@ int main()
     cin >> n;
     for1(i, n) sl(ara[i]);
 
-    stack <ll> nearBig;
     ll ans = 0;
     for1(i, n) {
-        while(!nearBig.empty() && ara[ nearBig.top() ] < ara[i])
-            nearBig.pop();
 
-        ll step = 0;
-        if(!nearBig.empty()) {
-            ll big = nearBig.top();
-            step = query(1, n, big+1, i, 1) + 1;
+        while(!psycho.empty() && psycho.top() < ara[i]) {
+
+            ll psy = psycho.top();
+            step[ ara[i] ] = max(step[ ara[i] ], step[psy] + 1);
+            psycho.pop();
         }
 
-        update(1, n, i, step, 1);
-        ans = max(ans, step);
+        if(psycho.empty())
+            step[ ara[i] ] = -1;
 
-        nearBig.push(i);
+        psycho.push(ara[i]);
+
+        ans = max(ans, step[ ara[i] ]+1);
     }
 
     cout << ans << EL;
