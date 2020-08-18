@@ -13380,6 +13380,24 @@
     ],
     "timestamp": "Jun/20/2020 20:38"
   },
+  "CF90345710": {
+    "contest_id": 400,
+    "language": "GNU C++17",
+    "path": "codeforces\\400\\D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "Dima and Bacteria",
+    "problem_url": "https://codeforces.com/contest/400/problem/D",
+    "submission_id": "CF90345710",
+    "submission_url": "https://codeforces.com/contest/400/submission/90345710",
+    "tags": [
+      "dsu",
+      "graphs",
+      "shortest paths",
+      "*2000"
+    ],
+    "timestamp": "Aug/19/2020 03:48"
+  },
   "CF90347665": {
     "contest_id": 319,
     "language": "GNU C++17",
