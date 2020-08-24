@@ -31,7 +31,7 @@ using namespace std;
 
 const ll sz = 105;
 ll dp[sz][sz][sz], len1, len2, len3;
-ll prefMatch[sz][26];
+ll prefMatch[sz][sz][26];
 
 char s1[sz], s2[sz], s3[sz];
 string ans;
@@ -57,9 +57,9 @@ ll solve(ll pos1, ll pos2, ll pos3)
             ret = max(ret, 1 + solve(pos1+1, pos2+1, pos3+1));
         else {
 
-            ll mx = (s3[1] == s1[pos1]) ? 1 : 0, ch = s1[pos1] - 'A';;
+            ll mx = (s3[1] == s1[pos1]) ? 1 : 0;
 
-            mx = max(mx, prefMatch[pos3-1][ch]);
+            for(ll i = pos3-1; i >= 1; i--) mx = max(mx, prefMatch[i][pos3-1][ s1[pos1] - 'A' ]);
 
             ret = max(ret, 1 + solve(pos1+1, pos2+1, mx+1));
         }
@@ -82,9 +82,9 @@ void make_ans(ll pos1, ll pos2, ll pos3, ll res)
             make_ans(pos1+1, pos2+1, pos3+1, res-1);
         else {
 
-            ll mx = (s3[1] == s1[pos1]) ? 1 : 0, ch = s1[pos1] - 'A';
+            ll mx = (s3[1] == s1[pos1]) ? 1 : 0;
 
-            mx = max(mx, prefMatch[pos3-1][ch]);
+            for(ll i = pos3-1; i >= 1; i--) mx = max(mx, prefMatch[i][pos3-1][ s1[pos1] - 'A' ]);
 
             make_ans(pos1+1, pos2+1, mx+1, res-1);
         }
@@ -104,10 +104,7 @@ int main()
             if(s3[j] != s3[k])
                 break;
 
-            if(k+1 <= len3) {
-                ll ch = s3[k+1] - 'A';
-                prefMatch[j][ch] = max(prefMatch[j][ch], k+1);
-            }
+            if(k+1 <= len3) prefMatch[i][j][ s3[k+1] - 'A' ] = k+1;
         }
     }
 
