@@ -13380,6 +13380,24 @@
     ],
     "timestamp": "Jun/20/2020 20:38"
   },
+  "CF91083972": {
+    "contest_id": 146,
+    "language": "GNU C++17",
+    "path": "codeforces\\146\\D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "Lucky Number 2",
+    "problem_url": "https://codeforces.com/contest/146/problem/D",
+    "submission_id": "CF91083972",
+    "submission_url": "https://codeforces.com/contest/146/submission/91083972",
+    "tags": [
+      "brute force",
+      "constructive algorithms",
+      "implementation",
+      "*1800"
+    ],
+    "timestamp": "Aug/27/2020 00:28"
+  },
   "CF91092087": {
     "contest_id": 234,
     "language": "GNU C++17",
