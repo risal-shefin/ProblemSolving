@@ -13380,6 +13380,22 @@
     ],
     "timestamp": "Jun/20/2020 20:38"
   },
+  "CF91092087": {
+    "contest_id": 234,
+    "language": "GNU C++17",
+    "path": "codeforces\\234\\D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "Cinema",
+    "problem_url": "https://codeforces.com/contest/234/problem/D",
+    "submission_id": "CF91092087",
+    "submission_url": "https://codeforces.com/contest/234/submission/91092087",
+    "tags": [
+      "implementation",
+      "*1600"
+    ],
+    "timestamp": "Aug/27/2020 03:37"
+  },
   "CF91141702": {
     "contest_id": 459,
     "language": "GNU C++17",
