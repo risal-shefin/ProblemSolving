@@ -13380,6 +13380,22 @@
     ],
     "timestamp": "Jun/20/2020 20:38"
   },
+  "CF91081253": {
+    "contest_id": 273,
+    "language": "GNU C++17",
+    "path": "codeforces\\273\\B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "Dima and Two Sequences",
+    "problem_url": "https://codeforces.com/contest/273/problem/B",
+    "submission_id": "CF91081253",
+    "submission_url": "https://codeforces.com/contest/273/submission/91081253",
+    "tags": [
+      "combinatorics",
+      "*1600"
+    ],
+    "timestamp": "Aug/26/2020 23:46"
+  },
   "CF91083890": {
     "contest_id": 145,
     "language": "GNU C++17",
