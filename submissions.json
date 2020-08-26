@@ -13380,6 +13380,27 @@
     ],
     "timestamp": "Jun/20/2020 20:38"
   },
+  "CF91059574": {
+    "contest_id": 14,
+    "language": "GNU C++17",
+    "path": "codeforces\\14\\D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "Two Paths",
+    "problem_url": "https://codeforces.com/contest/14/problem/D",
+    "submission_id": "CF91059574",
+    "submission_url": "https://codeforces.com/contest/14/submission/91059574",
+    "tags": [
+      "dfs and similar",
+      "dp",
+      "graphs",
+      "shortest paths",
+      "trees",
+      "two pointers",
+      "*1900"
+    ],
+    "timestamp": "Aug/26/2020 20:00"
+  },
   "CF91077709": {
     "contest_id": 142,
     "language": "GNU C++17",
