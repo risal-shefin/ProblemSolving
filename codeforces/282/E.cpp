@@ -30,7 +30,7 @@ using namespace std;
 #define fastio std::ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 
 const ll sz = 1e5 + 10, lim = 40, root = 0;
-ll ara[sz], preXor[sz];
+ll ara[sz], sufXor[sz];
 
 int trie[sz*(lim+2)][2], cnt[sz*(lim+2)], node;
 
@@ -45,6 +45,21 @@ void add(ll num)
 
         cur = trie[cur][bit];
         cnt[cur]++;
+    }
+}
+
+void del(ll num)
+{
+    int cur = root;
+    for(int i = 40; i >= 0; i--) {
+        bool bit = (num>>i) & 1;
+
+        int nxt = trie[cur][bit];
+        cnt[nxt]--;
+
+        if(cnt[nxt] == 0) trie[cur][bit] = -1;
+
+        cur = nxt;
     }
 }
 
@@ -74,19 +89,27 @@ int main()
 {
     ms(trie, -1);
 
-    ll n, ans = 0, suf = 0;
+    ll n, ans = 0, pre = 0;
     cin >> n;
 
-    for1(i, n) sl(ara[i]), preXor[i] = preXor[i-1] ^ ara[i];
+    for1(i, n) sl(ara[i]);
 
     rep1(i, n) {
-        ans = max(ans, preXor[i]);
+        sufXor[i] = sufXor[i+1] ^ ara[i];
+        add(sufXor[i]);
 
-        if(i != n) ans = max(ans, calc(preXor[i]));
+        ans = max(ans, sufXor[i]);
+    }
 
-        suf ^= ara[i];
-        add(suf);
-        ans = max(ans, suf);
+    for1(i, n) {
+        pre ^= ara[i];
+        ans = max(ans, pre);
+
+        if(i == n) break;
+
+        del(sufXor[i]);
+
+        ans = max(ans, calc(pre));
     }
 
     cout << ans << EL;
