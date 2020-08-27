@@ -32,7 +32,7 @@ using namespace std;
 const ll sz = 1e5 + 10, lim = 40, root = 0;
 ll ara[sz], preXor[sz];
 
-int trie[sz*(lim+2)][2], node;
+int trie[sz*(lim+2)][2], cnt[sz*(lim+2)], node;
 
 void add(ll num)
 {
@@ -44,6 +44,7 @@ void add(ll num)
             trie[cur][bit] = ++node;
 
         cur = trie[cur][bit];
+        cnt[cur]++;
     }
 }
 
