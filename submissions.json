@@ -13380,6 +13380,23 @@
     ],
     "timestamp": "Jun/20/2020 20:38"
   },
+  "CF91246739": {
+    "contest_id": 61,
+    "language": "GNU C++17",
+    "path": "codeforces\\61\\E.cpp",
+    "platform": "Codeforces",
+    "problem_index": "E",
+    "problem_name": "Enemy is weak",
+    "problem_url": "https://codeforces.com/contest/61/problem/E",
+    "submission_id": "CF91246739",
+    "submission_url": "https://codeforces.com/contest/61/submission/91246739",
+    "tags": [
+      "data structures",
+      "trees",
+      "*1900"
+    ],
+    "timestamp": "Aug/29/2020 04:32"
+  },
   "CF91280820": {
     "contest_id": 156,
     "language": "GNU C++17",
