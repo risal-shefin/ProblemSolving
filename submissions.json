@@ -13380,6 +13380,23 @@
     ],
     "timestamp": "Jun/20/2020 20:38"
   },
+  "CF91315135": {
+    "contest_id": 66,
+    "language": "GNU C++17",
+    "path": "codeforces\\66\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Petya and File System",
+    "problem_url": "https://codeforces.com/contest/66/problem/C",
+    "submission_id": "CF91315135",
+    "submission_url": "https://codeforces.com/contest/66/submission/91315135",
+    "tags": [
+      "data structures",
+      "implementation",
+      "*1800"
+    ],
+    "timestamp": "Aug/30/2020 04:49"
+  },
   "CF91315151": {
     "contest_id": 27,
     "language": "GNU C++17",
