@@ -13380,6 +13380,24 @@
     ],
     "timestamp": "Jun/20/2020 20:38"
   },
+  "CF91315045": {
+    "contest_id": 652,
+    "language": "GNU C++17",
+    "path": "codeforces\\652\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Foe Pairs",
+    "problem_url": "https://codeforces.com/contest/652/problem/C",
+    "submission_id": "CF91315045",
+    "submission_url": "https://codeforces.com/contest/652/submission/91315045",
+    "tags": [
+      "combinatorics",
+      "sortings",
+      "two pointers",
+      "*1800"
+    ],
+    "timestamp": "Aug/30/2020 04:46"
+  },
   "CF91315072": {
     "contest_id": 17,
     "language": "GNU C++17",
