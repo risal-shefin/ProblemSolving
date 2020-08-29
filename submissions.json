@@ -13380,6 +13380,23 @@
     ],
     "timestamp": "Jun/20/2020 20:38"
   },
+  "CF91314835": {
+    "contest_id": 270,
+    "language": "GNU C++17",
+    "path": "codeforces\\270\\E.cpp",
+    "platform": "Codeforces",
+    "problem_index": "E",
+    "problem_name": "Flawed Flow",
+    "problem_url": "https://codeforces.com/contest/270/problem/E",
+    "submission_id": "CF91314835",
+    "submission_url": "https://codeforces.com/contest/270/submission/91314835",
+    "tags": [
+      "dfs and similar",
+      "sortings",
+      "*2100"
+    ],
+    "timestamp": "Aug/30/2020 04:35"
+  },
   "CF91315045": {
     "contest_id": 652,
     "language": "GNU C++17",
