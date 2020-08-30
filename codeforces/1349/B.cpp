@@ -31,6 +31,38 @@ using namespace std;
 
 const ll sz = 1e5 + 10;
 ll ara[sz];
+multiset <ll> lst;
+
+inline bool check(ll n, ll k)
+{
+    lst.clear();
+
+    ll s = 0, l = 0;
+
+    for1(i, n) {
+        if(ara[i] >= k) l++;
+        else s++;
+
+        lst.insert(l-s);
+    }
+
+    s = 0, l = 0;
+
+    for1(i, n) {
+        if(ara[i] >= k) l++;
+        else s++;
+
+        lst.erase(lst.find(l-s));
+
+        if(ara[i] != k)
+            continue;
+
+        if(lst.find(l-s) != lst.end() || lst.find(1+ (l-s)) != lst.end())
+            return true;
+    }
+
+    return false;
+}
 
 int main()
 {
@@ -54,10 +86,23 @@ int main()
             continue;
         }
 
-        for1(i, n-1) {
-            if(ara[i] >= k && ara[i+1] >= k) ok = 1;
+        for1(i, n-1) if(ara[i] == k && ara[i+1] >= k) ok = 1;
 
-            if(i + 2 <= n && ara[i] >= k && ara[i+2] >= k) ok = 1;
+        if(ok) {
+            pf("yes\n");
+            continue;
+        }
+
+        ok |= check(n, k);
+
+        reverse(ara+1, ara+n+1);
+
+        ok |= check(n, k);
+
+        for1(i, n-1) {
+            if(ara[i] > k && ara[i+1] > k) ok = 1;
+
+            if(i + 2 <= n && ara[i] > k && ara[i+2] > k) ok = 1;
         }
 
         if(ok) pf("yes\n");
