@@ -3611,6 +3611,23 @@
     ],
     "timestamp": "Sep/16/2021 03:19"
   },
+  "CF91501433": {
+    "contest_id": 1397,
+    "language": "GNU C++17",
+    "path": "codeforces\\1397\\E.cpp",
+    "platform": "Codeforces",
+    "problem_index": "E",
+    "problem_name": "Monster Invaders",
+    "problem_url": "https://codeforces.com/contest/1397/problem/E",
+    "submission_id": "CF91501433",
+    "submission_url": "https://codeforces.com/contest/1397/submission/91501433",
+    "tags": [
+      "dp",
+      "greedy",
+      "*2300"
+    ],
+    "timestamp": "Aug/31/2020 20:50"
+  },
   "CF91518222": {
     "contest_id": 258,
     "language": "GNU C++17",
