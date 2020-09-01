@@ -80,6 +80,11 @@ int main()
 
     ll n; sl(n);
 
+    if(grundy[n] == 0) {
+        cout << -1 << EL;
+        return 0;
+    }
+
     ll k = inf;
 
     for(pii &p : g[n]) {
@@ -91,8 +96,7 @@ int main()
         if(Xor == 0) k = min(k, r-l+1);
     }
 
-    if(k == inf) cout << -1 << EL;
-    else    cout << k << EL;
+    cout << k << EL;
 
     return 0;
 }
