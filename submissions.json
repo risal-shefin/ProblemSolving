@@ -3611,6 +3611,23 @@
     ],
     "timestamp": "Sep/16/2021 03:19"
   },
+  "CF92737999": {
+    "contest_id": 346,
+    "language": "GNU C++17",
+    "path": "codeforces\\346\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Number Transformation II",
+    "problem_url": "https://codeforces.com/contest/346/problem/C",
+    "submission_id": "CF92737999",
+    "submission_url": "https://codeforces.com/contest/346/submission/92737999",
+    "tags": [
+      "greedy",
+      "math",
+      "*2200"
+    ],
+    "timestamp": "Sep/13/2020 23:47"
+  },
   "CF92790413": {
     "contest_id": 154,
     "language": "GNU C++17",
