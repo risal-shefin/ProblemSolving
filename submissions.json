@@ -3611,6 +3611,24 @@
     ],
     "timestamp": "Sep/16/2021 03:19"
   },
+  "CF92835909": {
+    "contest_id": 251,
+    "language": "GNU C++17",
+    "path": "codeforces\\251\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Number Transformation",
+    "problem_url": "https://codeforces.com/contest/251/problem/C",
+    "submission_id": "CF92835909",
+    "submission_url": "https://codeforces.com/contest/251/submission/92835909",
+    "tags": [
+      "dp",
+      "greedy",
+      "number theory",
+      "*2000"
+    ],
+    "timestamp": "Sep/14/2020 22:18"
+  },
   "CF92836012": {
     "contest_id": 252,
     "language": "GNU C++17",
