@@ -55,6 +55,8 @@ struct Hash {
     }
 
     inline ll hashVal(int l, int r) {
+        if(l > r) return 0;
+
         ll hsh1 = (h1[r] - h1[l-1] * pw1[r-l+1]) % mod;
         if(hsh1 < 0) hsh1 += mod;
         ll hsh2 = (h2[r] - h2[l-1] * pw2[r-l+1]) % mod;
@@ -69,8 +71,8 @@ struct Hash {
  * fw.hashVal(l,r) will return [l,,r] merged double hash value
 */
 
-ll frnd[sz], nonFrnd[sz];
-vector <int> g[sz], g2[sz];
+unordered_map <ll, ll> frnd, nonFrnd;
+vector <ll> g[sz], g2[sz];
 
 int main()
 {
@@ -99,57 +101,22 @@ int main()
     for1(i, n) {
 
         slen = g[i].size(), idx = 0;
-        for(int &f : g[i]) s[++idx] = f;
+        for(ll &f : g[i]) s[++idx] = f;
 
         fw.init();
-        ll friendHash = (fw.h1[slen] << 32) | fw.h2[slen];
+        ll friendHash = fw.hashVal(1, g[i].size());
 
-        frnd[i] = friendHash;
+        ans += frnd[friendHash];
+        ++frnd[friendHash];
 
         slen = g2[i].size(), idx = 0;
-        for(int &f : g2[i]) s[++idx] = f;
+        for(ll &f : g2[i]) s[++idx] = f;
 
         fw.init();
-        friendHash = (fw.h1[slen] << 32) | fw.h2[slen];
+        friendHash = fw.hashVal(1, g2[i].size());
 
-        nonFrnd[i] = friendHash;
-    }
-
-    sort(frnd+1, frnd+n+1);
-    sort(nonFrnd+1, nonFrnd+n+1);
-
-    for1(i, n) {
-
-        ll start = i, stop;
-
-        for(ll j = i; j <= n; j++) {
-
-            if(frnd[j] != frnd[i])
-                break;
-            stop = j;
-        }
-
-        ll tot = stop-start+1;
-        ans += (tot * (tot-1)) / 2;
-
-        i = stop;
-    }
-
-    for1(i, n) {
-
-        ll start = i, stop;
-
-        for(ll j = i; j <= n; j++) {
-
-            if(nonFrnd[j] != nonFrnd[i])
-                break;
-            stop = j;
-        }
-
-        ll tot = stop-start+1;
-        ans += (tot * (tot-1)) / 2;
-
-        i = stop;
+        ans += nonFrnd[friendHash];
+        ++nonFrnd[friendHash];
     }
 
     cout << ans << EL;
