@@ -3611,6 +3611,23 @@
     ],
     "timestamp": "Sep/16/2021 03:19"
   },
+  "CF92836012": {
+    "contest_id": 252,
+    "language": "GNU C++17",
+    "path": "codeforces\\252\\E.cpp",
+    "platform": "Codeforces",
+    "problem_index": "E",
+    "problem_name": "Number Transformation",
+    "problem_url": "https://codeforces.com/contest/252/problem/E",
+    "submission_id": "CF92836012",
+    "submission_url": "https://codeforces.com/contest/252/submission/92836012",
+    "tags": [
+      "dp",
+      "number theory",
+      "*2000"
+    ],
+    "timestamp": "Sep/14/2020 22:18"
+  },
   "CF92847290": {
     "contest_id": 446,
     "language": "GNU C++17",
