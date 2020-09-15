@@ -59,7 +59,11 @@ int main()
 
         ll ans = inf;
 
-        auto it = lst.lower_bound(-cyc);
+        auto it = lst.lower_bound(0);
+
+        if(it != lst.end()) ans = min(ans, abs(*it + cyc));
+
+        it = lst.lower_bound(-cyc);
 
         if(it != lst.end()) ans = min(ans, abs(*it + cyc));
 

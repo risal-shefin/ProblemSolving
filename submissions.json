@@ -3611,6 +3611,22 @@
     ],
     "timestamp": "Sep/16/2021 03:19"
   },
+  "CF92937361": {
+    "contest_id": 220,
+    "language": "GNU C++17",
+    "path": "codeforces\\220\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Little Elephant and Shifts",
+    "problem_url": "https://codeforces.com/contest/220/problem/C",
+    "submission_id": "CF92937361",
+    "submission_url": "https://codeforces.com/contest/220/submission/92937361",
+    "tags": [
+      "data structures",
+      "*2100"
+    ],
+    "timestamp": "Sep/16/2020 04:57"
+  },
   "CF92937367": {
     "contest_id": 221,
     "language": "GNU C++17",
