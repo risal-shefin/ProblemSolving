@@ -3611,6 +3611,22 @@
     ],
     "timestamp": "Sep/16/2021 03:19"
   },
+  "CF92936406": {
+    "contest_id": 444,
+    "language": "GNU C++17",
+    "path": "codeforces\\444\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "DZY Loves Colors",
+    "problem_url": "https://codeforces.com/contest/444/problem/C",
+    "submission_id": "CF92936406",
+    "submission_url": "https://codeforces.com/contest/444/submission/92936406",
+    "tags": [
+      "data structures",
+      "*2400"
+    ],
+    "timestamp": "Sep/16/2020 04:11"
+  },
   "CF92937361": {
     "contest_id": 220,
     "language": "GNU C++17",
