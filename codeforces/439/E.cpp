@@ -31,8 +31,7 @@ using namespace std;
 
 const ll sz = 1e5 + 10, mod = 1e9 + 7;
 vector <ll> dv[sz];
-ll dp[sz], fact[sz], inv[sz], totalWay[sz];
-unordered_map <int, int> ret[sz];
+ll dp[sz], fact[sz], inv[sz];
 
 ll fastPow(ll x, ll n, ll MOD)
 {
@@ -94,15 +93,10 @@ int main()
             continue;
         }
 
-        if(ret[n].find(f) != ret[n].end()) {
-            pf("%d\n", ret[n][f]);
-            continue;
-        }
-
         for(ll &d: dv[n]) dp[d] = -1;
         dp[n] = -1;
 
-        pf("%d\n", ret[n][f] = solve(n, f));
+        pf("%lld\n", solve(n, f));
     }
 
     return 0;
