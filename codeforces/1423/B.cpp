@@ -29,93 +29,17 @@ using namespace std;
 #define EL '\n'
 #define fastio std::ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 
-const ll maxnodes = 2e4 + 10, sz = 1e5 + 10;
+const ll sz = 1e5 + 10, MAX_N = 1e4 + 10;
 
-struct info {
+struct Edge {
     ll u, v, c;
 } ed[sz];
-
-ll nodes = maxnodes, src, dest;
-ll dist[maxnodes], q[maxnodes], work[maxnodes];
-
-struct Edge
+const bool operator <(const Edge &a, const Edge &b)
 {
-    ll to, rev;
-    ll f, cap;
-};
-
-vector<Edge> g[maxnodes];
-
-void addEdge(ll s, ll t, ll cap)
-{
-    Edge a = {t, g[t].size(), 0, cap};
-    Edge b = {s, g[s].size(), 0, 0};
-    g[s].push_back(a);
-    g[t].push_back(b);
+    return a.c < b.c;
 }
 
-bool dinic_bfs()
-{
-    fill(dist, dist + nodes, -1);
-
-    dist[src] = 0;
-    ll index = 0;
-    q[index++] = src;
-
-    for (ll i = 0; i < index; i++)
-    {
-        ll u = q[i];
-        for (ll j = 0; j < (ll) g[u].size(); j++)
-        {
-            Edge &e = g[u][j];
-            if (dist[e.to] < 0 && e.f < e.cap)
-            {
-                dist[e.to] = dist[u] + 1;
-                q[index++] = e.to;
-            }
-        }
-    }
-    return dist[dest] >= 0;
-}
-
-ll dinic_dfs(ll u, ll f)
-{
-    if (u == dest)
-        return f;
-
-    for (ll &i = work[u]; i < (ll) g[u].size(); i++)
-    {
-        Edge &e = g[u][i];
-
-        if (e.cap <= e.f) continue;
-
-        if (dist[e.to] == dist[u] + 1)
-        {
-            ll flow = dinic_dfs(e.to, min(f, e.cap - e.f));
-            if (flow > 0)
-            {
-                e.f += flow;
-                g[e.to][e.rev].f -= flow;
-                return flow;
-            }
-        }
-    }
-    return 0;
-}
-
-ll maxFlow(ll _src, ll _dest)
-{
-    src = _src;
-    dest = _dest;
-    ll result = 0;
-    while (dinic_bfs())
-    {
-        fill(work, work + nodes, 0);
-        while (ll delta = dinic_dfs(src, INT_MAX))
-            result += delta;
-    }
-    return result;
-}
+set <int> airport, factory;
 
 int main()
 {
@@ -125,32 +49,21 @@ int main()
     for1(i, m) {
         sl(ed[i].u), sl(ed[i].v), sl(ed[i].c);
     }
+    sort(ed+1, ed+m+1);
 
-    ll lo = 1, hi = 1e9, ret = -1;
+    ll ans = -1;
 
-    while(lo <= hi) {
-        ll mid = lo+hi >> 1;
+    for1(i, m) {
+        airport.insert(ed[i].u);
+        factory.insert(ed[i].v);
 
-        for(ll i = 0; i <= n+n+1; i++) g[i].clear();
-
-        for1(i, m) {
-            if(ed[i].c <= mid)
-                addEdge(ed[i].u, n+ed[i].v, 1);
+        if(airport.size() == n && factory.size() == n) {
+            ans = ed[i].c;
+            break;
         }
-
-        for1(i, n) addEdge(0, i, 1), addEdge(n+i, n+n+1, 1);
-
-        ll got = maxFlow(0, n+n+1);
-
-        if(got == n) {
-            ret = mid;
-            hi = mid - 1;
-        }
-        else
-            lo = mid + 1;
     }
 
-    cout << ret << EL;
+    cout << ans << EL;
 
     return 0;
 }
