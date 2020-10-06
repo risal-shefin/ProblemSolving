@@ -3611,6 +3611,23 @@
     ],
     "timestamp": "Sep/16/2021 03:19"
   },
+  "CF94851333": {
+    "contest_id": 489,
+    "language": "GNU C++17",
+    "path": "codeforces\\489\\E.cpp",
+    "platform": "Codeforces",
+    "problem_index": "E",
+    "problem_name": "Hiking",
+    "problem_url": "https://codeforces.com/contest/489/problem/E",
+    "submission_id": "CF94851333",
+    "submission_url": "https://codeforces.com/contest/489/submission/94851333",
+    "tags": [
+      "binary search",
+      "dp",
+      "*2300"
+    ],
+    "timestamp": "Oct/06/2020 19:05"
+  },
   "CF94933029": {
     "contest_id": 297,
     "language": "GNU C++17",
