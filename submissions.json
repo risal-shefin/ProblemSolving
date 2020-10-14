@@ -3611,6 +3611,24 @@
     ],
     "timestamp": "Sep/16/2021 03:19"
   },
+  "CF95533168": {
+    "contest_id": 92,
+    "language": "GNU C++17",
+    "path": "codeforces\\92\\E.cpp",
+    "platform": "Codeforces",
+    "problem_index": "E",
+    "problem_name": "Ski Base",
+    "problem_url": "https://codeforces.com/contest/92/problem/E",
+    "submission_id": "CF95533168",
+    "submission_url": "https://codeforces.com/contest/92/submission/95533168",
+    "tags": [
+      "data structures",
+      "dsu",
+      "graphs",
+      "*2300"
+    ],
+    "timestamp": "Oct/15/2020 00:10"
+  },
   "CF95667326": {
     "contest_id": 350,
     "language": "GNU C++17",
