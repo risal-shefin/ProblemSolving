@@ -3611,6 +3611,24 @@
     ],
     "timestamp": "Sep/16/2021 03:19"
   },
+  "CF95533125": {
+    "contest_id": 91,
+    "language": "GNU C++17",
+    "path": "codeforces\\91\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Ski Base",
+    "problem_url": "https://codeforces.com/contest/91/problem/C",
+    "submission_id": "CF95533125",
+    "submission_url": "https://codeforces.com/contest/91/submission/95533125",
+    "tags": [
+      "combinatorics",
+      "dsu",
+      "graphs",
+      "*2300"
+    ],
+    "timestamp": "Oct/15/2020 00:10"
+  },
   "CF95533168": {
     "contest_id": 92,
     "language": "GNU C++17",
