@@ -35,7 +35,11 @@ struct node {
     int id;
     char ch;
 };
-deque <node> lst;
+
+const bool operator <(const node &a, const node &b) {
+    return a.id < b.id;
+}
+set <node> lst;
 
 char s[sz], fDiff[sz];
 
@@ -50,20 +54,23 @@ void make_string()
     string now = "";
 
     if(lst.size() <= 10) {
-        for(node &nd : lst)
+        for(const node &nd : lst)
             now.pb(nd.ch);
 
-        ans.pb({lst.size(), now});
+        ans.pb({now.size(), now});
         return;
     }
 
-    for(ll i = 0; i < 5; i++)
-        now.pb(lst[i].ch);
+    auto it = lst.begin();
+    for(ll i = 1; i <= 5; i++, ++it)
+        now.pb(it->ch);
 
     now.pb('.'), now.pb('.'), now.pb('.');
 
-    for(ll i = lst.size()-2; i < lst.size(); i++)
-        now.pb(lst[i].ch);
+    it = --lst.end();
+    --it;
+    for(ll i = 1; i <= 2; i++, ++it)
+        now.pb(it->ch);
 
     ans.pb({lst.size(), now});
 }
@@ -76,35 +83,36 @@ int main()
     fDiff[len+1] = '\0';
     rep1(i, len) {
 
-        lst.push_front({i, s[i]});
+        lst.insert({i, s[i]});
         string now = "";
 
         if(lst.size() == 1) {
 
             now.pb(s[i]);
-            ans.pb({lst.size(), now});
+            ans.pb({now.size(), now});
 
             fDiff[i] = '\0';
             continue;
         }
 
-        if(s[i] == lst[1].ch) {
+        auto it1 = ++lst.begin();
 
-            if(i+1 == lst[1].id && fDiff[i+1] < s[i]) {
-                lst.pop_front(), lst.pop_front();
+        if(s[i] == it1->ch) {
+
+            if(i+1 == it1->id && fDiff[i+1] < s[i]) {
+                lst.erase(lst.begin()), lst.erase(lst.begin());
                 fDiff[i] = fDiff[i+2];
             }
             else
                 fDiff[i] = fDiff[i+1];
         }
         else
-            fDiff[i] = lst[1].ch;
+            fDiff[i] = it1->ch;
 
         make_string();
     }
 
     reverse(all(ans));
-
     for(info &Info : ans) {
         pf("%lld %s\n", Info.len, Info.s.c_str());
     }
