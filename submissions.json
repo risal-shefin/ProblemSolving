@@ -1,4 +1,20 @@
 {
+  "AC17641240": {
+    "contest_id": "arc106",
+    "language": "C++ (GCC 9.2.1)",
+    "path": "atcoder\\arc106\\D.cpp",
+    "platform": "AtCoder",
+    "problem_index": "D",
+    "problem_name": "Powers",
+    "problem_url": "https://atcoder.jp/contests/arc106/tasks/arc106_d",
+    "submission_id": "AC17641240",
+    "submission_url": "https://atcoder.jp/contests/arc106/submissions/17641240",
+    "tags": [
+      "AtCoder",
+      "*600"
+    ],
+    "timestamp": "Oct/24/2020 21:00"
+  },
   "AC18313682": {
     "contest_id": "abc184",
     "language": "C++ (GCC 9.2.1)",
