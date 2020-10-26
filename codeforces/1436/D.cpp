@@ -29,23 +29,24 @@ using namespace std;
 #define EL '\n'
 #define fastio std::ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 
+#define LL __int128
+
 const ll sz = 2e5 + 10;
 vector <ll> g[sz];
 ll city[sz];
 
-ll dfs(ll u, ll siz)
+LL dfs(ll u, LL siz)
 {
     if(g[u].size() == 0) return siz - city[u];
 
-    ll blank = 0;
+    LL blank = 0;
 
     for(ll &v : g[u]) {
 
-        ll got = dfs(v, siz);
+        LL got = dfs(v, siz);
         if(got < 0) return -1;
 
         blank += got;
-        blank = min(blank, (ll)1e15);
     }
     blank -= city[u];
 
@@ -54,7 +55,7 @@ ll dfs(ll u, ll siz)
 
 bool check(ll siz)
 {
-    ll got = dfs(1, siz);
+    LL got = dfs(1, siz);
     return got >= 0;
 }
 
