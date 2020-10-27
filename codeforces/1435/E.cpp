@@ -66,7 +66,7 @@ int main()
             continue;
         }
 
-        ll lo = 0, hi = 2e6, ret = 0;
+        ll lo = 0, hi = 1e6, ret = 0;
         while(lo < hi) {
             ll mid = lo+hi >> 1;
 
