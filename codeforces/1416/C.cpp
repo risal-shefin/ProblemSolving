@@ -35,7 +35,7 @@ ll ara[sz], inv[30][2], node=1;
 struct info {
     int nxt[2];
     vector <int> lst;
-} trie[sz*30];
+} trie[sz*30*2];
 
 void add(int num, int idx)
 {
