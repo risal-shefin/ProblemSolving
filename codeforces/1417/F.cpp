@@ -23,6 +23,7 @@ using namespace std;
 #define rep1(i, start) for(ll i = start; i >= 1; --i)
 #define rep0(i, start) for(ll i = (start-1); i >= 0; --i)
 #define ms(n, i) memset(n, i, sizeof(n))
+#define casep(n) printf("Case %lld:", ++n)
 #define pn printf("\n")
 #define pf printf
 #define EL '\n'
