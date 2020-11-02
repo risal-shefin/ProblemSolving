@@ -67,64 +67,6 @@ void dfs(ll u, ll c)
     }
 }
 
-void construct(ll l, ll r, vector <pii> &vertex)
-{
-    for(ll j = l; j <= r; j++) {
-
-        ll u = vertex[j].second;
-
-        for(int &v : g2[u]) {
-
-            ll cv = 2*compid[v] + col[v];
-
-            gnew[u].pb(cv);
-            gnew[cv].pb(u);
-
-            gnew[cv].pb(cv^1);
-            gnew[cv^1].pb(cv);
-        }
-
-        gnew[u].pb(u^1);
-        gnew[u^1].pb(u);
-    }
-}
-
-void destroy(ll l, ll r, vector <pii> &vertex)
-{
-    for(ll j = l; j <= r; j++) {
-
-        ll u = vertex[j].second;
-
-        for(int &v : g2[u]) {
-            ll cv = 2*compid[v] + col[v];
-
-            gnew[cv].clear(), gnew[cv^1].clear();
-        }
-
-        gnew[u].clear(), gnew[u^1].clear();
-    }
-
-    for(int &u : clr) col2[u] = -1;
-    clr.clear();
-}
-
-bool check_bicolor(ll l, ll r, vector <pii> &vertex)
-{
-    for(ll j = l; j <= r; j++) {
-
-        ll u = vertex[j].second;
-
-        if(col2[u] != -1)
-            continue;
-
-        checker = 0;
-        dfs(u, 0);
-
-        if(checker == -1) return 0;
-    }
-    return 1;
-}
-
 int main()
 {
     ll n, m, k;
@@ -210,11 +152,57 @@ int main()
                 stop = j;
             }
 
-            construct(start, stop, glst);
+            for(ll j = start; j <= stop; j++) {
 
-            if(!check_bicolor(start, stop, glst)) bad++;
+                ll u = glst[j].second;
 
-            destroy(start, stop, glst);
+                for(int &v : g2[u]) {
+
+                    ll cv = 2*compid[v] + col[v];
+
+                    gnew[u].pb(cv);
+                    gnew[cv].pb(u);
+
+                    gnew[cv].pb(cv^1);
+                    gnew[cv^1].pb(cv);
+                }
+
+                gnew[u].pb(u^1);
+                gnew[u^1].pb(u);
+            }
+
+            for(ll j = start; j <= stop; j++) {
+
+                ll u = glst[j].second;
+
+                if(col2[u] != -1)
+                    continue;
+
+                checker = 0;
+                dfs(u, 0);
+
+                if(checker == -1) {
+                    bad++;
+                    break;
+                }
+            }
+
+            for(ll j = start; j <= stop; j++) {
+
+                ll u = glst[j].second;
+
+                for(int &v : g2[u]) {
+
+                    ll cv = 2*compid[v] + col[v];
+
+                    gnew[cv].clear(), gnew[cv^1].clear();
+                }
+
+                gnew[u].clear(), gnew[u^1].clear();
+            }
+
+            for(int &u : clr) col2[u] = -1;
+            clr.clear();
 
             i = stop;
         }
