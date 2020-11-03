@@ -16,7 +16,7 @@ using namespace std;
 #define mp make_pair
 #define pb push_back
 #define all(v) v.begin(), v.end()
-#define inf (1LL << 29)
+#define inf (1LL << 61)
 #define loop(i, start, stop, inc) for(ll i = start; i <= stop; i += inc)
 #define for1(i, stop) for(ll i = 1; i <= stop; ++i)
 #define for0(i, stop) for(ll i = 0; i < stop; ++i)
@@ -32,28 +32,22 @@ using namespace std;
 const ll sz = 2e5 + 10, mod = 998244353, mxb = 30;
 
 struct node {
-    int v, k, x;
+    ll v, k, x;
 };
+const bool operator <(const node &a, const node &b) {
 
-inline bool large(const pii &a, const pii &b)
-{
-    if(a.first == b.first)
-        return a.second > b.second;
+    if(a.k == b.k)
+        return a.x > b.x;
 
-    if(a.first > 50 || b.first > 50)
-        return a.first > b.first;
+    if(a.k > 50 || b.k > 50)
+        return a.k > b.k;
 
-    register ll ta = (1LL << (a.first+1)) - 1;
-    register ll tb = (1LL << (b.first+1)) - 1;
+    register ll ta = 0, tb = 0;
+    if(a.k != -1) ta = (1LL << (a.k+1)) - 1;
+    if(b.k != -1) tb = (1LL << (b.k+1)) - 1;
 
-    register const ll ca = ta + a.second, cb = tb + b.second;
+    register const ll ca = ta + a.x, cb = tb + b.x;
     return ca > cb;
-}
-
-const bool operator <(const node &a, const node &b)
-{
-    const pii f = mp(a.k, a.x), s = mp(b.k, b.x);
-    return large(f, s);
 }
 
 struct edge {
@@ -61,7 +55,23 @@ struct edge {
 };
 vector <edge> g[sz];
 
-pii dist[sz][mxb+5];
+pll dist[sz][mxb+5];
+
+inline bool check(pll &a, pll &b)
+{
+    if(a.first == b.first)
+        return a.second > b.second;
+
+    if(a.first > 50 || b.first > 50)
+        return a.first > b.first;
+
+    register ll ta = 0, tb = 0;
+    if(a.first != -1) ta = (1LL << (a.first+1)) - 1;
+    if(b.first != -1) tb = (1LL << (b.first+1)) - 1;
+
+    register const ll ca = ta + a.second, cb = tb + b.second;
+    return ca > cb;
+}
 
 ll fastPow(ll x, ll n, ll MOD)
 {
@@ -103,11 +113,11 @@ int main()
         ll step = (u.k+1);
         if(step >= mxb) step = mxb + (u.k&1);
 
-        if(pii(u.k, u.x) != dist[u.v][step])
+        if(pll(u.k, u.x) != dist[u.v][step])
             continue;
 
         for(edge &Edge : g[u.v]) {
-            pii cst;
+            pll cst;
             ll step2 = step;
 
             if(Edge.state && (u.k&1)) cst.first = u.k+1, step2++;
@@ -118,7 +128,7 @@ int main()
 
             cst.second = u.x + 1;
 
-            if(large(dist[Edge.v][step2], cst)) {
+            if(check(dist[Edge.v][step2], cst)) {
 
                 dist[Edge.v][step2] = cst;
                 pq.push({Edge.v, cst.first, cst.second});
@@ -126,11 +136,11 @@ int main()
         }
     }
 
-    pii got = mp(inf, inf);
+    pll got = mp(inf, inf);
 
     for(ll i = 0; i <= mxb+1; i++) {
 
-        if(large(got, dist[n][i])) got = dist[n][i];
+        if(check(got, dist[n][i])) got = dist[n][i];
     }
 
     ll tp = fastPow(2, got.first+1, mod);
