@@ -42,7 +42,7 @@ ll solve(ll o, ll z, ll rem)
         return ret;
 
     ll taken = o+z, restz = zero-z, oneIdx = o+1;
-    ret = -1e9;
+   
     for(ll i = 0; i <= restz; i++) {
         ll pos = taken + i + 1, swp = abs(pos - onePos[oneIdx]);
         if(swp > rem)
