@@ -43,16 +43,16 @@ inline bool large(const pii &a, const pii &b)
     if(a.first > 50 || b.first > 50)
         return a.first > b.first;
 
-    const ll ta = (1LL << (a.first+1)) - 1;
-    const ll tb = (1LL << (b.first+1)) - 1;
+    register ll ta = (1LL << (a.first+1)) - 1;
+    register ll tb = (1LL << (b.first+1)) - 1;
 
-    const ll ca = ta + a.second, cb = tb + b.second;
+    register const ll ca = ta + a.second, cb = tb + b.second;
     return ca > cb;
 }
 
 const bool operator <(const node &a, const node &b)
 {
-    const pii f = mp(a.k, a.x), s = mp(b.k, b.x);
+    register const pii f = mp(a.k, a.x), s = mp(b.k, b.x);
     return large(f, s);
 }
 
