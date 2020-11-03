@@ -52,7 +52,7 @@ inline bool large(const pii &a, const pii &b)
 
 const bool operator <(const node &a, const node &b)
 {
-    register const pii f = mp(a.k, a.x), s = mp(b.k, b.x);
+    const pii f = mp(a.k, a.x), s = mp(b.k, b.x);
     return large(f, s);
 }
 
