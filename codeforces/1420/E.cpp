@@ -23,6 +23,7 @@ using namespace std;
 #define rep1(i, start) for(ll i = start; i >= 1; --i)
 #define rep0(i, start) for(ll i = (start-1); i >= 0; --i)
 #define ms(n, i) memset(n, i, sizeof(n))
+#define casep(n) printf("Case %lld:", ++n)
 #define pn printf("\n")
 #define pf printf
 #define EL '\n'
@@ -30,14 +31,14 @@ using namespace std;
 
 const ll sz = 85;
 ll onePos[sz], ara[sz], idx, one, zero, n;
-ll dp[sz][sz][3165];
+ll dp[3165][sz][sz];
 
 ll solve(ll o, ll z, ll rem)
 {
     if(o == one || z == zero)
         return 0;
 
-    ll &ret = dp[o][z][rem];
+    ll &ret = dp[rem][o][z];
     if(ret != -1)
         return ret;
 
