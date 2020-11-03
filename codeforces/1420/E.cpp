@@ -31,14 +31,14 @@ using namespace std;
 
 const ll sz = 85;
 ll onePos[sz], ara[sz], idx, one, zero, n;
-ll dp[3165][sz][sz];
+ll dp[sz][sz][3165];
 
 ll solve(ll o, ll z, ll rem)
 {
     if(o == one || z == zero)
         return 0;
 
-    ll &ret = dp[rem][o][z];
+    ll &ret = dp[o][z][rem];
     if(ret != -1)
         return ret;
 
