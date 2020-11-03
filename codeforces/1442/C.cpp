@@ -40,12 +40,13 @@ inline bool large(const pii &a, const pii &b)
     if(a.first == b.first)
         return a.second > b.second;
 
-    if(a.first >= mxb || b.first >= mxb)
+    if(a.first > 50 || b.first > 50)
         return a.first > b.first;
 
-    const ll ca = ( (1LL << (a.first+1)) - 1) + a.second;
-    const ll cb = ( (1LL << (b.first+1)) - 1) + b.second;
-    
+    const ll ta = (1LL << (a.first+1)) - 1;
+    const ll tb = (1LL << (b.first+1)) - 1;
+
+    const ll ca = ta + a.second, cb = tb + b.second;
     return ca > cb;
 }
 
