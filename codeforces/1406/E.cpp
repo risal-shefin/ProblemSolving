@@ -30,7 +30,7 @@ using namespace std;
 #define fastio std::ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 
 const ll sz = 1e5 + 10;
-bool chk[sz], del[sz], used[sz], small;
+bool chk[sz], del[sz], used[sz];
 vector <ll> prime;
 ll tot, n;
 
@@ -86,9 +86,9 @@ int main()
 
         ll p = prime[i];
 
-        if(check_prime(p)) ans *= calc_factor(p);
+        if(check_prime(p)) ans *= calc_factor(p), used[p] = 1;
 
-        if((i+1 != prime.size() && i % sqt != sqt-1) || small)
+        if(i+1 != prime.size() && i % sqt != sqt-1)
             continue;
 
         ll got = query('A', 1);
@@ -97,11 +97,13 @@ int main()
             tot = got;
             ll b = i / sqt;
 
-            for(ll j = b*sqt; j <= i && !small; j++) {
+            for(ll j = b*sqt; j <= i; j++) {
 
                 p = prime[j];
 
-                if(check_prime(p)) ans *= calc_factor(p), small = 1;
+                if(used[p]) continue;
+
+                if(check_prime(p)) ans *= calc_factor(p), used[p] = 1;
             }
         }
     }
