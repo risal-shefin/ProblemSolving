@@ -30,7 +30,7 @@ using namespace std;
 #define fastio std::ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 
 const ll sz = 1e5 + 10;
-bool chk[sz], del[sz], small;
+bool chk[sz], del[sz], used[sz], small;
 vector <ll> prime;
 ll tot, n;
 
