@@ -20069,6 +20069,23 @@
     ],
     "timestamp": "Oct/28/2020 22:57"
   },
+  "CF98067859": {
+    "contest_id": 1427,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1427\\D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "Unshuffling a Deck",
+    "problem_url": "https://codeforces.com/contest/1427/problem/D",
+    "submission_id": "CF98067859",
+    "submission_url": "https://codeforces.com/contest/1427/submission/98067859",
+    "tags": [
+      "constructive algorithms",
+      "implementation",
+      "*2000"
+    ],
+    "timestamp": "Nov/10/2020 20:47"
+  },
   "CF98091938": {
     "contest_id": 455,
     "language": "GNU C++17 (64)",
