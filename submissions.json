@@ -20069,6 +20069,22 @@
     ],
     "timestamp": "Oct/28/2020 22:57"
   },
+  "CF98200419": {
+    "contest_id": 1395,
+    "language": "GNU C++17",
+    "path": "codeforces\\1395\\B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "Boboniu Plays Chess",
+    "problem_url": "https://codeforces.com/contest/1395/problem/B",
+    "submission_id": "CF98200419",
+    "submission_url": "https://codeforces.com/contest/1395/submission/98200419",
+    "tags": [
+      "constructive algorithms",
+      "*1100"
+    ],
+    "timestamp": "Nov/12/2020 18:52"
+  },
   "CF98201070": {
     "contest_id": 1395,
     "language": "GNU C++17",
