@@ -31,7 +31,7 @@ using namespace std;
 
 const ll sz = 2e5 + 10;
 ll ara[sz];
-unordered_set <int> taken[sz];
+set <int> taken[sz];
 
 int main()
 {
