@@ -20069,6 +20069,27 @@
     ],
     "timestamp": "Oct/28/2020 22:57"
   },
+  "CF98489347": {
+    "contest_id": 1446,
+    "language": "GNU C++17",
+    "path": "codeforces\\1446\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Xor Tree",
+    "problem_url": "https://codeforces.com/contest/1446/problem/C",
+    "submission_id": "CF98489347",
+    "submission_url": "https://codeforces.com/contest/1446/submission/98489347",
+    "tags": [
+      "binary search",
+      "bitmasks",
+      "data structures",
+      "divide and conquer",
+      "dp",
+      "trees",
+      "*2100"
+    ],
+    "timestamp": "Nov/15/2020 22:47"
+  },
   "CF98495086": {
     "contest_id": 1446,
     "language": "GNU C++17",
