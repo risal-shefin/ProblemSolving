@@ -45,12 +45,12 @@ ll solve(ll pos1, ll pos2, bool run)
     ll ad = run;
 
     ret = -ad + solve(pos1, pos2+1, run);
-    ret = max(ret, -ad + solve(pos1+1, pos2, run));
+    ret = max((ll)ret, -ad + solve(pos1+1, pos2, run));
 
     if(s1[pos1] == s2[pos2]) {
 
-        ret = max(ret, 2);
-        ret = max(ret, 2 + solve(pos1+1, pos2+1, 1));
+        ret = max((ll)ret, 2);
+        ret = max((ll)ret, 2 + solve(pos1+1, pos2+1, 1));
     }
 
     return ret;
