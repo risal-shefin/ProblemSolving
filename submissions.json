@@ -20069,6 +20069,23 @@
     ],
     "timestamp": "Oct/28/2020 22:57"
   },
+  "CF98586316": {
+    "contest_id": 1446,
+    "language": "GNU C++17",
+    "path": "codeforces\\1446\\D1.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D1",
+    "problem_name": "Frequency Problem (Easy Version)",
+    "problem_url": "https://codeforces.com/contest/1446/problem/D1",
+    "submission_id": "CF98586316",
+    "submission_url": "https://codeforces.com/contest/1446/submission/98586316",
+    "tags": [
+      "data structures",
+      "greedy",
+      "*2600"
+    ],
+    "timestamp": "Nov/16/2020 23:45"
+  },
   "CF98586341": {
     "contest_id": 1447,
     "language": "GNU C++17",
