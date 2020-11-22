@@ -1,4 +1,20 @@
 {
+  "AC18313682": {
+    "contest_id": "abc184",
+    "language": "C++ (GCC 9.2.1)",
+    "path": "atcoder\\abc184\\A.cpp",
+    "platform": "AtCoder",
+    "problem_index": "A",
+    "problem_name": "Determinant",
+    "problem_url": "https://atcoder.jp/contests/abc184/tasks/abc184_a",
+    "submission_id": "AC18313682",
+    "submission_url": "https://atcoder.jp/contests/abc184/submissions/18313682",
+    "tags": [
+      "AtCoder",
+      "*100"
+    ],
+    "timestamp": "Nov/22/2020 18:05"
+  },
   "AC18318458": {
     "contest_id": "abc184",
     "language": "C++ (GCC 9.2.1)",
