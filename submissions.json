@@ -1,4 +1,20 @@
 {
+  "AC18585825": {
+    "contest_id": "arc110",
+    "language": "C++ (GCC 9.2.1)",
+    "path": "atcoder\\arc110\\C.cpp",
+    "platform": "AtCoder",
+    "problem_index": "C",
+    "problem_name": "Exoswap",
+    "problem_url": "https://atcoder.jp/contests/arc110/tasks/arc110_c",
+    "submission_id": "AC18585825",
+    "submission_url": "https://atcoder.jp/contests/arc110/submissions/18585825",
+    "tags": [
+      "AtCoder",
+      "*500"
+    ],
+    "timestamp": "Dec/05/2020 18:53"
+  },
   "AC18722528": {
     "contest_id": "abc185",
     "language": "C++ (GCC 9.2.1)",
