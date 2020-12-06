@@ -30,17 +30,8 @@ using namespace std;
 #define fastio std::ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 
 const ll sz = 3e5 + 10;
-ll ans[sz], ara[sz], lft[sz], cnt[sz], exist;
+ll ans[sz], ara[sz], lft[sz], rgt[sz], cnt[sz];
 vector <int> erased[sz];
-set <int> check;
-
-inline bool validPerm(ll n)
-{
-    if(check.size() == n && exist == n && *check.rbegin() == n)
-        return 1;
-    else
-        return 0;
-}
 
 int main()
 {
@@ -57,6 +48,8 @@ int main()
         }
 
         stack <pii> st;
+        multiset <int> check;
+        set <int> check2;
 
         for1(i, n) {
 
@@ -77,41 +70,49 @@ int main()
             while(!st.empty() && st.top().first >= ara[i])
                 st.pop();
 
-            ll rgt = n;
-            if(!st.empty()) rgt = st.top().second - 1;
+            rgt[i] = n;
+
+            if(!st.empty()) rgt[i] = st.top().second - 1;
 
             st.push(mp(ara[i], i));
 
-            ll len = rgt - lft[i] + 1;
+            ll len = rgt[i] - lft[i] + 1;
+
+            //cout << ara[i] << " " << len << " " << lft[i] << " " << rgt[i] << endl;
 
             check.insert(ara[i]);
+            check2.insert(ara[i]);
             cnt[ ara[i] ]++;
 
             erased[len+1].pb(ara[i]);
         }
-        exist = n;
 
         for1(i, n) {
             for(int &val : erased[i]) {
 
-                cnt[val]--, exist--;
-                if(cnt[val] == 0) check.erase(val);
+                auto it = check.find(val);
+                if(it != check.end()) {
+                    check.erase(it);
+                    cnt[val]--;
+                }
+
+                if(cnt[val] == 0) check2.erase(val);
             }
 
+            //cout << i << " " << check.size() << " || " << check2.size() << EL;
             ll len = n-i+1;
 
-            if(validPerm(len)) ans[i] = 1;
+            if(check.size() == len && check2.size() == len && *(--check.end()) == len)
+                ans[i] = 1;
         }
 
         for1(i, n) pf("%lld", ans[i]);
         pn;
 
-        for(ll i = 1; i <= n+1; i++)
+        for(ll i = 1; i <= n+1; i++) {
             erased[i].clear();
-
-        check.clear();
+        }
     }
 
     return 0;
 }
-
