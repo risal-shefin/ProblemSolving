@@ -1,4 +1,20 @@
 {
+  "AC18748269": {
+    "contest_id": "abc185",
+    "language": "C++ (GCC 9.2.1)",
+    "path": "atcoder\\abc185\\E.cpp",
+    "platform": "AtCoder",
+    "problem_index": "E",
+    "problem_name": "Sequence Matching",
+    "problem_url": "https://atcoder.jp/contests/abc185/tasks/abc185_e",
+    "submission_id": "AC18748269",
+    "submission_url": "https://atcoder.jp/contests/abc185/submissions/18748269",
+    "tags": [
+      "AtCoder",
+      "*500"
+    ],
+    "timestamp": "Dec/13/2020 18:50"
+  },
   "AC18899488": {
     "contest_id": "arc108",
     "language": "C++ (GCC 9.2.1)",
