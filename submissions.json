@@ -1,4 +1,20 @@
 {
+  "AC18899489": {
+    "contest_id": "arc108",
+    "language": "C++ (GCC 9.2.1)",
+    "path": "atcoder\\arc108\\B.cpp",
+    "platform": "AtCoder",
+    "problem_index": "B",
+    "problem_name": "Abbreviate Fox",
+    "problem_url": "https://atcoder.jp/contests/arc108/tasks/arc108_b",
+    "submission_id": "AC18899489",
+    "submission_url": "https://atcoder.jp/contests/arc108/submissions/18899489",
+    "tags": [
+      "AtCoder",
+      "*400"
+    ],
+    "timestamp": "Dec/20/2020 03:26"
+  },
   "AC18899491": {
     "contest_id": "arc109",
     "language": "C++ (GCC 9.2.1)",
