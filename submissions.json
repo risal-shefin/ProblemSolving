@@ -1,4 +1,20 @@
 {
+  "AC18966867": {
+    "contest_id": "abc107",
+    "language": "C++ (GCC 9.2.1)",
+    "path": "atcoder\\abc107\\D.cpp",
+    "platform": "AtCoder",
+    "problem_index": "D",
+    "problem_name": "Median of Medians",
+    "problem_url": "https://atcoder.jp/contests/abc107/tasks/arc101_b",
+    "submission_id": "AC18966867",
+    "submission_url": "https://atcoder.jp/contests/abc107/submissions/18966867",
+    "tags": [
+      "AtCoder",
+      "*700"
+    ],
+    "timestamp": "Dec/24/2020 17:38"
+  },
   "AC19462149": {
     "contest_id": "keyence2021",
     "language": "C++ (GCC 9.2.1)",
