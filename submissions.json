@@ -1183,6 +1183,23 @@
     ],
     "timestamp": "Sep/11/2021 18:44"
   },
+  "CF102166956": {
+    "contest_id": 62,
+    "language": "GNU C++17",
+    "path": "codeforces\\62\\B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "Tyndex.Brome",
+    "problem_url": "https://codeforces.com/contest/62/problem/B",
+    "submission_id": "CF102166956",
+    "submission_url": "https://codeforces.com/contest/62/submission/102166956",
+    "tags": [
+      "binary search",
+      "implementation",
+      "*1800"
+    ],
+    "timestamp": "Dec/24/2020 11:37"
+  },
   "CF102167747": {
     "contest_id": 186,
     "language": "GNU C++17",
