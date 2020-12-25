@@ -1,111 +1,106 @@
-// #pragma GCC optimize("Ofast,unroll-loops")
-// #pragma GCC target("avx,avx2,fma")
-
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 
 #define ll long long
-#define ull unsigned long long
-#define dd double
-#define ld long double
-#define sl(n) scanf("%lld", &n)
-#define si(n) scanf("%d", &n)
-#define sd(n) scanf("%lf", &n)
-#define pll pair <ll, ll>
-#define pii pair <int, int>
 #define mp make_pair
 #define pb push_back
-#define all(v) v.begin(), v.end()
-#define inf (1LL << 61)
-#define loop(i, start, stop, inc) for(ll i = start; i <= stop; i += inc)
-#define for1(i, stop) for(ll i = 1; i <= stop; ++i)
-#define for0(i, stop) for(ll i = 0; i < stop; ++i)
-#define rep1(i, start) for(ll i = start; i >= 1; --i)
-#define rep0(i, start) for(ll i = (start-1); i >= 0; --i)
-#define ms(n, i) memset(n, i, sizeof(n))
-#define casep(n) printf("Case %lld:", ++n)
-#define pn printf("\n")
-#define pf printf
-#define EL '\n'
-#define fastio std::ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+#define sc second
+#define fr first
+#define scl(n) scanf("%lld",&n)
+#define scll(n,m) scanf("%lld%lld",&n,&m)
+#define scs(ch) scanf("%s", ch)
 
-const ll sz = 5e5 + 10;
-ll ara[sz], mxLen[sz];
-int tr[4*sz];
-vector <int> nxt[sz];
 
-void upd(ll lo, ll hi, ll idx, ll v, ll node)
+
+vector < pair < ll,ll > > vec;
+pair < ll,ll > pr;
+ll ara[500002],trck[500005],tree[2000002];
+vector < ll > tmp[500002];
+stack < ll > st;
+
+ll qry(ll node,ll l,ll r,ll p)
 {
-    if(lo > idx || hi < idx)
-        return;
-    if(lo == hi) {
-        tr[node] = max(tr[node], (int)v);
-        return;
-    }
-
-    ll mid = lo+hi>>1, lft=node<<1, rgt=lft|1;
-
-    upd(lo, mid, idx, v, lft);
-    upd(mid+1, hi, idx, v, rgt);
-
-    tr[node] = max(tr[lft], tr[rgt]);
+    if(l>p)return 0;
+    if(r<=p)return tree[node];
+    ll ln=node*2,mid=(l+r)/2;
+    ll a = qry(ln,l,mid,p);
+    ll b = qry(ln+1,mid+1,r,p);
+    return max(a,b);
 }
 
-ll qry(ll lo, ll hi, ll l, ll r, ll node)
+void up(ll node,ll l,ll r,ll i,ll x)
 {
-    if(lo > r || hi < l)
-        return 0;
-    if(lo >= l && hi <= r)
-        return tr[node];
-
-    ll mid = lo+hi>>1, lft=node<<1, rgt=lft|1;
-
-    return max(qry(lo, mid, l, r, lft),
-              qry(mid+1, hi, l, r, rgt));
+    if(i>r||i<l){
+        return;
+    }
+    if(l==r){
+        tree[node]+=x;
+        return;
+    }
+    ll ln=node*2;
+    ll rn=ln+1,mid=(l+r)/2;
+    up(ln,l,mid,i,x);
+    up(ln+1,mid+1,r,i,x);
+    tree[node]=max(tree[ln],tree[rn]);
+    return;
 }
 
 int main()
 {
-    ll t;
-    cin >> t;
-
-    while(t--) {
-        ll n; sl(n);
-        for1(i, n) sl(ara[i]), nxt[i].clear(), mxLen[i] = 0;
-
-        for1(i, 4*n) tr[i] = 0;
-
-        stack <int> st;
-
-        for1(i, n) {
-            while(!st.empty() && ara[st.top()] <= ara[i])
-                st.pop();
-
-            if(!st.empty())
-                nxt[st.top()].pb(i);
-
+    ll test,t,i,j,k,a,b,c,x,y,z,n,m;
+    scl(test);
+    for(t=1;t<=test;t++)
+    {
+        scl(n);
+        for(i=1;i<=n;i++){
+            scl(ara[i]);
+            vec.pb(mp(ara[i],i));
+            tmp[i].clear();
+        }
+        sort(vec.begin(),vec.end());
+        for(i=0;i<n;i++){
+            pr=vec[i];
+            trck[pr.sc]=i+1;
+        }
+        for(i=n;i>0;i--){
+            while(!st.empty()){
+                a=st.top();
+                if(ara[a]<ara[i]){
+                    st.pop();
+                }
+                else break;
+            }
+            if(!st.empty()){
+                a=st.top();
+                //cout<<i << "   " <<a<<endl;
+                tmp[a].pb(trck[i]);
+            }
             st.push(i);
         }
-
-        ll ans = 0;
-        for1(i, n) {
-            ll q = qry(1, n, 1, ara[i], 1);
-            ans = max(ans, q+1);
-
-            for(int &idx : nxt[i]) {
-                ll len = qry(1, n, 1, ara[idx], 1);
-                ans = max(ans, len+2);
-
-                mxLen[idx] = max(mxLen[idx], len+2);
+        for(i=1;i<=n;i++){
+            a=trck[i];
+            b=qry(1,0,n,a-1);
+            b++;
+            if(i>1){
+                b=max(b,2ll);
             }
+            //cout<<i<< " "<<a<< " " <<b<<endl;
+            up(1,0,n,a,b);
+            for(j=0;j<tmp[i].size();j++){
 
-            mxLen[i] = max(mxLen[i], q+1);
-            //cout << i << " || " << mxLen[i] << " " << q << EL;
-            upd(1, n, ara[i], mxLen[i], 1);
+                x=tmp[i][j];
+                //cout<<x<<endl;
+                up(1,0,n,x,1);
+            }
         }
-
-        pf("%lld\n", ans);
+        printf("%lld\n",tree[1]);
+        vec.clear();
+        while(!st.empty())st.pop();
+        for(i=0;i<=4*n;i++){
+            tree[i]=0;
+        }
     }
 
     return 0;
 }
+
