@@ -1183,6 +1183,24 @@
     ],
     "timestamp": "Sep/11/2021 18:44"
   },
+  "CF102429287": {
+    "contest_id": 1468,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1468\\M.cpp",
+    "platform": "Codeforces",
+    "problem_index": "M",
+    "problem_name": "Similar Sets",
+    "problem_url": "https://codeforces.com/contest/1468/problem/M",
+    "submission_id": "CF102429287",
+    "submission_url": "https://codeforces.com/contest/1468/submission/102429287",
+    "tags": [
+      "data structures",
+      "graphs",
+      "implementation",
+      "*2300"
+    ],
+    "timestamp": "Dec/27/2020 02:08"
+  },
   "CF102429486": {
     "contest_id": 1468,
     "language": "GNU C++17 (64)",

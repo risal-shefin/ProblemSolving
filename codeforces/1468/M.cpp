@@ -4,7 +4,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define ll long long
+#define ll int
 #define ull unsigned long long
 #define dd double
 #define ld long double
@@ -29,32 +29,33 @@ using namespace std;
 #define EL '\n'
 #define fastio std::ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 
-const ll sz = 3e5 + 10;
-vector <ll> g[sz], g2[sz], st[sz];
-ll lst[sz], deg[sz], mark[sz];
-pll check[sz];
+const ll sz = 3e5 + 10, ssz = 1e5+10;
+vector <ll> g[sz], g2[sz], st[ssz];
+ll deg[sz], mark[sz];
 
-bool cmp(const ll &a, const ll &b) {
-    return deg[a] > deg[b];
-}
+struct info {
+    ll u, v;
+} check[sz];
 
 int main()
 {
+    fastio;
+
     ll t;
     cin >> t;
     while(t--) {
-        ll n; sl(n);
+        ll n; cin >> n;
 
         vector <int> num;
 
         for1(i, n) {
-            ll k; sl(k);
+            ll k; cin >> k;
 
             st[i].clear();
             st[i].reserve(k);
 
             for1(j, k) {
-                ll x; sl(x);
+                ll x; cin >> x;
                 st[i].pb(x);
 
                 num.pb(x);
@@ -67,8 +68,8 @@ int main()
 
         for1(i, tot) {
             g[i].clear(), g2[i].clear();
-            deg[i] = mark[i] = 0, lst[i] = i;
-            check[i] = {-1, -1};
+            deg[i] = mark[i] = 0;
+            check[i].u = check[i].v = -1;
         }
 
         for1(i, n) {
@@ -83,25 +84,21 @@ int main()
                 deg[i]++, deg[n+p]++;
             }
         }
-        sort(lst+1, lst+tot+1, cmp);
 
-        for1(i, tot) {
-            ll u = lst[i];
-            mark[u] = 1;
+        for1(i, n) {
 
-            for(ll &v : g[u]) {
-                if(mark[v])
-                    continue;
+            for(ll &v : g[i]) {
 
-                g2[u].pb(v);
+                if(deg[i] >= deg[v])
+                    g2[i].pb(v);
+                else
+                    g2[v].pb(i);
             }
         }
 
-        pll ans = {-1, -1};
+        info ans = {-1, -1};
 
-        for1(i, tot) {
-            ll u = lst[i];
-            //cout << u << endl;
+        for1(u, tot) {
 
             for(ll &v : g2[u]) {
 
@@ -109,37 +106,37 @@ int main()
 
                     if(w == v || w == u)
                         continue;
-                    //cout << u << " " << w << endl;
+                    //cout << u << " " << v << " " << w << endl;
 
-                    if(check[w].first == u) {
+                    if(check[w].u == u) {
 
-                        if(u <= n) ans.first = u;
-                        else if(v <= n) ans.first = v;
-                        else ans.first = w;
+                        if(u <= n) ans.u = u;
+                        else if(v <= n) ans.u = v;
+                        else ans.u = w;
 
-                        if(check[w].second <= n) ans.second = check[w].second;
-                        else if(w <= n) ans.second = w;
-                        else ans.first = v;
+                        if(check[w].v <= n) ans.v = check[w].v;
+                        else if(w <= n) ans.v = w;
+                        else ans.v = v;
 
                         break;
                     }
 
-                    if(ans.first != -1)
+                    if(ans.u != -1)
                         break;
 
-                    check[w] = {u, v};
+                    check[w].u = u, check[w].v = v;
                 }
 
-                if(ans.first != -1)
-                        break;
+                if(ans.u != -1)
+                    break;
             }
 
-            if(ans.first != -1)
+            if(ans.u != -1)
                 break;
         }
 
-        if(ans.first == -1) pf("-1\n");
-        else pf("%lld %lld\n", ans.first, ans.second);
+        if(ans.u == -1) cout << -1 << EL;
+        else cout << ans.u << " " << ans.v << EL;
     }
 
     return 0;
