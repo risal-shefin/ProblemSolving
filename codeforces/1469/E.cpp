@@ -98,8 +98,6 @@ int main()
         gen(1, minNeed);
 
         unordered_set <string> bad;
-        bad.reserve(1<<15);
-        bad.max_load_factor(0.25);
 
         for(ll i = n-minNeed+1; i >= 1; i--) {
 
