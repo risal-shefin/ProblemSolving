@@ -123,7 +123,7 @@ int main()
 
                 pf("YES\n");
                 for(ll i = 1; i <= k-minNeed; i++) pf("0");
-                pf("%s\n", s.c_str());
+                cout << s << '\n';
 
                 got = 1;
                 break;
