@@ -31,8 +31,8 @@ using namespace std;
 
 #define LL long long
 
-const ll sz = 1e5 + 10, block = 80, MAX_N = 2e6 + 10, bsz = sz/block +10;
-LL tot[bsz][bsz];
+const ll sz = 1e5 + 10, block = 350, MAX_N = 2e6 + 10;
+LL tot[block][block];
 ll n, m, k, ara[sz], pre[sz], cnt[MAX_N], idx, vis[MAX_N];
 vector <ll> pos[MAX_N];
 
