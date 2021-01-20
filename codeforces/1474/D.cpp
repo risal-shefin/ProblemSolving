@@ -30,18 +30,15 @@ using namespace std;
 #define fastio std::ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 
 const ll sz = 2e5 + 10;
-ll ara[sz], tr[4*sz][2], lazy[4*sz], n;
+ll ara[sz], tr[4*sz][2], lazy[4*sz][2], n;
 
-void prop(ll lo, ll hi, ll node)
+void prop(ll lo, ll hi, ll node, bool s)
 {
     ll lft = node<<1, rgt = lft|1;
+    tr[lft][s] += lazy[node][s], tr[rgt][s] += lazy[node][s];
+    lazy[lft][s] += lazy[node][s], lazy[rgt][s] += lazy[node][s];
 
-    tr[lft][1] += lazy[node], tr[rgt][1] += lazy[node];
-    tr[lft][0] -= lazy[node], tr[rgt][0] -= lazy[node];
-
-    lazy[lft] += lazy[node], lazy[rgt] += lazy[node];
-
-    lazy[node] = 0;
+    lazy[node][s] = 0;
 }
 
 void build(ll lo, ll hi, ll node)
@@ -56,7 +53,7 @@ void build(ll lo, ll hi, ll node)
             tr[node][0] = 0;
         }
 
-        lazy[node] = 0;
+        lazy[node][1] = lazy[node][0] = 0;
         return;
     }
 
@@ -67,8 +64,7 @@ void build(ll lo, ll hi, ll node)
 
     tr[node][0] = min(tr[lft][0], tr[rgt][0]);
     tr[node][1] = min(tr[lft][1], tr[rgt][1]);
-
-    lazy[node] = 0;
+    lazy[node][1] = lazy[node][0] = 0;
 }
 
 void upd(ll lo, ll hi, ll l, ll r, ll val, bool s, ll node)
@@ -76,25 +72,36 @@ void upd(ll lo, ll hi, ll l, ll r, ll val, bool s, ll node)
     if(lo > r || hi < l)
         return;
     if(lo >= l && hi <= r) {
-        tr[node][s] += val, tr[node][!s] -= val;
-        lazy[node] += (s==1)? val : -val;
+        tr[node][s] += val;
+        lazy[node][s] += val;
         return;
     }
 
-    if(lazy[node] != 0) prop(lo, hi, node);
+    if(lazy[node][s] != 0) prop(lo, hi, node, s);
 
     ll mid = lo+hi>>1, lft = node<<1, rgt = lft|1;
     upd(lo, mid, l, r, val, s, lft);
     upd(mid+1, hi, l, r, val, s, rgt);
 
     tr[node][s] = min(tr[lft][s], tr[rgt][s]);
-    tr[node][!s] = min(tr[lft][!s], tr[rgt][!s]);
 }
 
 void swp(ll i, ll j)
 {
-    upd(1, n, i, n, -ara[i]+ara[j], i&1, 1);
-    upd(1, n, j, n, -ara[j]+ara[i], j&1, 1);
+    bool s1 = i&1, s2 = j&1;
+
+    upd(1, n, i, n, -ara[i], s1, 1);
+    upd(1, n, i, n, ara[i], !s1, 1);
+
+    upd(1, n, j, n, -ara[j], s2, 1);
+    upd(1, n, j, n, ara[j], !s2, 1);
+
+
+    upd(1, n, i, n, ara[j], s1, 1);
+    upd(1, n, i, n, -ara[j], !s1, 1);
+
+    upd(1, n, j, n, ara[i], s2, 1);
+    upd(1, n, j, n, -ara[i], !s2, 1);
 
     swap(ara[i], ara[j]);
 }
@@ -106,7 +113,7 @@ ll query(ll lo, ll hi, ll idx, ll s, ll node)
     if(lo == hi)
         return tr[node][s];
 
-    if(lazy[node] != 0) prop(lo, hi, node);
+    if(lazy[node][s] != 0) prop(lo, hi, node, s);
 
     ll mid = lo+hi>>1, lft = node<<1, rgt = lft|1;
 
@@ -128,8 +135,11 @@ int main()
 
         build(1, n, 1);
 
-        for1(i, n)
-            upd(1, n, i, n, ara[i], i&1, 1);
+        for1(i, n) {
+            bool s = i&1;
+            upd(1, n, i, n, ara[i], s, 1);
+            upd(1, n, i, n, -ara[i], !s, 1);
+        }
 
         if(tr[1][0] >= 0 && tr[1][1] >= 0 && query(1, n, n, n&1, 1) == 0)
             ok = 1;
