@@ -29,8 +29,8 @@ using namespace std;
 #define EL '\n'
 #define fastio std::ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 
-const ll sz = 2e5 + 10;
-int par[sz], rnk[sz], tr[4*sz], idx;
+const ll sz = 2e5 + 10, nsz = 1e6 + 10;
+int par[nsz], rnk[nsz], tr[4*sz], idx;
 
 ll findp(ll u) {
     if(par[u] == u)
@@ -91,7 +91,7 @@ int main()
     ll n, q;
     cin >> n >> q;
 
-    for0(i, sz) par[i] = i, rnk[i] = 1;
+    for0(i, nsz) par[i] = i, rnk[i] = 1;
     build(1, n, 1);
     idx = n;
 
@@ -102,7 +102,7 @@ int main()
         if(typ == 1)
             Union(u, v);
         else if(typ == 2)
-            upd(1, n, u, v, findp(u), 1);
+            upd(1, n, u, v, ++idx, 1);
         else {
             u = findp(u), v = findp(v);
             if(u == v)
@@ -114,3 +114,4 @@ int main()
 
     return 0;
 }
+
