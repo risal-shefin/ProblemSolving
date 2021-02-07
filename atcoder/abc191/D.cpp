@@ -28,7 +28,7 @@ using namespace std;
 #define pf printf
 #define EL '\n'
 #define fastio std::ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
-#define eps 1e-12
+#define eps 1e-9
 
 inline ld sq(ld x) {return x*x;}
 
