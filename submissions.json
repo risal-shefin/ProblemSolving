@@ -3717,6 +3717,25 @@
     ],
     "timestamp": "Feb/07/2021 22:49"
   },
+  "CF107276465": {
+    "contest_id": 1485,
+    "language": "GNU C++17",
+    "path": "codeforces\\1485\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Floor and Mod",
+    "problem_url": "https://codeforces.com/contest/1485/problem/C",
+    "submission_id": "CF107276465",
+    "submission_url": "https://codeforces.com/contest/1485/submission/107276465",
+    "tags": [
+      "binary search",
+      "brute force",
+      "math",
+      "number theory",
+      "*1700"
+    ],
+    "timestamp": "Feb/13/2021 17:45"
+  },
   "CF107370880": {
     "contest_id": 1480,
     "language": "GNU C++17",
