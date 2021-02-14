@@ -42,16 +42,16 @@ int main()
 
         map <ll, ll> cnt;
 
-        ll ans = 1, pre = 0, bad = 1;
+        ll ans = 1, k = 0;
         cnt[0] = 1;
 
         for1(i, n) {
             ll x; sl(x);
 
-            ans = (2*ans - bad + mod) % mod;
+            ll bad = cnt[k];
+            cnt[k] = ans, k += x;
 
-            pre += x, bad = cnt[pre];
-            cnt[pre] = ans;
+            ans = (2*ans - bad + mod) % mod;
         }
 
         pf("%lld\n", ans);
