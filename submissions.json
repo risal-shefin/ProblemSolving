@@ -3773,6 +3773,25 @@
     ],
     "timestamp": "Feb/13/2021 17:45"
   },
+  "CF107331532": {
+    "contest_id": 1485,
+    "language": "GNU C++17",
+    "path": "codeforces\\1485\\F.cpp",
+    "platform": "Codeforces",
+    "problem_index": "F",
+    "problem_name": "Copy or Prefix Sum",
+    "problem_url": "https://codeforces.com/contest/1485/problem/F",
+    "submission_id": "CF107331532",
+    "submission_url": "https://codeforces.com/contest/1485/submission/107331532",
+    "tags": [
+      "combinatorics",
+      "data structures",
+      "dp",
+      "sortings",
+      "*2400"
+    ],
+    "timestamp": "Feb/14/2021 16:27"
+  },
   "CF107350241": {
     "contest_id": 1480,
     "language": "GNU C++17",
