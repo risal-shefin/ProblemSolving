@@ -42,26 +42,30 @@ ll solve(ll i)
     if(ret != -1)
         return ret;
 
-    auto fun = [&] (ll k) {
+    ret = 1+solve(i+1);
 
-        ll val = ara2[k];
-        ll nxt = upper_bound(all(pos[val]), k) - pos[val].begin();
+    if(i > 1) {
+        ll val = ara2[i-1];
+        ll nxt = upper_bound(all(pos[val]), i) - pos[val].begin();
 
-        if(nxt == pos[val].size())
-            return inf;
+        if(nxt < pos[val].size()) {
+            ll np = pos[val][nxt];
+            ll ad = (np-i-1);
 
+            ret = min(ret, ad + solve(np));
+        }
+
+    }
+
+    ll val = ara2[i];
+    ll nxt = upper_bound(all(pos[val]), i) - pos[val].begin();
+
+    if(nxt < pos[val].size()) {
         ll np = pos[val][nxt];
         ll ad = (np-i-1);
 
-        return ad + solve(np);
-    };
-
-    ret = 1+solve(i+1);
-
-    if(i > 1)
-        ret = min(ret, fun(i-1));
-
-    ret = min(ret, fun(i));
+        ret = min(ret, ad+solve(np));
+    }
 
     return ret;
 }
@@ -92,4 +96,3 @@ int main()
 
     return 0;
 }
-
