@@ -31,11 +31,6 @@ using namespace std;
 
 const ll sz = 1e5 + 50*1e5 + 10;
 ll dist[sz], n, m;
-set <int> wlst[100009];
-
-struct info {
-    ll u, v, w;
-} ara[sz];
 
 struct Edge {
     int v, w;
@@ -78,7 +73,7 @@ void addEdge(ll u, ll v, ll w)
     ll vw = n+50*(v-1) + w;
     g[u].pb({vw, 0});
 
-    for(const int &i : wlst[u]) {
+    for1(i, 50) {
         ll cst = sq(i+w), ui = n+50*(u-1) + i;
         g[ui].pb({v, cst});
     }
@@ -94,15 +89,8 @@ int main()
         ll u, v, w;
         cin >> u >> v >> w;
 
-        ara[i] = {u, v, w};
-
-        wlst[u].insert(w);
-        wlst[v].insert(w);
-    }
-
-    for1(i, m) {
-        addEdge(ara[i].u, ara[i].v, ara[i].w);
-        addEdge(ara[i].v, ara[i].u, ara[i].w);
+        addEdge(u, v, w);
+        addEdge(v, u, w);
     }
 
     dijkstra();
