@@ -4,7 +4,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define ll int
+#define ll long long
 #define ull unsigned long long
 #define dd double
 #define ld long double
@@ -16,7 +16,7 @@ using namespace std;
 #define mp make_pair
 #define pb push_back
 #define all(v) v.begin(), v.end()
-#define inf (1<<30)
+#define inf (1LL << 61)
 #define loop(i, start, stop, inc) for(ll i = start; i <= stop; i += inc)
 #define for1(i, stop) for(ll i = 1; i <= stop; ++i)
 #define for0(i, stop) for(ll i = 0; i < stop; ++i)
@@ -29,80 +29,90 @@ using namespace std;
 #define EL '\n'
 #define fastio std::ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 
-const ll sz = 1e5 + 50*1e5 + 10;
-ll dist[sz], n, m;
+const ll sz = 1e5 + 10;
+ll dist[sz][2];
 
 struct Edge {
-    int v, w;
+    ll v, w;
 };
 vector <Edge> g[sz];
 
-const bool operator <(const Edge &a, const Edge &b) {
-    return a.w > b.w;
+struct info {
+    ll v, w, ext;
+};
+const bool operator <(const info &a, const info &b) {
+    return a.w+a.ext > b.w+b.ext;
 }
 
 inline ll sq(ll x) {return x*x;}
 
-void dijkstra()
+void dijkstra(ll n)
 {
-    for1(i, sz-1) dist[i] = inf;
+    for1(i, n)
+        for0(j, 2)
+            dist[i][j] = inf;
 
-    priority_queue <Edge> pq;
-    pq.push({1, 0});
-    dist[1] = 0;
+    priority_queue <info> pq;
+    pq.push({1, 0, 0});
+    dist[1][0] = 0;
 
     while(!pq.empty()) {
-        Edge got = pq.top();
+        info got = pq.top();
         pq.pop();
 
-        if(dist[got.v] != got.w)
+        ll state = 1;
+        if(got.ext == 0) state = 0;
+
+        if(state == 0 && dist[got.v][state] != got.w+got.ext)
             continue;
 
         for(Edge &edge : g[ got.v ]) {
 
-            if(dist[edge.v] > got.w + edge.w) {
-                dist[edge.v] = got.w + edge.w;
-                pq.push({edge.v, dist[edge.v]});
+            ll now = state^1;
+
+            if(!state) {
+                ll cst = got.w + sq(edge.w), cst2 = 2*edge.w;
+                pq.push({edge.v, cst, cst2});
+
+//                if(dist[edge.v][now] > cst+cst2) {
+//                    dist[edge.v][now] = cst+cst2;
+//                    pq.push({edge.v, cst, cst2});
+//                }
+            }
+            else {
+                ll cst = got.w + sq(edge.w) + got.ext*edge.w;
+
+                if(dist[edge.v][now] > cst) {
+                    dist[edge.v][now] = cst;
+                    pq.push({edge.v, cst, 0});
+                }
             }
         }
     }
 }
 
-void addEdge(ll u, ll v, ll w)
-{
-    ll vw = n+50*(v-1) + w;
-    g[u].pb({vw, 0});
-
-    for1(i, 50) {
-        ll cst = sq(i+w), ui = n+50*(u-1) + i;
-        g[ui].pb({v, cst});
-    }
-}
-
 int main()
 {
-    fastio;
-
+    ll n, m;
     cin >> n >> m;
 
     for1(i, m) {
         ll u, v, w;
-        cin >> u >> v >> w;
+        sl(u), sl(v), sl(w);
 
-        addEdge(u, v, w);
-        addEdge(v, u, w);
+        g[u].pb({v, w});
+        g[v].pb({u, w});
     }
 
-    dijkstra();
+    dijkstra(n);
 
     for1(i, n) {
-        if(dist[i] == inf)
-            cout << -1 << " ";
+        if(dist[i][0] == inf)
+            pf("-1 ");
         else
-            cout << dist[i] << " ";
+            pf("%lld ", dist[i][0]);
     }
-    cout << EL;
+    pn;
 
     return 0;
 }
-
