@@ -29,17 +29,20 @@ using namespace std;
 #define EL '\n'
 #define fastio std::ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 
-const ll sz = 1e5 + 10;
-ll dist[sz][51], n, m;
+const ll sz = 5e5 + 10;
+ll dist[sz], n, m;
+unordered_map <int, int> wlst[100009];
+
+struct info {
+    ll u, v, w;
+} ara[sz];
 
 struct Edge {
-    int v, w, a;
+    int v, w;
 };
 vector <Edge> g[sz];
 
 const bool operator <(const Edge &a, const Edge &b) {
-    if(a.w == b.w)
-        return a.a > b.a;
     return a.w > b.w;
 }
 
@@ -47,34 +50,38 @@ inline ll sq(ll x) {return x*x;}
 
 void dijkstra()
 {
-    for1(i, sz-1)
-        for0(j, 51)
-            dist[i][j] = inf;
+    for1(i, sz-1) dist[i] = inf;
 
     priority_queue <Edge> pq;
-    pq.push({1, 0, 0});
-    dist[1][0] = 0;
+    pq.push({1, 0});
+    dist[1] = 0;
 
     while(!pq.empty()) {
         Edge got = pq.top();
         pq.pop();
 
-        if(dist[got.v][got.a] != got.w)
+        if(dist[got.v] != got.w)
             continue;
 
         for(Edge &edge : g[ got.v ]) {
 
-            ll nxt = edge.w, cst = got.w;
-            if(got.a != 0) {
-                nxt = 0;
-                cst += sq(got.a+edge.w);
-            }
-
-            if(dist[edge.v][nxt] > cst) {
-                dist[edge.v][nxt] = cst;
-                pq.push({edge.v, cst, nxt});
+            if(dist[edge.v] > got.w + edge.w) {
+                dist[edge.v] = got.w + edge.w;
+                pq.push({edge.v, dist[edge.v]});
             }
         }
+    }
+}
+
+void addEdge(ll u, ll v, ll w)
+{
+    ll vw = wlst[v][w];
+    g[u].pb({vw, 0});
+
+    for(auto it = wlst[u].begin(); it != wlst[u].end(); ++it) {
+
+        ll cst = sq(it->first +w), ui = it->second;
+        g[ui].pb({v, cst});
     }
 }
 
@@ -83,26 +90,36 @@ int main()
     fastio;
 
     cin >> n >> m;
+    ll idx = n;
 
     for1(i, m) {
         ll u, v, w;
         cin >> u >> v >> w;
 
-        g[u].pb({v, w});
-        g[v].pb({u, w});
+        ara[i] = {u, v, w};
+
+        if(wlst[u].find(w) == wlst[u].end())
+            wlst[u][w] = ++idx;
+
+        if(wlst[v].find(w) == wlst[v].end())
+            wlst[v][w] = ++idx;
+    }
+
+    for1(i, m) {
+        addEdge(ara[i].u, ara[i].v, ara[i].w);
+        addEdge(ara[i].v, ara[i].u, ara[i].w);
     }
 
     dijkstra();
 
     for1(i, n) {
-        if(dist[i][0] == inf)
+        if(dist[i] == inf)
             cout << -1 << " ";
         else
-            cout << dist[i][0] << " ";
+            cout << dist[i] << " ";
     }
     cout << EL;
 
     return 0;
 }
-
 
