@@ -29,9 +29,9 @@ using namespace std;
 #define EL '\n'
 #define fastio std::ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 
-const ll sz = 5e5 + 10;
+const ll sz = 1e5 + 50*1e5 + 10;
 ll dist[sz], n, m;
-unordered_map <int, int> wlst[100009];
+set <int> wlst[100009];
 
 struct info {
     ll u, v, w;
@@ -75,12 +75,11 @@ void dijkstra()
 
 void addEdge(ll u, ll v, ll w)
 {
-    ll vw = wlst[v][w];
+    ll vw = n+50*(v-1) + w;
     g[u].pb({vw, 0});
 
-    for(auto it = wlst[u].begin(); it != wlst[u].end(); ++it) {
-
-        ll cst = sq(it->first +w), ui = it->second;
+    for(const int &i : wlst[u]) {
+        ll cst = sq(i+w), ui = n+50*(u-1) + i;
         g[ui].pb({v, cst});
     }
 }
@@ -90,7 +89,6 @@ int main()
     fastio;
 
     cin >> n >> m;
-    ll idx = n;
 
     for1(i, m) {
         ll u, v, w;
@@ -98,11 +96,8 @@ int main()
 
         ara[i] = {u, v, w};
 
-        if(wlst[u].find(w) == wlst[u].end())
-            wlst[u][w] = ++idx;
-
-        if(wlst[v].find(w) == wlst[v].end())
-            wlst[v][w] = ++idx;
+        wlst[u].insert(w);
+        wlst[v].insert(w);
     }
 
     for1(i, m) {
