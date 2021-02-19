@@ -1,4 +1,26 @@
 {
+  "CF107937862": {
+    "contest_id": 1486,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1486\\E.cpp",
+    "platform": "Codeforces",
+    "problem_index": "E",
+    "problem_name": "Paired Payment",
+    "problem_url": "https://codeforces.com/contest/1486/problem/E",
+    "submission_id": "CF107937862",
+    "submission_url": "https://codeforces.com/contest/1486/submission/107937862",
+    "tags": [
+      "binary search",
+      "brute force",
+      "constructive algorithms",
+      "dp",
+      "flows",
+      "graphs",
+      "shortest paths",
+      "*2200"
+    ],
+    "timestamp": "Feb/19/2021 17:44"
+  },
   "CF108670585": {
     "contest_id": 1491,
     "language": "GNU C++17",
