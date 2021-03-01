@@ -1,4 +1,24 @@
 {
+  "CF108823363": {
+    "contest_id": 1492,
+    "language": "GNU C++17",
+    "path": "codeforces\\1492\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Maximum width",
+    "problem_url": "https://codeforces.com/contest/1492/problem/C",
+    "submission_id": "CF108823363",
+    "submission_url": "https://codeforces.com/contest/1492/submission/108823363",
+    "tags": [
+      "binary search",
+      "data structures",
+      "dp",
+      "greedy",
+      "two pointers",
+      "*1500"
+    ],
+    "timestamp": "Mar/01/2021 22:56"
+  },
   "CF108827360": {
     "contest_id": 1492,
     "language": "GNU C++17",
