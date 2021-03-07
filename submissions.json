@@ -1,4 +1,24 @@
 {
+  "CF109355112": {
+    "contest_id": 1493,
+    "language": "GNU C++17",
+    "path": "codeforces\\1493\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "K-beautiful Strings",
+    "problem_url": "https://codeforces.com/contest/1493/problem/C",
+    "submission_id": "CF109355112",
+    "submission_url": "https://codeforces.com/contest/1493/submission/109355112",
+    "tags": [
+      "binary search",
+      "brute force",
+      "constructive algorithms",
+      "greedy",
+      "strings",
+      "*2000"
+    ],
+    "timestamp": "Mar/08/2021 00:02"
+  },
   "CF109559921": {
     "contest_id": 1496,
     "language": "GNU C++17",
