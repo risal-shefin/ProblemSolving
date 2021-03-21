@@ -1,4 +1,22 @@
 {
+  "CF110631962": {
+    "contest_id": 1483,
+    "language": "GNU C++17",
+    "path": "codeforces\\1483\\A.cpp",
+    "platform": "Codeforces",
+    "problem_index": "A",
+    "problem_name": "Basic Diplomacy",
+    "problem_url": "https://codeforces.com/contest/1483/problem/A",
+    "submission_id": "CF110631962",
+    "submission_url": "https://codeforces.com/contest/1483/submission/110631962",
+    "tags": [
+      "constructive algorithms",
+      "greedy",
+      "implementation",
+      "*1600"
+    ],
+    "timestamp": "Mar/21/2021 19:30"
+  },
   "CF110646650": {
     "contest_id": 1483,
     "language": "GNU C++17",
