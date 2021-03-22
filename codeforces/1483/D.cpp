@@ -66,6 +66,11 @@ struct Edge {
     int u, v, w;
 } edge[esz], qry[esz];
 
+struct info {
+    ll v, w;
+};
+vector <info> g[sz];
+
 void solve(ll src)
 {
     for1(i, n) dist[i] = ini[i] = inf;
@@ -98,8 +103,6 @@ void solve(ll src)
 
 int main()
 {
-    fastio;
-
     cin >> n >> m;
 
     for1(i, n)
@@ -108,9 +111,12 @@ int main()
 
     for1(i, m) {
         ll u, v, w;
-        cin >> u >> v >> w;
+        sl(u), sl(v), sl(w);
 
         edge[i] = {u, v, w};
+
+        g[u].pb({v, w});
+        g[v].pb({u, w});
 
         d[u][v] = d[v][u] = min(d[u][v], w);
     }
@@ -122,7 +128,7 @@ int main()
 
     cin >> q;
     for1(i, q)
-        cin >> qry[i].u >> qry[i].v >> qry[i].w;
+        sl(qry[i].u), sl(qry[i].v), sl(qry[i].w);
 
     for1(i, n)
         solve(i);
