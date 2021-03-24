@@ -61,7 +61,7 @@ Ostream& operator<<(Ostream& os,  const pair<Ts...>& p){
 const ll sz = 2e7 + 10;
 ll pcnt[sz], chk[sz], c, d, x;
 
-inline ll solve(ll g)
+ll solve(ll g)
 {
     ll k = x/g + d;
     if(k % c != 0)
@@ -73,8 +73,6 @@ inline ll solve(ll g)
 
 int main()
 {
-    fastio;
-
     for(ll i = 2; i < sz; i++) {
         if(!chk[i]) {
             for(ll j = i; j < sz; j += i) {
@@ -88,7 +86,7 @@ int main()
     cin >> t;
 
     while(t--) {
-        cin >> c >> d >> x;
+        sl(c), sl(d), sl(x);
 
         ll ans = 0;
 
@@ -101,7 +99,7 @@ int main()
                 ans += solve(x/i);
         }
 
-        cout << ans << EL;
+        pf("%lld\n", ans);
     }
 
     return 0;
