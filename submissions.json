@@ -1,4 +1,23 @@
 {
+  "CF110912398": {
+    "contest_id": 1499,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1499\\E.cpp",
+    "platform": "Codeforces",
+    "problem_index": "E",
+    "problem_name": "Chaotic Merge",
+    "problem_url": "https://codeforces.com/contest/1499/problem/E",
+    "submission_id": "CF110912398",
+    "submission_url": "https://codeforces.com/contest/1499/submission/110912398",
+    "tags": [
+      "combinatorics",
+      "dp",
+      "math",
+      "strings",
+      "*2400"
+    ],
+    "timestamp": "Mar/24/2021 22:15"
+  },
   "CF110929879": {
     "contest_id": 1499,
     "language": "GNU C++17 (64)",
