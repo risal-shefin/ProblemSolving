@@ -59,8 +59,7 @@ Ostream& operator<<(Ostream& os,  const pair<Ts...>& p){
 #define ss second
 
 const ll sz = 2e7 + 10;
-int pcnt[sz], c, d, x;
-bitset <sz> chk;
+ll pcnt[sz], chk[sz], c, d, x;
 
 inline ll solve(ll g)
 {
@@ -76,9 +75,9 @@ int main()
 {
     fastio;
 
-    for(int i = 2; i < sz; ++i) {
+    for(ll i = 2; i < sz; i++) {
         if(!chk[i]) {
-            for(int j = i; j < sz; j += i) {
+            for(ll j = i; j < sz; j += i) {
                 chk[j] = 1;
                 pcnt[j]++;
             }
