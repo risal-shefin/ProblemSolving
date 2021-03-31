@@ -1,4 +1,22 @@
 {
+  "CF111582806": {
+    "contest_id": 1498,
+    "language": "GNU C++17",
+    "path": "codeforces\\1498\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Planar Reflections",
+    "problem_url": "https://codeforces.com/contest/1498/problem/C",
+    "submission_id": "CF111582806",
+    "submission_url": "https://codeforces.com/contest/1498/submission/111582806",
+    "tags": [
+      "brute force",
+      "data structures",
+      "dp",
+      "*1600"
+    ],
+    "timestamp": "Mar/31/2021 23:16"
+  },
   "CF111595689": {
     "contest_id": 1498,
     "language": "GNU C++17",
