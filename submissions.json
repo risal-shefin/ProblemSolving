@@ -1,4 +1,23 @@
 {
+  "CF111580342": {
+    "contest_id": 1498,
+    "language": "GNU C++17",
+    "path": "codeforces\\1498\\B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "Box Fitting",
+    "problem_url": "https://codeforces.com/contest/1498/problem/B",
+    "submission_id": "CF111580342",
+    "submission_url": "https://codeforces.com/contest/1498/submission/111580342",
+    "tags": [
+      "binary search",
+      "bitmasks",
+      "data structures",
+      "greedy",
+      "*1300"
+    ],
+    "timestamp": "Mar/31/2021 22:50"
+  },
   "CF111582806": {
     "contest_id": 1498,
     "language": "GNU C++17",
