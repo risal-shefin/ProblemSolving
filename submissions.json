@@ -1,4 +1,24 @@
 {
+  "CF111771361": {
+    "contest_id": 1498,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1498\\E.cpp",
+    "platform": "Codeforces",
+    "problem_index": "E",
+    "problem_name": "Two Houses",
+    "problem_url": "https://codeforces.com/contest/1498/problem/E",
+    "submission_id": "CF111771361",
+    "submission_url": "https://codeforces.com/contest/1498/submission/111771361",
+    "tags": [
+      "brute force",
+      "graphs",
+      "greedy",
+      "interactive",
+      "sortings",
+      "*2200"
+    ],
+    "timestamp": "Apr/02/2021 15:06"
+  },
   "CF111907626": {
     "contest_id": 1503,
     "language": "GNU C++17 (64)",
