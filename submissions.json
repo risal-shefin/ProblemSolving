@@ -1,4 +1,23 @@
 {
+  "CF112069919": {
+    "contest_id": 1504,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1504\\B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "Flip the Bits",
+    "problem_url": "https://codeforces.com/contest/1504/problem/B",
+    "submission_id": "CF112069919",
+    "submission_url": "https://codeforces.com/contest/1504/submission/112069919",
+    "tags": [
+      "constructive algorithms",
+      "greedy",
+      "implementation",
+      "math",
+      "*1200"
+    ],
+    "timestamp": "Apr/05/2021 17:21"
+  },
   "CF112070057": {
     "contest_id": 1504,
     "language": "GNU C++17 (64)",
