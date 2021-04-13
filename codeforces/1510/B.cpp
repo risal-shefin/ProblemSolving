@@ -179,7 +179,7 @@ int main()
         addEdge(n+i, dest, 1, 0);
     }
     pll got = maxFlow(src, dest);
-    //dbg(got);
+    dbg(got);
 
     for1(i, n) {
         for(Edge &e : g[i]) {
@@ -212,10 +212,10 @@ int main()
                 made |= (1<<j);
                 ans.pb(j+'0');
             }
-            //dbg(mp(cur, bitset<5>(ara[cur])));
+            dbg(mp(cur, bitset<5>(ara[cur])));
             cur = nxt[cur];
         }
-        //dbg(i);
+        dbg(i);
     }
 
     cout << ans.size() << EL;
@@ -224,4 +224,3 @@ int main()
 
     return 0;
 }
-

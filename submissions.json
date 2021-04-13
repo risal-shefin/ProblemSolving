@@ -3831,6 +3831,24 @@
     ],
     "timestamp": "Apr/11/2021 21:03"
   },
+  "CF112944525": {
+    "contest_id": 1510,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1510\\B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "Button Lock",
+    "problem_url": "https://codeforces.com/contest/1510/problem/B",
+    "submission_id": "CF112944525",
+    "submission_url": "https://codeforces.com/contest/1510/submission/112944525",
+    "tags": [
+      "flows",
+      "graph matchings",
+      "graphs",
+      "*2600"
+    ],
+    "timestamp": "Apr/13/2021 22:18"
+  },
   "CF112944631": {
     "contest_id": 1510,
     "language": "GNU C++17 (64)",
