@@ -144,7 +144,7 @@ pll maxFlow(ll _src, ll _dest)
 }
 
 const ll sz = 1030;
-ll ara[sz], nxt[sz], cnt[sz];
+ll ara[sz], prv[sz], cnt[sz];
 
 int main()
 {
@@ -164,30 +164,29 @@ int main()
 
     ll src = 0, dest = 2*n+1;
     for1(i, n) {
-        ll c = __builtin_popcount(ara[i]);
         addEdge(src, i, 1, 0);
-        addEdge(src, n+i, 1, c+1);
+        addEdge(src, n+i, 1, 0);
 
         for1(j, n) {
-            if(i == j || (ara[i]|ara[j]) != ara[j])
+            if(i == j || (ara[i]|ara[j]) != ara[i])
                 continue;
 
-            ll c2 = __builtin_popcount(ara[j]);
+            ll c = __builtin_popcount(ara[j]);
 
-            addEdge(i, n+j, 1, c2-c);
+            addEdge(i, n+j, 1, -(c+1));
         }
         addEdge(n+i, dest, 1, 0);
     }
     pll got = maxFlow(src, dest);
-    dbg(got);
+    //dbg(got);
 
     for1(i, n) {
         for(Edge &e : g[i]) {
             if(e.cap == 0 || e.f == 0)
                 continue;
 
-            nxt[i] = e.to-n;
-            cnt[e.to-n]++;
+            prv[e.to-n] = i;
+            cnt[i]++;
         }
     }
 
@@ -212,10 +211,10 @@ int main()
                 made |= (1<<j);
                 ans.pb(j+'0');
             }
-            dbg(mp(cur, bitset<5>(ara[cur])));
-            cur = nxt[cur];
+            //dbg(mp(cur, bitset<5>(ara[cur])));
+            cur = prv[cur];
         }
-        dbg(i);
+        //dbg(i);
     }
 
     cout << ans.size() << EL;
