@@ -3831,6 +3831,25 @@
     ],
     "timestamp": "Apr/11/2021 21:03"
   },
+  "CF113229819": {
+    "contest_id": 1508,
+    "language": "GNU C++17",
+    "path": "codeforces\\1508\\B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "Almost Sorted",
+    "problem_url": "https://codeforces.com/contest/1508/problem/B",
+    "submission_id": "CF113229819",
+    "submission_url": "https://codeforces.com/contest/1508/submission/113229819",
+    "tags": [
+      "binary search",
+      "combinatorics",
+      "constructive algorithms",
+      "implementation",
+      "*1800"
+    ],
+    "timestamp": "Apr/16/2021 21:40"
+  },
   "CF113593344": {
     "contest_id": 1514,
     "language": "GNU C++17",
