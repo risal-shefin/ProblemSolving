@@ -63,6 +63,7 @@ Ostream& operator<<(Ostream& os,  const pair<Ts...>& p){
 const ll sz = 505;
 ll cst[sz][sz][4], n, m, k, h;
 ll dist[sz][sz][22];
+bool enq[sz][sz][22];
 
 const ll dr[] = {0, -1, 0, 1};
 const ll dc[] = {-1, 0, 1, 0};
@@ -71,11 +72,16 @@ struct info {
     int r, c, lv, w;
 };
 const bool operator <(const info &a, const info &b) {
+    if(a.w == b.w)
+        return a.lv > b.lv;
+
     return a.w > b.w;
 }
 
-void dijkstra()
+void spfa()
 {
+    ms(enq, 0);
+
     for1(i, n)
         for1(j, m)
             for(ll k = 0; k <= h; k++)
@@ -86,27 +92,29 @@ void dijkstra()
         for1(j, m) {
             dist[i][j][0] = 0;
             pq.push({i, j, 0, 0});
+            enq[i][j][0] = 1;
         }
     }
 
     while(!pq.empty()) {
         info u = pq.front();
         pq.pop();
+        enq[u.r][u.c][u.lv] = 0;
 
-        if(dist[u.r][u.c][u.lv] != u.w)
-            continue;
 
         for0(i, 4) {
             ll nr = u.r+dr[i], nc = u.c+dc[i];
             if(nr < 1 || nc < 1 || nr > n || nc > m)
                 continue;
 
-            if(dist[nr][nc][u.lv+1] > u.w + cst[u.r][u.c][i]) {
+            if(dist[nr][nc][u.lv+1] > dist[u.r][u.c][u.lv] + cst[u.r][u.c][i]) {
 
-                dist[nr][nc][u.lv+1] = u.w + cst[u.r][u.c][i];
+                dist[nr][nc][u.lv+1] = dist[u.r][u.c][u.lv] + cst[u.r][u.c][i];
 
-                if(u.lv+1 < h)
+                if(u.lv+1 < h && !enq[nr][nc][u.lv+1]) {
                     pq.push({nr, nc, u.lv+1, dist[nr][nc][u.lv+1]});
+                    enq[nr][nc][u.lv+1] = 1;
+                }
             }
         }
     }
@@ -146,7 +154,7 @@ int main()
     }
 
     h = k/2;
-    dijkstra();
+    spfa();
 
     for1(i, n) {
         for1(j, m) {
@@ -169,3 +177,5 @@ int main()
 
     return 0;
 }
+
+
