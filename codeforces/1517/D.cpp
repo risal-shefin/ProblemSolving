@@ -81,7 +81,7 @@ void dijkstra()
             for(ll k = 0; k <= h; k++)
                 dist[i][j][k] = inf;
 
-    priority_queue <info> pq;
+    queue <info> pq;
     for1(i, n) {
         for1(j, m) {
             dist[i][j][0] = 0;
@@ -90,7 +90,7 @@ void dijkstra()
     }
 
     while(!pq.empty()) {
-        info u = pq.top();
+        info u = pq.front();
         pq.pop();
 
         if(dist[u.r][u.c][u.lv] != u.w)
