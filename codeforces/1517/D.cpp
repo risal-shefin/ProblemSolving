@@ -114,11 +114,13 @@ void dijkstra()
 
 int main()
 {
+    fastio;
+
     cin >> n >> m >> k;
 
     for1(i, n) {
         for1(j, m-1) {
-            ll c; sl(c);
+            ll c; cin >> c;
 
             cst[i][j][2] = cst[i][j+1][0] = c;
         }
@@ -126,7 +128,7 @@ int main()
 
     for1(i, n-1) {
         for1(j, m) {
-            ll c; sl(c);
+            ll c; cin >> c;
 
             cst[i][j][3] = cst[i+1][j][1] = c;
         }
@@ -135,9 +137,9 @@ int main()
     if(k & 1) {
         for1(i, n) {
             for1(j, m) {
-                pf("-1 ");
+                cout << "-1 ";
             }
-            pn;
+            cout << EL;
         }
 
         return 0;
@@ -160,9 +162,9 @@ int main()
                 c = min(c, 2*dist[i][j][x] + 2*dist[i][j][rest/2]);
             }
 
-            pf("%lld ", c);
+            cout << c << " ";
         }
-        pn;
+        cout << EL;
     }
 
     return 0;
