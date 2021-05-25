@@ -3831,6 +3831,23 @@
     ],
     "timestamp": "Apr/11/2021 21:03"
   },
+  "CF117316661": {
+    "contest_id": 614,
+    "language": "GNU C++17",
+    "path": "codeforces\\614\\A.cpp",
+    "platform": "Codeforces",
+    "problem_index": "A",
+    "problem_name": "Link/Cut Tree",
+    "problem_url": "https://codeforces.com/contest/614/problem/A",
+    "submission_id": "CF117316661",
+    "submission_url": "https://codeforces.com/contest/614/submission/117316661",
+    "tags": [
+      "brute force",
+      "implementation",
+      "*1500"
+    ],
+    "timestamp": "May/25/2021 17:35"
+  },
   "CF117323787": {
     "contest_id": 498,
     "language": "GNU C++17",
