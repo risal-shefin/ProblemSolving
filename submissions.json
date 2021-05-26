@@ -3831,6 +3831,24 @@
     ],
     "timestamp": "Apr/11/2021 21:03"
   },
+  "CF117413592": {
+    "contest_id": 487,
+    "language": "GNU C++17",
+    "path": "codeforces\\487\\A.cpp",
+    "platform": "Codeforces",
+    "problem_index": "A",
+    "problem_name": "Fight the Monster",
+    "problem_url": "https://codeforces.com/contest/487/problem/A",
+    "submission_id": "CF117413592",
+    "submission_url": "https://codeforces.com/contest/487/submission/117413592",
+    "tags": [
+      "binary search",
+      "brute force",
+      "implementation",
+      "*1800"
+    ],
+    "timestamp": "May/26/2021 19:48"
+  },
   "CF117421157": {
     "contest_id": 488,
     "language": "GNU C++17",
