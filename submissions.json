@@ -3831,6 +3831,23 @@
     ],
     "timestamp": "Apr/11/2021 21:03"
   },
+  "CF117494241": {
+    "contest_id": 528,
+    "language": "GNU C++17",
+    "path": "codeforces\\528\\A.cpp",
+    "platform": "Codeforces",
+    "problem_index": "A",
+    "problem_name": "Glass Carving",
+    "problem_url": "https://codeforces.com/contest/528/problem/A",
+    "submission_id": "CF117494241",
+    "submission_url": "https://codeforces.com/contest/528/submission/117494241",
+    "tags": [
+      "data structures",
+      "implementation",
+      "*1500"
+    ],
+    "timestamp": "May/27/2021 18:28"
+  },
   "CF117569667": {
     "contest_id": 461,
     "language": "GNU C++17",
