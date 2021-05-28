@@ -3831,6 +3831,23 @@
     ],
     "timestamp": "Apr/11/2021 21:03"
   },
+  "CF117569667": {
+    "contest_id": 461,
+    "language": "GNU C++17",
+    "path": "codeforces\\461\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Appleman and a Sheet of Paper",
+    "problem_url": "https://codeforces.com/contest/461/problem/C",
+    "submission_id": "CF117569667",
+    "submission_url": "https://codeforces.com/contest/461/submission/117569667",
+    "tags": [
+      "data structures",
+      "implementation",
+      "*2200"
+    ],
+    "timestamp": "May/28/2021 15:15"
+  },
   "CF117569725": {
     "contest_id": 462,
     "language": "GNU C++17",
