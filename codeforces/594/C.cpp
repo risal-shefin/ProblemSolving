@@ -57,16 +57,15 @@ Ostream& operator<<(Ostream& os,  const pair<Ts...>& p){
 #endif
 // === Debug macro ends here ===
 
+#define ff first
+#define ss second
+
 const ll sz = 1e5 + 10;
-
-struct info {
-    int ff, ss;
-} ara[sz];
-
+pll ara[sz];
 ll ans = inf;
 
 struct cmpw {
-    const bool operator()(const int &a, const int &b)
+    const bool operator()(const ll a, const ll b)
     {
         if(ara[a].ff != ara[b].ff)
             return ara[a].ff < ara[b].ff;
@@ -76,7 +75,7 @@ struct cmpw {
 };
 
 struct cmph {
-    const bool operator()(const int &a, const int &b)
+    const bool operator()(const ll a, const ll b)
     {
         if(ara[a].ss != ara[b].ss)
             return ara[a].ss < ara[b].ss;
@@ -85,8 +84,8 @@ struct cmph {
     }
 };
 
-set <int, cmpw> w;
-set <int, cmph> h;
+set <ll, cmpw> w;
+set <ll, cmph> h;
 
 void solve(ll k)
 {
@@ -95,10 +94,10 @@ void solve(ll k)
         return;
     }
     if(k == 0) {
-        ll dw = max(1, (ara[*w.rbegin()].ff  - ara[*w.begin()].ff)/2);
-        ll dh = max(1, (ara[*h.rbegin()].ss  - ara[*h.begin()].ss)/2);
+        ll dw = max(1LL, (ara[*w.rbegin()].ff  - ara[*w.begin()].ff)/2);
+        ll dh = max(1LL, (ara[*h.rbegin()].ss  - ara[*h.begin()].ss)/2);
 
-        ans = min(ans, (ll)dw*dh);
+        ans = min(ans, dw*dh);
         //dbg(mp(dw, dh));
         return;
     }
@@ -134,7 +133,7 @@ int main()
 
         x1 *= 2, x2 *= 2, y1 *= 2, y2 *= 2;
 
-        ara[i] = {(x1+x2)/2, (y1+y2)/2};
+        ara[i] = mp((x1+x2)/2, (y1+y2)/2);
         w.insert(i), h.insert(i);
     }
 
