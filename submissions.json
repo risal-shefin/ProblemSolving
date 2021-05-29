@@ -3831,6 +3831,26 @@
     ],
     "timestamp": "Apr/11/2021 21:03"
   },
+  "CF117772990": {
+    "contest_id": 1526,
+    "language": "GNU C++14",
+    "path": "codeforces\\1526\\D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "Kill Anton",
+    "problem_url": "https://codeforces.com/contest/1526/problem/D",
+    "submission_id": "CF117772990",
+    "submission_url": "https://codeforces.com/contest/1526/submission/117772990",
+    "tags": [
+      "brute force",
+      "constructive algorithms",
+      "data structures",
+      "math",
+      "strings",
+      "*2200"
+    ],
+    "timestamp": "May/29/2021 18:38"
+  },
   "CF117817839": {
     "contest_id": 1526,
     "language": "GNU C++14",
