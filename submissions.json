@@ -3831,6 +3831,26 @@
     ],
     "timestamp": "Apr/11/2021 21:03"
   },
+  "CF117990770": {
+    "contest_id": 1523,
+    "language": "GNU C++14",
+    "path": "codeforces\\1523\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Compression and Expansion",
+    "problem_url": "https://codeforces.com/contest/1523/problem/C",
+    "submission_id": "CF117990770",
+    "submission_url": "https://codeforces.com/contest/1523/submission/117990770",
+    "tags": [
+      "brute force",
+      "data structures",
+      "greedy",
+      "implementation",
+      "trees",
+      "*1600"
+    ],
+    "timestamp": "May/31/2021 18:50"
+  },
   "CF118003021": {
     "contest_id": 1523,
     "language": "GNU C++17 (64)",
