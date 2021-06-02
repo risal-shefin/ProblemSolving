@@ -3831,6 +3831,24 @@
     ],
     "timestamp": "Apr/11/2021 21:03"
   },
+  "CF118230489": {
+    "contest_id": 536,
+    "language": "GNU C++17",
+    "path": "codeforces\\536\\B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "Tavas and Malekas",
+    "problem_url": "https://codeforces.com/contest/536/problem/B",
+    "submission_id": "CF118230489",
+    "submission_url": "https://codeforces.com/contest/536/submission/118230489",
+    "tags": [
+      "hashing",
+      "string suffix structures",
+      "strings",
+      "*1900"
+    ],
+    "timestamp": "Jun/03/2021 03:54"
+  },
   "CF119651159": {
     "contest_id": 1527,
     "language": "GNU C++17",
