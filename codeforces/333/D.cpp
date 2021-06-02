@@ -76,17 +76,13 @@ int main()
 
     int ans = 0;
 
-    for1(j, m-1)
-        for(ll k = j+1; k <= m; ++k)
-            dp[j][k] = min(mat[n][j], mat[n][k]);
-
-    rep1(i, n-1) {
+    rep1(i, n) {
 
         for1(j, m-1) {
 
             for(ll k = j+1; k <= m; ++k) {
                 int mn = min(mat[i][j], mat[i][k]);
-                ans = max(ans, min(mn, dp[j][k]));
+                if(i != n) ans = max(ans, min(mn, dp[j][k]));
 
                 dp[j][k] = max(dp[j][k], mn);
             }
