@@ -6758,6 +6758,22 @@
     ],
     "timestamp": "Jun/03/2021 03:54"
   },
+  "CF118457295": {
+    "contest_id": 505,
+    "language": "GNU C++17",
+    "path": "codeforces\\505\\D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "Mr. Kitayuta's Technology",
+    "problem_url": "https://codeforces.com/contest/505/problem/D",
+    "submission_id": "CF118457295",
+    "submission_url": "https://codeforces.com/contest/505/submission/118457295",
+    "tags": [
+      "dfs and similar",
+      "*2200"
+    ],
+    "timestamp": "Jun/05/2021 02:37"
+  },
   "CF118457322": {
     "contest_id": 506,
     "language": "GNU C++17",
