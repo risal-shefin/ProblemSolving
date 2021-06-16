@@ -6758,6 +6758,24 @@
     ],
     "timestamp": "Jun/03/2021 03:54"
   },
+  "CF119642064": {
+    "contest_id": 1039,
+    "language": "GNU C++17",
+    "path": "codeforces\\1039\\B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "Subway Pursuit",
+    "problem_url": "https://codeforces.com/contest/1039/problem/B",
+    "submission_id": "CF119642064",
+    "submission_url": "https://codeforces.com/contest/1039/submission/119642064",
+    "tags": [
+      "binary search",
+      "interactive",
+      "probabilities",
+      "*2100"
+    ],
+    "timestamp": "Jun/16/2021 20:21"
+  },
   "CF119642281": {
     "contest_id": 1040,
     "language": "GNU C++17",
