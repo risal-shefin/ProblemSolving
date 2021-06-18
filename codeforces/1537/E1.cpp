@@ -75,7 +75,11 @@ ll cmp(ll l, ll r, ll l2, ll r2)
             return -1;
     }
 
-    return 0;
+    ll len1 = (r-l+1), len2 = (r2-l2+1);
+
+    if(len1 < len2) return 1;
+    else if(len1 > len2) return -1;
+    else return 0;
 }
 
 int main()
