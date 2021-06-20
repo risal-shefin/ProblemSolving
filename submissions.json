@@ -1,4 +1,22 @@
 {
+  "CF120163242": {
+    "contest_id": 498,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\498\\D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "Traffic Jams in the Land",
+    "problem_url": "https://codeforces.com/contest/498/problem/D",
+    "submission_id": "CF120163242",
+    "submission_url": "https://codeforces.com/contest/498/submission/120163242",
+    "tags": [
+      "data structures",
+      "dp",
+      "number theory",
+      "*2400"
+    ],
+    "timestamp": "Jun/21/2021 03:52"
+  },
   "CF120219144": {
     "contest_id": 1539,
     "language": "GNU C++17 (64)",
