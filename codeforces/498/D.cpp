@@ -124,22 +124,20 @@ int query(int l, int r)
 
 int main()
 {
-    fastio;
-
-    cin >> n;
-    for0(i, n) cin >> a[i];
+    si(n);
+    for0(i, n) si(a[i]);
 
     int lim = (n-1)/block;
     for(int i = 0; i <= lim; i++) calc(i);
 
-    int q; cin >> q;
+    int q; si(q);
     while(q--) {
         char ch; int x, y;
-        cin >> ch >> x >> y;
+        scanf(" %c %d %d", &ch, &x, &y);
 
         if(ch == 'A') {
             x--, y -= 2;
-            cout << query(x, y) << EL;
+            pf("%d\n", query(x, y));
         }
         else {
             x--;
@@ -150,4 +148,3 @@ int main()
 
     return 0;
 }
-
