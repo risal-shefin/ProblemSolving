@@ -7121,6 +7121,23 @@
     ],
     "timestamp": "Jun/21/2021 21:03"
   },
+  "CF120244803": {
+    "contest_id": 594,
+    "language": "GNU C++17",
+    "path": "codeforces\\594\\D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "REQ",
+    "problem_url": "https://codeforces.com/contest/594/problem/D",
+    "submission_id": "CF120244803",
+    "submission_url": "https://codeforces.com/contest/594/submission/120244803",
+    "tags": [
+      "data structures",
+      "number theory",
+      "*2500"
+    ],
+    "timestamp": "Jun/22/2021 03:25"
+  },
   "CF120381317": {
     "contest_id": 1198,
     "language": "GNU C++17",
