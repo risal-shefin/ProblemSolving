@@ -1,4 +1,26 @@
 {
+  "CF120655874": {
+    "contest_id": 1540,
+    "language": "GNU C++17",
+    "path": "codeforces\\1540\\B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "Tree Array",
+    "problem_url": "https://codeforces.com/contest/1540/problem/B",
+    "submission_id": "CF120655874",
+    "submission_url": "https://codeforces.com/contest/1540/submission/120655874",
+    "tags": [
+      "brute force",
+      "combinatorics",
+      "dp",
+      "graphs",
+      "math",
+      "probabilities",
+      "trees",
+      "*2300"
+    ],
+    "timestamp": "Jun/26/2021 15:15"
+  },
   "CF120655927": {
     "contest_id": 1541,
     "language": "GNU C++17",
