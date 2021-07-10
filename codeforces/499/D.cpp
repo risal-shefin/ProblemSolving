@@ -95,9 +95,9 @@ int main()
 
                 if(j > t[i]) got -= prob[i-1][ j - (t[i]+1) ] * pwt;
 
-                got -= prob[i-1][ j-t[i] ] * pwt1 * p[i];
-                got += prob[i-1][ j-t[i] ] * pwt1;
-//                got += prob[i-1][ j-t[i] ] * pwt1 * (1 - p[i]);
+//                got -= prob[i-1][ j-t[i] ] * pw[ t[i]-1 ] * p[i];
+//                got += prob[i-1][ j-t[i] ] * pw[ t[i]-1 ];
+                got += prob[i-1][ j-t[i] ] * pwt1 * (1 - p[i]);
 
                 prob[i][j] = prob[i-1][j-1]*p[i] + got;
             }
