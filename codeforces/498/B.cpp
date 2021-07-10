@@ -61,7 +61,7 @@ Ostream& operator<<(Ostream& os,  const pair<Ts...>& p){
 #define ss second
 
 const ll sz = 5005;
-double prob[sz][sz], p[sz];
+double prob[sz][sz], p[sz], pw[sz];
 ll t[sz];
 
 int main()
@@ -80,9 +80,10 @@ int main()
     prob[0][0] = 1;
 
     for1(i, n) {
-        double pwt = pow(1-p[i], t[i]), pwt1 = pow(1-p[i], t[i]-1);
+        pw[0] = 1;
 
         for1(j, T) {
+            pw[j] = pw[j-1] * (1-p[i]);
 
             if(t[i] == 1) {
                 prob[i][j] = prob[i-1][j-1];
@@ -93,11 +94,11 @@ int main()
             else {
                 got = prob[i][j-1]*(1-p[i]);
 
-                if(j > t[i]) got -= prob[i-1][ j - (t[i]+1) ] * pwt;
+                if(j > t[i]) got -= prob[i-1][ j - (t[i]+1) ] * pw[ t[i] ];
 
 //                got -= prob[i-1][ j-t[i] ] * pw[ t[i]-1 ] * p[i];
 //                got += prob[i-1][ j-t[i] ] * pw[ t[i]-1 ];
-                got += prob[i-1][ j-t[i] ] * pwt1 * (1 - p[i]);
+                got += prob[i-1][ j-t[i] ] * pw[ t[i]-1 ] * (1 - p[i]);
 
                 prob[i][j] = prob[i-1][j-1]*p[i] + got;
             }
