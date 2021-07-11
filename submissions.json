@@ -7436,6 +7436,23 @@
     ],
     "timestamp": "Jul/09/2021 21:53"
   },
+  "CF122138271": {
+    "contest_id": 1546,
+    "language": "GNU C++17",
+    "path": "codeforces\\1546\\D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "AquaMoon and Chess",
+    "problem_url": "https://codeforces.com/contest/1546/problem/D",
+    "submission_id": "CF122138271",
+    "submission_url": "https://codeforces.com/contest/1546/submission/122138271",
+    "tags": [
+      "combinatorics",
+      "math",
+      "*1900"
+    ],
+    "timestamp": "Jul/12/2021 00:15"
+  },
   "CF122191460": {
     "contest_id": 1545,
     "language": "GNU C++17 (64)",
