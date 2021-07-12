@@ -7436,6 +7436,27 @@
     ],
     "timestamp": "Jul/09/2021 21:53"
   },
+  "CF122191460": {
+    "contest_id": 1545,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1545\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "AquaMoon and Permutations",
+    "problem_url": "https://codeforces.com/contest/1545/problem/C",
+    "submission_id": "CF122191460",
+    "submission_url": "https://codeforces.com/contest/1545/submission/122191460",
+    "tags": [
+      "2-sat",
+      "brute force",
+      "combinatorics",
+      "constructive algorithms",
+      "graph matchings",
+      "graphs",
+      "*2800"
+    ],
+    "timestamp": "Jul/12/2021 15:19"
+  },
   "CF122191515": {
     "contest_id": 1546,
     "language": "GNU C++17 (64)",
