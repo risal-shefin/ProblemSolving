@@ -7436,6 +7436,23 @@
     ],
     "timestamp": "Jul/09/2021 21:53"
   },
+  "CF122597785": {
+    "contest_id": 1550,
+    "language": "GNU C++17",
+    "path": "codeforces\\1550\\B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "Maximum Cost Deletion",
+    "problem_url": "https://codeforces.com/contest/1550/problem/B",
+    "submission_id": "CF122597785",
+    "submission_url": "https://codeforces.com/contest/1550/submission/122597785",
+    "tags": [
+      "greedy",
+      "math",
+      "*1000"
+    ],
+    "timestamp": "Jul/15/2021 21:28"
+  },
   "CF122602399": {
     "contest_id": 1550,
     "language": "GNU C++17",
