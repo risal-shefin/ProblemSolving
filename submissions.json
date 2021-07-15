@@ -7436,6 +7436,28 @@
     ],
     "timestamp": "Jul/09/2021 21:53"
   },
+  "CF122611043": {
+    "contest_id": 1550,
+    "language": "GNU C++17",
+    "path": "codeforces\\1550\\D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "Excellent Arrays",
+    "problem_url": "https://codeforces.com/contest/1550/problem/D",
+    "submission_id": "CF122611043",
+    "submission_url": "https://codeforces.com/contest/1550/submission/122611043",
+    "tags": [
+      "binary search",
+      "combinatorics",
+      "constructive algorithms",
+      "implementation",
+      "math",
+      "sortings",
+      "two pointers",
+      "*2300"
+    ],
+    "timestamp": "Jul/16/2021 00:10"
+  },
   "CF122858654": {
     "contest_id": 650,
     "language": "GNU C++17",
