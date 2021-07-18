@@ -7436,6 +7436,24 @@
     ],
     "timestamp": "Jul/09/2021 21:53"
   },
+  "CF122925596": {
+    "contest_id": 314,
+    "language": "GNU C++17",
+    "path": "codeforces\\314\\B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "Sereja and Periods",
+    "problem_url": "https://codeforces.com/contest/314/problem/B",
+    "submission_id": "CF122925596",
+    "submission_url": "https://codeforces.com/contest/314/submission/122925596",
+    "tags": [
+      "binary search",
+      "dfs and similar",
+      "strings",
+      "*2000"
+    ],
+    "timestamp": "Jul/18/2021 17:40"
+  },
   "CF122925660": {
     "contest_id": 315,
     "language": "GNU C++17",
