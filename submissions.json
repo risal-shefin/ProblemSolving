@@ -7436,6 +7436,25 @@
     ],
     "timestamp": "Jul/09/2021 21:53"
   },
+  "CF122948614": {
+    "contest_id": 1530,
+    "language": "GNU C++17",
+    "path": "codeforces\\1530\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Pursuit",
+    "problem_url": "https://codeforces.com/contest/1530/problem/C",
+    "submission_id": "CF122948614",
+    "submission_url": "https://codeforces.com/contest/1530/submission/122948614",
+    "tags": [
+      "binary search",
+      "brute force",
+      "greedy",
+      "sortings",
+      "*1200"
+    ],
+    "timestamp": "Jul/18/2021 22:06"
+  },
   "CF122951329": {
     "contest_id": 1530,
     "language": "GNU C++17",
