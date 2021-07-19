@@ -7436,6 +7436,24 @@
     ],
     "timestamp": "Jul/09/2021 21:53"
   },
+  "CF123042282": {
+    "contest_id": 168,
+    "language": "GNU C++17",
+    "path": "codeforces\\168\\D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "Wizards and Huge Prize",
+    "problem_url": "https://codeforces.com/contest/168/problem/D",
+    "submission_id": "CF123042282",
+    "submission_url": "https://codeforces.com/contest/168/submission/123042282",
+    "tags": [
+      "dp",
+      "math",
+      "probabilities",
+      "*1800"
+    ],
+    "timestamp": "Jul/19/2021 23:06"
+  },
   "CF123055664": {
     "contest_id": 348,
     "language": "GNU C++17",
