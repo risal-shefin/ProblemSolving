@@ -7436,6 +7436,24 @@
     ],
     "timestamp": "Jul/09/2021 21:53"
   },
+  "CF123037628": {
+    "contest_id": 214,
+    "language": "GNU C++17",
+    "path": "codeforces\\214\\D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "Numbers",
+    "problem_url": "https://codeforces.com/contest/214/problem/D",
+    "submission_id": "CF123037628",
+    "submission_url": "https://codeforces.com/contest/214/submission/123037628",
+    "tags": [
+      "combinatorics",
+      "dp",
+      "math",
+      "*1900"
+    ],
+    "timestamp": "Jul/19/2021 22:04"
+  },
   "CF123042223": {
     "contest_id": 167,
     "language": "GNU C++17",
