@@ -7436,6 +7436,24 @@
     ],
     "timestamp": "Jul/09/2021 21:53"
   },
+  "CF123124543": {
+    "contest_id": 301,
+    "language": "GNU C++17",
+    "path": "codeforces\\301\\B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "Yaroslav and Time",
+    "problem_url": "https://codeforces.com/contest/301/problem/B",
+    "submission_id": "CF123124543",
+    "submission_url": "https://codeforces.com/contest/301/submission/123124543",
+    "tags": [
+      "binary search",
+      "graphs",
+      "shortest paths",
+      "*2100"
+    ],
+    "timestamp": "Jul/20/2021 23:00"
+  },
   "CF123124604": {
     "contest_id": 302,
     "language": "GNU C++17",
