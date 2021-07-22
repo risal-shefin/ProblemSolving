@@ -4509,6 +4509,23 @@
     ],
     "timestamp": "Jul/09/2021 21:53"
   },
+  "CF123264526": {
+    "contest_id": 106,
+    "language": "GNU C++17",
+    "path": "codeforces\\106\\D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "Treasure Island",
+    "problem_url": "https://codeforces.com/contest/106/problem/D",
+    "submission_id": "CF123264526",
+    "submission_url": "https://codeforces.com/contest/106/submission/123264526",
+    "tags": [
+      "brute force",
+      "implementation",
+      "*1700"
+    ],
+    "timestamp": "Jul/22/2021 16:18"
+  },
   "CF123275431": {
     "contest_id": 196,
     "language": "GNU C++17",
