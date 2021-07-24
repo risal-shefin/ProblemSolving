@@ -10,6 +10,7 @@ using namespace std;
 #define ld long double
 #define sl(n) scanf("%lld", &n)
 #define si(n) scanf("%d", &n)
+#define sd(n) scanf("%lf", &n)
 #define pll pair <ll, ll>
 #define pii pair <int, int>
 #define mp make_pair
@@ -75,11 +76,11 @@ inline double dist(double x, double y, double z)
     return f1 + f2 + f3;
 }
 
-pair<double, double> solve(double x)
+inline pair<double, double> solve(double x)
 {
     double lo = 0, hi = s-x;
     pair <double , double> ret;
-    ll cnt = 200;
+    ll cnt = 1000;
 
     while(cnt--) {
         double mid1 = (2*lo+hi)/3, mid2 = (lo+2*hi)/3;
@@ -104,7 +105,7 @@ int main()
     cin >> s >> a >> b >> c;
 
     double lo = 0, hi = s, p1 = 0, p2 = 0;
-    ll cnt = 200;
+    ll cnt = 1000;
 
     while(cnt--) {
         double mid1 = (2*lo+hi)/3, mid2 = (lo+2*hi)/3;
