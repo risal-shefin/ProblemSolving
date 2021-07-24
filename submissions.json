@@ -7673,6 +7673,24 @@
     ],
     "timestamp": "Jul/24/2021 21:08"
   },
+  "CF123637603": {
+    "contest_id": 186,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\186\\D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "Mushroom Scientists",
+    "problem_url": "https://codeforces.com/contest/186/problem/D",
+    "submission_id": "CF123637603",
+    "submission_url": "https://codeforces.com/contest/186/submission/123637603",
+    "tags": [
+      "math",
+      "number theory",
+      "probabilities",
+      "*1800"
+    ],
+    "timestamp": "Jul/24/2021 23:55"
+  },
   "CF123642657": {
     "contest_id": 185,
     "language": "GNU C++17 (64)",

@@ -59,7 +59,6 @@ Ostream& operator<<(Ostream& os,  const pair<Ts...>& p){
 
 #define ff first
 #define ss second
-#define eps 1e-9
 
 ll s, a, b, c;
 
@@ -81,8 +80,9 @@ inline pair<double, double> solve(double x)
 {
     double lo = 0, hi = s-x;
     pair <double , double> ret;
+    ll cnt = 1000;
 
-    while(hi-lo > eps) {
+    while(cnt--) {
         double mid1 = (2*lo+hi)/3, mid2 = (lo+2*hi)/3;
 
         double got1 = dist(x, mid1, s-(x+mid1)), got2 = dist(x, mid2, s-(x+mid2));
@@ -105,8 +105,9 @@ int main()
     cin >> s >> a >> b >> c;
 
     double lo = 0, hi = s, p1 = 0, p2 = 0;
+    ll cnt = 1000;
 
-    while(hi-lo > eps) {
+    while(cnt--) {
         double mid1 = (2*lo+hi)/3, mid2 = (lo+2*hi)/3;
 
         pair <double, double> got1 = solve(mid1), got2 = solve(mid2);
