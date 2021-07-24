@@ -4509,6 +4509,24 @@
     ],
     "timestamp": "Jul/09/2021 21:53"
   },
+  "CF123618157": {
+    "contest_id": 83,
+    "language": "GNU C++17",
+    "path": "codeforces\\83\\B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "Doctor",
+    "problem_url": "https://codeforces.com/contest/83/problem/B",
+    "submission_id": "CF123618157",
+    "submission_url": "https://codeforces.com/contest/83/submission/123618157",
+    "tags": [
+      "binary search",
+      "math",
+      "sortings",
+      "*1800"
+    ],
+    "timestamp": "Jul/24/2021 21:07"
+  },
   "CF123618239": {
     "contest_id": 84,
     "language": "GNU C++17",
