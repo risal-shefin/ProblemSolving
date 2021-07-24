@@ -75,7 +75,7 @@ inline double dist(double x, double y, double z)
     return f1 + f2 + f3;
 }
 
-inline pair<double, double> solve(double x)
+pair<double, double> solve(double x)
 {
     double lo = 0, hi = s-x;
     pair <double , double> ret;
