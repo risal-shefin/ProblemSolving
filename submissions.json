@@ -7673,6 +7673,24 @@
     ],
     "timestamp": "Jul/24/2021 21:08"
   },
+  "CF123650358": {
+    "contest_id": 102,
+    "language": "GNU C++17",
+    "path": "codeforces\\102\\D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "Buses",
+    "problem_url": "https://codeforces.com/contest/102/problem/D",
+    "submission_id": "CF123650358",
+    "submission_url": "https://codeforces.com/contest/102/submission/123650358",
+    "tags": [
+      "binary search",
+      "data structures",
+      "dp",
+      "*1700"
+    ],
+    "timestamp": "Jul/25/2021 04:26"
+  },
   "CF123701846": {
     "contest_id": 128,
     "language": "GNU C++17",
