@@ -4509,6 +4509,23 @@
     ],
     "timestamp": "Jul/09/2021 21:53"
   },
+  "CF123609375": {
+    "contest_id": 251,
+    "language": "GNU C++17",
+    "path": "codeforces\\251\\B.cpp",
+    "platform": "Codeforces",
+    "problem_index": "B",
+    "problem_name": "Playing with Permutations",
+    "problem_url": "https://codeforces.com/contest/251/problem/B",
+    "submission_id": "CF123609375",
+    "submission_url": "https://codeforces.com/contest/251/submission/123609375",
+    "tags": [
+      "implementation",
+      "math",
+      "*1800"
+    ],
+    "timestamp": "Jul/24/2021 19:21"
+  },
   "CF123609454": {
     "contest_id": 252,
     "language": "GNU C++17",
