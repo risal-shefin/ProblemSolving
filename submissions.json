@@ -7673,6 +7673,23 @@
     ],
     "timestamp": "Jul/24/2021 21:08"
   },
+  "CF123714548": {
+    "contest_id": 1552,
+    "language": "GNU C++17",
+    "path": "codeforces\\1552\\A.cpp",
+    "platform": "Codeforces",
+    "problem_index": "A",
+    "problem_name": "Subsequence Permutation",
+    "problem_url": "https://codeforces.com/contest/1552/problem/A",
+    "submission_id": "CF123714548",
+    "submission_url": "https://codeforces.com/contest/1552/submission/123714548",
+    "tags": [
+      "sortings",
+      "strings",
+      "*800"
+    ],
+    "timestamp": "Jul/25/2021 20:38"
+  },
   "CF123753391": {
     "contest_id": 1552,
     "language": "GNU C++17",
