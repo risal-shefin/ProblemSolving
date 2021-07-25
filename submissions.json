@@ -7673,6 +7673,24 @@
     ],
     "timestamp": "Jul/24/2021 21:08"
   },
+  "CF123701879": {
+    "contest_id": 129,
+    "language": "GNU C++17",
+    "path": "codeforces\\129\\D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "String",
+    "problem_url": "https://codeforces.com/contest/129/problem/D",
+    "submission_id": "CF123701879",
+    "submission_url": "https://codeforces.com/contest/129/submission/123701879",
+    "tags": [
+      "implementation",
+      "string suffix structures",
+      "strings",
+      "*2100"
+    ],
+    "timestamp": "Jul/25/2021 18:15"
+  },
   "CF123714548": {
     "contest_id": 1552,
     "language": "GNU C++17",
