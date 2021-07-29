@@ -7673,6 +7673,25 @@
     ],
     "timestamp": "Jul/24/2021 21:08"
   },
+  "CF124179752": {
+    "contest_id": 1554,
+    "language": "GNU C++17",
+    "path": "codeforces\\1554\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Mikasa",
+    "problem_url": "https://codeforces.com/contest/1554/problem/C",
+    "submission_id": "CF124179752",
+    "submission_url": "https://codeforces.com/contest/1554/submission/124179752",
+    "tags": [
+      "binary search",
+      "bitmasks",
+      "greedy",
+      "implementation",
+      "*1800"
+    ],
+    "timestamp": "Jul/29/2021 22:23"
+  },
   "CF124294130": {
     "contest_id": 1555,
     "language": "GNU C++17",
