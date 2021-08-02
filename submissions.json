@@ -7673,6 +7673,25 @@
     ],
     "timestamp": "Jul/24/2021 21:08"
   },
+  "CF124692660": {
+    "contest_id": 1555,
+    "language": "GNU C++17",
+    "path": "codeforces\\1555\\E.cpp",
+    "platform": "Codeforces",
+    "problem_index": "E",
+    "problem_name": "Boring Segments",
+    "problem_url": "https://codeforces.com/contest/1555/problem/E",
+    "submission_id": "CF124692660",
+    "submission_url": "https://codeforces.com/contest/1555/submission/124692660",
+    "tags": [
+      "data structures",
+      "sortings",
+      "trees",
+      "two pointers",
+      "*2100"
+    ],
+    "timestamp": "Aug/02/2021 19:17"
+  },
   "CF124714357": {
     "contest_id": 1554,
     "language": "GNU C++17",
