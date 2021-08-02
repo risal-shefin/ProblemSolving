@@ -7673,6 +7673,23 @@
     ],
     "timestamp": "Jul/24/2021 21:08"
   },
+  "CF124684338": {
+    "contest_id": 1549,
+    "language": "GNU C++17",
+    "path": "codeforces\\1549\\F1.cpp",
+    "platform": "Codeforces",
+    "problem_index": "F1",
+    "problem_name": "Gregor and the Odd Cows (Easy)",
+    "problem_url": "https://codeforces.com/contest/1549/problem/F1",
+    "submission_id": "CF124684338",
+    "submission_url": "https://codeforces.com/contest/1549/submission/124684338",
+    "tags": [
+      "geometry",
+      "number theory",
+      "*2300"
+    ],
+    "timestamp": "Aug/02/2021 17:54"
+  },
   "CF124684417": {
     "contest_id": 1548,
     "language": "GNU C++17",
