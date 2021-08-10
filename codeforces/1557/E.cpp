@@ -114,7 +114,7 @@ int main()
     while(t--) {
 
         cur = 1;
-        for1(r, 7) {
+        for1(r, 8) {
             string got = ask(r, cur);
             if(got == "Done") break;
 
