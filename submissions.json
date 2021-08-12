@@ -1,4 +1,20 @@
 {
+  "AC24983365": {
+    "contest_id": "abc213",
+    "language": "C++ (GCC 9.2.1)",
+    "path": "atcoder\\abc213\\E.cpp",
+    "platform": "AtCoder",
+    "problem_index": "E",
+    "problem_name": "Stronger Takahashi",
+    "problem_url": "https://atcoder.jp/contests/abc213/tasks/abc213_e",
+    "submission_id": "AC24983365",
+    "submission_url": "https://atcoder.jp/contests/abc213/submissions/24983365",
+    "tags": [
+      "AtCoder",
+      "*500"
+    ],
+    "timestamp": "Aug/13/2021 00:16"
+  },
   "AC24984074": {
     "contest_id": "abc213",
     "language": "C++ (GCC 9.2.1)",
