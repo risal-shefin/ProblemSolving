@@ -1,4 +1,24 @@
 {
+  "CF126014541": {
+    "contest_id": 1559,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1559\\E.cpp",
+    "platform": "Codeforces",
+    "problem_index": "E",
+    "problem_name": "Mocha and Stars",
+    "problem_url": "https://codeforces.com/contest/1559/problem/E",
+    "submission_id": "CF126014541",
+    "submission_url": "https://codeforces.com/contest/1559/submission/126014541",
+    "tags": [
+      "combinatorics",
+      "dp",
+      "fft",
+      "math",
+      "number theory",
+      "*2200"
+    ],
+    "timestamp": "Aug/15/2021 22:45"
+  },
   "CF126077703": {
     "contest_id": 1559,
     "language": "GNU C++17 (64)",
