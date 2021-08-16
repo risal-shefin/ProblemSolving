@@ -1,4 +1,27 @@
 {
+  "CF126077703": {
+    "contest_id": 1559,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1559\\D2.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D2",
+    "problem_name": "Mocha and Diana (Hard Version)",
+    "problem_url": "https://codeforces.com/contest/1559/problem/D2",
+    "submission_id": "CF126077703",
+    "submission_url": "https://codeforces.com/contest/1559/submission/126077703",
+    "tags": [
+      "brute force",
+      "constructive algorithms",
+      "dfs and similar",
+      "dsu",
+      "graphs",
+      "greedy",
+      "trees",
+      "two pointers",
+      "*2500"
+    ],
+    "timestamp": "Aug/16/2021 16:28"
+  },
   "CF126204856": {
     "contest_id": 216,
     "language": "GNU C++17 (64)",
