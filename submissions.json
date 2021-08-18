@@ -1,4 +1,22 @@
 {
+  "CF126359650": {
+    "contest_id": 34,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\34\\E.cpp",
+    "platform": "Codeforces",
+    "problem_index": "E",
+    "problem_name": "Collisions",
+    "problem_url": "https://codeforces.com/contest/34/problem/E",
+    "submission_id": "CF126359650",
+    "submission_url": "https://codeforces.com/contest/34/submission/126359650",
+    "tags": [
+      "brute force",
+      "implementation",
+      "math",
+      "*2000"
+    ],
+    "timestamp": "Aug/18/2021 22:37"
+  },
   "CF126376019": {
     "contest_id": 89,
     "language": "GNU C++17 (64)",
