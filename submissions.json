@@ -1,4 +1,21 @@
 {
+  "CF126378603": {
+    "contest_id": 365,
+    "language": "GNU C++17",
+    "path": "codeforces\\365\\E.cpp",
+    "platform": "Codeforces",
+    "problem_index": "E",
+    "problem_name": "Beautiful Set",
+    "problem_url": "https://codeforces.com/contest/365/problem/E",
+    "submission_id": "CF126378603",
+    "submission_url": "https://codeforces.com/contest/365/submission/126378603",
+    "tags": [
+      "brute force",
+      "number theory",
+      "*2300"
+    ],
+    "timestamp": "Aug/19/2021 00:37"
+  },
   "CF126466793": {
     "contest_id": 1320,
     "language": "GNU C++17",
