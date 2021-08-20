@@ -1,4 +1,22 @@
 {
+  "CF126541123": {
+    "contest_id": 1320,
+    "language": "GNU C++17",
+    "path": "codeforces\\1320\\D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "Reachable Strings",
+    "problem_url": "https://codeforces.com/contest/1320/problem/D",
+    "submission_id": "CF126541123",
+    "submission_url": "https://codeforces.com/contest/1320/submission/126541123",
+    "tags": [
+      "data structures",
+      "hashing",
+      "strings",
+      "*2500"
+    ],
+    "timestamp": "Aug/20/2021 19:36"
+  },
   "CF126541265": {
     "contest_id": 1321,
     "language": "GNU C++17",
