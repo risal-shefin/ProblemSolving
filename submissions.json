@@ -1,4 +1,21 @@
 {
+  "CF126706683": {
+    "contest_id": 403,
+    "language": "GNU C++17",
+    "path": "codeforces\\403\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Strictly Positive Matrix",
+    "problem_url": "https://codeforces.com/contest/403/problem/C",
+    "submission_id": "CF126706683",
+    "submission_url": "https://codeforces.com/contest/403/submission/126706683",
+    "tags": [
+      "graphs",
+      "math",
+      "*2200"
+    ],
+    "timestamp": "Aug/22/2021 23:15"
+  },
   "CF126716615": {
     "contest_id": 432,
     "language": "GNU C++17",
