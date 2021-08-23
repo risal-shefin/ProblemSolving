@@ -1,4 +1,21 @@
 {
+  "CF126763974": {
+    "contest_id": 277,
+    "language": "GNU C++17",
+    "path": "codeforces\\277\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Game",
+    "problem_url": "https://codeforces.com/contest/277/problem/C",
+    "submission_id": "CF126763974",
+    "submission_url": "https://codeforces.com/contest/277/submission/126763974",
+    "tags": [
+      "games",
+      "implementation",
+      "*2400"
+    ],
+    "timestamp": "Aug/23/2021 19:50"
+  },
   "CF126764051": {
     "contest_id": 278,
     "language": "GNU C++17",
