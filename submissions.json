@@ -1,4 +1,23 @@
 {
+  "CF126792896": {
+    "contest_id": 1314,
+    "language": "GNU C++17 (64)",
+    "path": "codeforces\\1314\\D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "Tourism",
+    "problem_url": "https://codeforces.com/contest/1314/problem/D",
+    "submission_id": "CF126792896",
+    "submission_url": "https://codeforces.com/contest/1314/submission/126792896",
+    "tags": [
+      "brute force",
+      "dp",
+      "graphs",
+      "probabilities",
+      "*2300"
+    ],
+    "timestamp": "Aug/24/2021 03:54"
+  },
   "CF126819626": {
     "contest_id": 190,
     "language": "GNU C++17",
