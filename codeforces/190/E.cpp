@@ -64,41 +64,41 @@ const ll sz = 5e5 + 10;
 vector <int> comp[sz], g[sz];
 set <int> alive;
 
-void bfs(ll x, ll idx)
+void dfs(ll u, ll idx)
 {
-    queue <int> q;
-    q.push(x);
+    comp[idx].pb(u);
+    alive.erase(u);
 
-    while(!q.empty()) {
-        int u = q.front();
-        q.pop();
+    ll ptr = 0;
 
-        ll ptr = 0;
-        auto it = alive.begin();
+    while(ptr < g[u].size()) {
+        ll v = g[u][ptr];
 
-        while(ptr < g[u].size() && it != alive.end()) {
-            ll v = g[u][ptr];
-
-            if(*it == v)
-                ptr++, ++it;
-            else if(*it > v)
-                ptr++;
-            else {
-                q.push(*it);
-                comp[idx].pb(*it);
-
-                auto it2 = it++;
-                alive.erase(it2);
-            }
+        auto it = alive.lower_bound(v);
+        if(it == alive.begin()) {
+            ptr++;
+            continue;
         }
 
-        while(it != alive.end()) {
-            q.push(*it);
-            comp[idx].pb(*it);
+        --it;
 
-            auto it2 = it++;
-            alive.erase(it2);
+        if(ptr > 0 && *it <= g[u][ptr-1]) {
+            ptr++;
+            continue;
         }
+
+        dfs(*it, idx);
+    }
+
+    ll v = 0;
+    if(!g[u].empty()) v = g[u].back();
+
+    while(1) {
+        auto it = alive.upper_bound(v);
+        if(it == alive.end())
+            break;
+
+        dfs(*it, idx);
     }
 }
 
@@ -122,7 +122,7 @@ int main()
 
     ll idx = 0;
     while(!alive.empty())
-        bfs(*alive.begin(), ++idx);
+        dfs(*alive.begin(), ++idx);
 
     cout << idx << EL;
     for1(i, idx) {
@@ -135,4 +135,3 @@ int main()
 
     return 0;
 }
-
