@@ -1,4 +1,21 @@
 {
+  "CF126918940": {
+    "contest_id": 1558,
+    "language": "GNU C++17",
+    "path": "codeforces\\1558\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Bottom-Tier Reversals",
+    "problem_url": "https://codeforces.com/contest/1558/problem/C",
+    "submission_id": "CF126918940",
+    "submission_url": "https://codeforces.com/contest/1558/submission/126918940",
+    "tags": [
+      "constructive algorithms",
+      "greedy",
+      "*2000"
+    ],
+    "timestamp": "Aug/25/2021 04:00"
+  },
   "CF126918963": {
     "contest_id": 1561,
     "language": "GNU C++17",
