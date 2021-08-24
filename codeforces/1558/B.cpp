@@ -70,32 +70,45 @@ int main()
     ll n, mod;
     cin >> n >> mod;
 
-    ll sum = 0, sec = 0;
+    dp[1] = 1;
+    ll sum = 1, sec = 0;
 
-    for(ll i = 1; i <= n; ++i) {
-        sec += ad[i];
-        if(sec >= mod) sec -= mod;
-
-        dp[i] = (i==1)? 1 : sum+sec;
+    for(ll i = 2; i <= n; ++i) {
+        dp[i] += sum;
         if(dp[i] >= mod) dp[i] -= mod;
+
+        for(ll j = 1; i*j <= n && j <= i; j++) {
+            ll k = i*j;
+
+            ad[k] += dp[j];
+            if(ad[k] >= mod) ad[k] -= mod;
+
+            if(k+i <= n) ad[k+i] -= dp[j];
+            if(ad[k+i] < 0) ad[k+i] += mod;
+
+            if(j != i && j != 1) {
+                ad[k] += dp[i];
+                if(ad[k] >= mod) ad[k] -= mod;
+
+                if(k+j <= n) ad[k+j] -= dp[i];
+                if(ad[k+j] < 0) ad[k+j] += mod;
+            }
+
+            if(k == i) {
+                sec += ad[i];
+                if(sec >= mod) sec -= mod;
+
+                dp[i] += sec;
+                if(dp[i] >= mod) dp[i] -= mod;
+            }
+        }
 
         sum += dp[i];
         if(sum >= mod) sum -= mod;
-
-        for(ll j = 2; i*j <= n; j++) {
-            ll k = j*i;
-
-            ad[k] += dp[i];
-            if(ad[k] >= mod) ad[k] -= mod;
-
-            if(k+j <= n) ad[k+j] -= dp[i];
-            if(ad[k+j] < 0) ad[k+j] += mod;
-        }
     }
 
     cout << dp[n] << EL;
 
     return 0;
 }
-
 
