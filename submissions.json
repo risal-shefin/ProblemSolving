@@ -1,4 +1,21 @@
 {
+  "CF127447282": {
+    "contest_id": 1556,
+    "language": "GNU C++17",
+    "path": "codeforces\\1556\\C.cpp",
+    "platform": "Codeforces",
+    "problem_index": "C",
+    "problem_name": "Compressed Bracket Sequence",
+    "problem_url": "https://codeforces.com/contest/1556/problem/C",
+    "submission_id": "CF127447282",
+    "submission_url": "https://codeforces.com/contest/1556/submission/127447282",
+    "tags": [
+      "brute force",
+      "implementation",
+      "*1800"
+    ],
+    "timestamp": "Aug/30/2021 18:39"
+  },
   "CF127459814": {
     "contest_id": 1556,
     "language": "GNU C++17",
