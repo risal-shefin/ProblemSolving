@@ -1,4 +1,21 @@
 {
+  "CF127924553": {
+    "contest_id": 1567,
+    "language": "GNU C++17",
+    "path": "codeforces\\1567\\A.cpp",
+    "platform": "Codeforces",
+    "problem_index": "A",
+    "problem_name": "Domino Disaster",
+    "problem_url": "https://codeforces.com/contest/1567/problem/A",
+    "submission_id": "CF127924553",
+    "submission_url": "https://codeforces.com/contest/1567/submission/127924553",
+    "tags": [
+      "implementation",
+      "strings",
+      "*800"
+    ],
+    "timestamp": "Sep/05/2021 20:38"
+  },
   "CF127933442": {
     "contest_id": 1567,
     "language": "GNU C++17",
