@@ -1,4 +1,24 @@
 {
+  "CF128081377": {
+    "contest_id": 1567,
+    "language": "GNU C++17",
+    "path": "codeforces\\1567\\F.cpp",
+    "platform": "Codeforces",
+    "problem_index": "F",
+    "problem_name": "One-Four Overload",
+    "problem_url": "https://codeforces.com/contest/1567/problem/F",
+    "submission_id": "CF128081377",
+    "submission_url": "https://codeforces.com/contest/1567/submission/128081377",
+    "tags": [
+      "constructive algorithms",
+      "dfs and similar",
+      "dsu",
+      "graphs",
+      "implementation",
+      "*2700"
+    ],
+    "timestamp": "Sep/07/2021 03:05"
+  },
   "CF128159661": {
     "contest_id": 243,
     "language": "GNU C++17",
