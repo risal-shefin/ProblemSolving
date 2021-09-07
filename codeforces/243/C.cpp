@@ -69,15 +69,15 @@ const ll dc[] = {0, 0, 1, -1};
 vector <ll> R, C;
 vector <pll> lst;
 
-void dfs(ll r, ll c)
+void dfs(ll r, ll c, ll t1=0, ll t2=0)
 {
     if(r < 0 || r >= R.size() || c < 0 || c >= C.size() || vis[r][c])
         return;
 
     vis[r][c] = 2;
 
-    dfs(r-1, c), dfs(r+1, c);
-    dfs(r, c-1), dfs(r, c+1);
+    dfs(r-1, c, r, c), dfs(r+1, c, r, c);
+    dfs(r, c-1, r, c), dfs(r, c+1, r, c);
 }
 
 int main()
