@@ -69,15 +69,15 @@ const ll dc[] = {0, 0, 1, -1};
 vector <ll> R, C;
 vector <pll> lst;
 
-void dfs(ll r, ll c)
+void dfs(ll r, ll c, ll t1=0, ll t2=0)
 {
     if(r < 0 || r >= R.size() || c < 0 || c >= C.size() || vis[r][c])
         return;
 
     vis[r][c] = 2;
 
-    dfs(r-1, c), dfs(r+1, c);
-    dfs(r, c-1), dfs(r, c+1);
+    dfs(r-1, c, r, c), dfs(r+1, c, r, c);
+    dfs(r, c-1, r, c), dfs(r, c+1, r, c);
 }
 
 int main()
@@ -87,8 +87,8 @@ int main()
 
     ll pr = lim/2 + 1, pc = pr;
 
-    R.pb(pr-1), R.pb(pr);
-    C.pb(pr-1), C.pb(pc);
+    R.pb(pr-1), R.pb(pr), R.pb(pr+1),
+    C.pb(pr-1), C.pb(pc), C.pb(pc+1);
 
     lst.pb({pr, pc});
 
@@ -105,9 +105,11 @@ int main()
 
         if(nr-1 > 0) R.pb(nr-1);
         R.pb(nr);
+        if(nr+1 <= lim) R.pb(nr+1);
 
         if(nc-1 > 0) C.pb(nc-1);
         C.pb(nc);
+        if(nc+1 <= lim) C.pb(nc+1);
 
         pr = nr, pc = nc;
         lst.pb({pr, pc});
