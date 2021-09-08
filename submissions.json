@@ -1,4 +1,23 @@
 {
+  "CF128297957": {
+    "contest_id": 1569,
+    "language": "GNU C++17",
+    "path": "codeforces\\1569\\E.cpp",
+    "platform": "Codeforces",
+    "problem_index": "E",
+    "problem_name": "Playoff Restoration",
+    "problem_url": "https://codeforces.com/contest/1569/problem/E",
+    "submission_id": "CF128297957",
+    "submission_url": "https://codeforces.com/contest/1569/submission/128297957",
+    "tags": [
+      "bitmasks",
+      "brute force",
+      "hashing",
+      "implementation",
+      "meet-in-the-middle"
+    ],
+    "timestamp": "Sep/09/2021 03:23"
+  },
   "CF128919179": {
     "contest_id": 1566,
     "language": "GNU C++17",
