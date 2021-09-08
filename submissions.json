@@ -1,4 +1,23 @@
 {
+  "CF128267698": {
+    "contest_id": 1569,
+    "language": "GNU C++17",
+    "path": "codeforces\\1569\\D.cpp",
+    "platform": "Codeforces",
+    "problem_index": "D",
+    "problem_name": "Inconvenient Pairs",
+    "problem_url": "https://codeforces.com/contest/1569/problem/D",
+    "submission_id": "CF128267698",
+    "submission_url": "https://codeforces.com/contest/1569/submission/128267698",
+    "tags": [
+      "binary search",
+      "data structures",
+      "implementation",
+      "sortings",
+      "two pointers"
+    ],
+    "timestamp": "Sep/08/2021 22:05"
+  },
   "CF128297957": {
     "contest_id": 1569,
     "language": "GNU C++17",
