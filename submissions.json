@@ -1,4 +1,20 @@
 {
+  "AC25768293": {
+    "contest_id": "arc058",
+    "language": "C++ (GCC 9.2.1)",
+    "path": "atcoder\\arc058\\F.cpp",
+    "platform": "AtCoder",
+    "problem_index": "F",
+    "problem_name": "Iroha Loves Strings",
+    "problem_url": "https://atcoder.jp/contests/arc058/tasks/arc058_d",
+    "submission_id": "AC25768293",
+    "submission_url": "https://atcoder.jp/contests/arc058/submissions/25768293",
+    "tags": [
+      "AtCoder",
+      "*1500"
+    ],
+    "timestamp": "Sep/11/2021 18:43"
+  },
   "AC25768536": {
     "contest_id": "arc058",
     "language": "C++ (GCC 9.2.1)",
