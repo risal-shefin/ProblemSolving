@@ -76,17 +76,18 @@ void go_with_free(ll u, ll com, ll cst)
 
     vector <int> &lst = g2[u][com];
     for(auto &v: lst) {
-
+        
         if(dist[v] == -1) {
             dist[v] = cst;
 
             track[v].insert(com);
             go_with_free(v, com, cst);
         }
-        else if(dist[v] == cst && track[v].find(com) == track[v].end()) {
+        else if(track[v].find(com) == track[v].end()) {
             track[v].insert(com);
-            go_with_free(v, com, cst);
+            go_with_free(v, com, cst);    
         }
+     
     }
 }
 
@@ -132,6 +133,7 @@ int main()
             }
         }
     }
+
 
     cout << dist[n] << EL;
 
