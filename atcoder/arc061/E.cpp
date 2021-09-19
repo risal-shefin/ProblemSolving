@@ -1,3 +1,12 @@
+/* Wrong Solution. Below is the case. Answer should be 1. 1->2->3->5.
+5 5
+1 2 8
+2 3 8
+1 4 9
+4 3 9
+3 5 8
+*/
+
 // #pragma GCC optimize("Ofast,unroll-loops")
 // #pragma GCC target("avx,avx2,fma")
 
@@ -62,39 +71,8 @@ Ostream& operator<<(Ostream& os,  const pair<Ts...>& p){
 
 const ll sz = 1e5 + 10;
 vector <pll> g[sz];
-set <int> track[sz];
-map <int, vector<int>> g2[sz];
-ll dist[sz], enq[sz];
-queue <int> q;
-
-void go_with_free(ll u, ll com, ll cst)
-{
-    if(!enq[u]) {
-        q.push(u);
-        enq[u] = 1;
-    }
-
-    vector <int> &lst = g2[u][com];
-    for(auto &v: lst) {
-        if(dist[v] < cst)
-            continue;
-
-        if(dist[v] == cst) {
-            if(track[v].find(com) == track[v].end()) {
-                track[v].insert(com);
-                go_with_free(v, com, cst);
-            }
-        }
-        else {
-            dist[v] = cst;
-
-            track[v].clear();
-            track[v].insert(com);
-
-            go_with_free(v, com, cst);
-        }
-    }
-}
+unordered_set <int> track[sz];
+ll dist[sz];
 
 int main()
 {
@@ -107,37 +85,34 @@ int main()
 
         g[u].pb({v, c});
         g[v].pb({u, c});
-
-        g2[u][c].pb(v);
-        g2[v][c].pb(u);
     }
 
     for1(i, n) dist[i] = inf;
 
-    q.push(1);
+    priority_queue <pii> pq;
+    pq.push({0, 1});
     dist[1] = 0;
 
-    while(!q.empty()) {
-        ll u = q.front();
-        q.pop();
+    while(!pq.empty()) {
+        pll u = pq.top();
+        pq.pop();
 
-        for(auto &[v, c] : g[u]) {
-            ll cst = (track[u].find(c) == track[u].end());
-            if(cst == 0)
-                continue;
+        if(dist[u.ss] != -u.ff)
+            continue;
 
-            if(dist[u] + cst < dist[v]) {
-                dist[v] = dist[u] + cst;
+        for(pll &v : g[u.ss]) {
+            ll cst = (track[u.ss].find(v.ss) == track[u.ss].end());
 
-                track[v].clear();
-                track[v].insert(c);
+            if(dist[u.ss] + cst < dist[v.ff]) {
+                dist[v.ff] = dist[u.ss] + cst;
 
-                go_with_free(v, c, dist[v]);
+                track[v.ff].clear();
+                track[v.ff].insert(v.ss);
+
+                pq.push({-dist[v.ff], v.ff});
             }
-            else if(dist[u] + cst == dist[v] && track[v].find(c) == track[v].end()) {
-                track[v].insert(c);
-
-                go_with_free(v, c, dist[v]);
+            else if(dist[u.ss] + cst == dist[v.ff]) {
+                track[v.ff].insert(v.ss);
             }
         }
     }
@@ -149,4 +124,3 @@ int main()
 
     return 0;
 }
-
