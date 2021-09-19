@@ -76,18 +76,23 @@ void go_with_free(ll u, ll com, ll cst)
 
     vector <int> &lst = g2[u][com];
     for(auto &v: lst) {
-        
-        if(dist[v] == -1) {
+        if(dist[v] < cst)
+            continue;
+
+        if(dist[v] == cst) {
+            if(track[v].find(com) == track[v].end()) {
+                track[v].insert(com);
+                go_with_free(v, com, cst);
+            }
+        }
+        else {
             dist[v] = cst;
 
+            track[v].clear();
             track[v].insert(com);
+
             go_with_free(v, com, cst);
         }
-        else if(track[v].find(com) == track[v].end()) {
-            track[v].insert(com);
-            go_with_free(v, com, cst);    
-        }
-     
     }
 }
 
@@ -107,7 +112,7 @@ int main()
         g2[v][c].pb(u);
     }
 
-    ms(dist, -1);
+    for1(i, n) dist[i] = inf;
 
     q.push(1);
     dist[1] = 0;
@@ -117,25 +122,31 @@ int main()
         q.pop();
 
         for(auto &[v, c] : g[u]) {
-            if(track[u].find(c) != track[u].end())
+            ll cst = (track[u].find(c) == track[u].end());
+            if(cst == 0)
                 continue;
 
-            if(dist[v] == -1) {
-                dist[v] = dist[u] + 1;
+            if(dist[u] + cst < dist[v]) {
+                dist[v] = dist[u] + cst;
 
+                track[v].clear();
                 track[v].insert(c);
+
                 go_with_free(v, c, dist[v]);
             }
-            else if(dist[u] + 1 == dist[v] && track[v].find(c) == track[v].end()) {
-
+            else if(dist[u] + cst == dist[v] && track[v].find(c) == track[v].end()) {
                 track[v].insert(c);
+
                 go_with_free(v, c, dist[v]);
             }
         }
     }
 
+    ll ans = dist[n];
 
-    cout << dist[n] << EL;
+    if(ans==inf) cout << -1 << EL;
+    else cout << ans << EL;
 
     return 0;
 }
+
