@@ -62,8 +62,8 @@ Ostream& operator<<(Ostream& os,  const pair<Ts...>& p){
 
 const ll sz = 1e5 + 10;
 vector <pll> g[sz];
-unordered_set <int> track[sz];
-unordered_map <int, vector<int>> g2[sz];
+set <int> track[sz];
+map <int, vector<int>> g2[sz];
 ll dist[sz], enq[sz];
 queue <int> q;
 
