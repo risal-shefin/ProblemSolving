@@ -1,12 +1,3 @@
-/* Wrong Solution. Below is the case. Answer should be 1. 1->2->3->5.
-5 5
-1 2 8
-2 3 8
-1 4 9
-4 3 9
-3 5 8
-*/
-
 // #pragma GCC optimize("Ofast,unroll-loops")
 // #pragma GCC target("avx,avx2,fma")
 
@@ -124,3 +115,5 @@ int main()
 
     return 0;
 }
+
+
