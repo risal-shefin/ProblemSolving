@@ -1183,6 +1183,22 @@
     ],
     "timestamp": "Sep/11/2021 18:44"
   },
+  "AC26019446": {
+    "contest_id": "arc062",
+    "language": "C++ (GCC 9.2.1)",
+    "path": "atcoder\\arc062\\E.cpp",
+    "platform": "AtCoder",
+    "problem_index": "E",
+    "problem_name": "Building Cubes with AtCoDeer",
+    "problem_url": "https://atcoder.jp/contests/arc062/tasks/arc062_c",
+    "submission_id": "AC26019446",
+    "submission_url": "https://atcoder.jp/contests/arc062/submissions/26019446",
+    "tags": [
+      "AtCoder",
+      "*900"
+    ],
+    "timestamp": "Sep/20/2021 23:59"
+  },
   "CF100007944": {
     "contest_id": 1455,
     "language": "GNU C++17",
