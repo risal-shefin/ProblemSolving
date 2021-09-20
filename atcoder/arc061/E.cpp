@@ -63,7 +63,32 @@ Ostream& operator<<(Ostream& os,  const pair<Ts...>& p){
 const ll sz = 1e5 + 10;
 vector <pll> g[sz];
 unordered_set <int> track[sz];
-ll dist[sz];
+unordered_map <int, vector<int>> g2[sz];
+ll dist[sz], enq[sz];
+queue <int> q;
+
+void go_with_free(ll u, ll com, ll cst)
+{
+    if(!enq[u]) {
+        q.push(u);
+        enq[u] = 1;
+    }
+
+    vector <int> &lst = g2[u][com];
+    for(auto &v: lst) {
+
+        if(dist[v] == -1) {
+            dist[v] = cst;
+
+            track[v].insert(com);
+            go_with_free(v, com, cst);
+        }
+        else if(dist[v] == cst && track[v].find(com) == track[v].end()) {
+            track[v].insert(com);
+            go_with_free(v, com, cst);
+        }
+    }
+}
 
 int main()
 {
@@ -76,44 +101,39 @@ int main()
 
         g[u].pb({v, c});
         g[v].pb({u, c});
+
+        g2[u][c].pb(v);
+        g2[v][c].pb(u);
     }
 
-    for1(i, n) dist[i] = inf;
+    ms(dist, -1);
 
-    priority_queue <pii> pq;
-    pq.push({0, 1});
+    q.push(1);
     dist[1] = 0;
 
-    while(!pq.empty()) {
-        pll u = pq.top();
-        pq.pop();
+    while(!q.empty()) {
+        ll u = q.front();
+        q.pop();
 
-        if(dist[u.ss] != -u.ff)
-            continue;
+        for(auto &[v, c] : g[u]) {
+            if(track[u].find(c) != track[u].end())
+                continue;
 
-        for(pll &v : g[u.ss]) {
-            ll cst = (track[u.ss].find(v.ss) == track[u.ss].end());
+            if(dist[v] == -1) {
+                dist[v] = dist[u] + 1;
 
-            if(dist[u.ss] + cst < dist[v.ff]) {
-                dist[v.ff] = dist[u.ss] + cst;
-
-                track[v.ff].clear();
-                track[v.ff].insert(v.ss);
-
-                pq.push({-dist[v.ff], v.ff});
+                track[v].insert(c);
+                go_with_free(v, c, dist[v]);
             }
-            else if(dist[u.ss] + cst == dist[v.ff]) {
-                track[v.ff].insert(v.ss);
+            else if(dist[u] + 1 == dist[v] && track[v].find(c) == track[v].end()) {
+
+                track[v].insert(c);
+                go_with_free(v, c, dist[v]);
             }
         }
     }
 
-    ll ans = dist[n];
-
-    if(ans==inf) cout << -1 << EL;
-    else cout << ans << EL;
+    cout << dist[n] << EL;
 
     return 0;
 }
-
-
