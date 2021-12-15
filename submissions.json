@@ -1359,6 +1359,22 @@
     ],
     "timestamp": "Sep/21/2021 02:54"
   },
+  "AC27927160": {
+    "contest_id": "arc115",
+    "language": "C++ (GCC 9.2.1)",
+    "path": "atcoder\\arc115\\E.cpp",
+    "platform": "AtCoder",
+    "problem_index": "E",
+    "problem_name": "LEQ and NEQ",
+    "problem_url": "https://atcoder.jp/contests/arc115/tasks/arc115_e",
+    "submission_id": "AC27927160",
+    "submission_url": "https://atcoder.jp/contests/arc115/submissions/27927160",
+    "tags": [
+      "AtCoder",
+      "*700"
+    ],
+    "timestamp": "Dec/15/2021 19:07"
+  },
   "AC28697996": {
     "contest_id": "arc106",
     "language": "C++ (GCC 9.2.1)",
