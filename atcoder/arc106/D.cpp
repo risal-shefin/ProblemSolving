@@ -29,48 +29,100 @@ using namespace std;
 #define EL '\n'
 #define fastio std::ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 
-const ll mod = 998244353, sz = 2e5 + 10, MAX_N = 310;
+mt19937_64 rng(chrono::steady_clock::now().time_since_epoch().count());
+// returns a random ll integer in [l, r] range
+inline ll gen_random(ll l, ll r) {
+    return uniform_int_distribution<ll>(l, r)(rng);
+}
 
-ll nCr[MAX_N][MAX_N];
-ll sumpw[MAX_N], ara[sz];
+// === DEBUG MACRO STARTS HERE === //
+#ifdef LOCALXOX
+#define DEBUG
+#define SYS_COL system("COLOR")
+#endif
+
+int recur_depth = 0;
+#ifdef DEBUG
+#define dbg(x) {++recur_depth; auto x_=x; --recur_depth; SYS_COL; \
+                cerr<<string(recur_depth, '\t')<<"\e[91m"<<__func__<<":" \
+                <<__LINE__<<"\t"<<#x<<" = "<<x_<<"\e[39m"<<endl;}
+
+template<typename Ostream, typename Cont>
+typename enable_if<is_same<Ostream,ostream>::value,
+            Ostream&>::type operator<<(Ostream& os,  const Cont& v) {
+	os<<"[";
+	for(auto& x:v){os<<x<<", ";}
+	return os<<"]";
+}
+template<typename Ostream, typename ...Ts>
+Ostream& operator<<(Ostream& os,  const pair<Ts...>& p){
+	return os<<"{"<<p.first<<", "<<p.second<<"}";
+}
+#else
+#define dbg(x)
+#endif
+// === DEBUG MACRO ENDS HERE === //
+
+#define ff first
+#define ss second
+
+const ll sz = 2e5 + 10, mod = 998244353;
+ll ara[sz], sum_pw[305], pw[305][sz], fact[sz], inv[sz];
+
+ll fastPow(ll x, ll n, ll MOD)
+{
+    ll ret = 1;
+    while (n)
+    {
+        if (n & 1) ret = (ret * x) % MOD;
+        x = (x * x) % MOD;
+        n >>= 1;
+    }
+    return ret % MOD;
+}
+
+const ll invTwo = fastPow(2, mod-2, mod);
+
+inline ll nCr(ll n, ll r)
+{
+    ll den = (inv[r] * inv[n-r]) % mod;
+    return (fact[n] * den) % mod;
+}
 
 int main()
 {
+    fact[0] = 1;
+    for1(i, sz-1) fact[i] = (fact[i-1] * i) % mod;
+
+    inv[sz-1] = fastPow(fact[sz-1], mod-2, mod);
+    rep0(i, sz-1) inv[i] = (inv[i+1] * (i+1)) % mod;
+
     ll n, k;
-    sl(n), sl(k);
+    cin >> n >> k;
 
-    nCr[0][0] = 1;
+    for1(i, n) sl(ara[i]);
+
+    sum_pw[0] = n;
+
     for1(i, k) {
-        nCr[i][0] = nCr[i][i] = 1;
-
-        for(ll j = 1; j < k; j++)
-            nCr[i][j] = (nCr[i-1][j-1] + nCr[i-1][j]) % mod;
-    }
-
-    for1(i, n) {
-        sl(ara[i]);
-
-        ll pw = 1;
-        for(ll p = 0; p <= k; p++) {
-            sumpw[p] = (sumpw[p] + pw) % mod;
-            pw = (pw * ara[i]) % mod;
+        for1(j, n) {
+            pw[i][j] = (i==1) ? ara[j] : (pw[i-1][j] * ara[j]) % mod;
+            sum_pw[i] = (sum_pw[i] + pw[i][j]) % mod;
         }
     }
 
-    for1(x, k) {
+
+    for(ll p = 1; p <= k; p++) {
         ll ans = 0;
 
-        for(ll p = 0; p <= x; p++) {
+        for(ll i = 0; i <= p; i++) {
+            ll sum = (sum_pw[p-i] * sum_pw[i]) % mod;
+            sum = (sum - sum_pw[p]) % mod;
+            if(sum < 0) sum += mod;
 
-            ll sumab = (sumpw[p] * sumpw[x-p]) % mod;
-            sumab -= sumpw[x];
-            if(sumab < 0) sumab += mod;
-
-            ans = (ans + nCr[x][p] * sumab) % mod;
+            ans = (ans + nCr(p, i)*sum) % mod;
         }
-
-        if(ans & 1) ans += mod;
-        ans /= 2;
+        ans = (ans * invTwo) % mod;
 
         pf("%lld\n", ans);
     }
