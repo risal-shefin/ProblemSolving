@@ -1359,6 +1359,22 @@
     ],
     "timestamp": "Sep/21/2021 02:54"
   },
+  "AC30442682": {
+    "contest_id": "abc240",
+    "language": "C++ (GCC 9.2.1)",
+    "path": "atcoder\\abc240\\F.cpp",
+    "platform": "AtCoder",
+    "problem_index": "F",
+    "problem_name": "Sum Sum Max",
+    "problem_url": "https://atcoder.jp/contests/abc240/tasks/abc240_f",
+    "submission_id": "AC30442682",
+    "submission_url": "https://atcoder.jp/contests/abc240/submissions/30442682",
+    "tags": [
+      "AtCoder",
+      "*500"
+    ],
+    "timestamp": "Mar/26/2022 18:13"
+  },
   "CF100007944": {
     "contest_id": 1455,
     "language": "GNU C++17",
